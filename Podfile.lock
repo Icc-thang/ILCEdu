@@ -1,4 +1,8 @@
 PODS:
+  - Alamofire (4.9.0)
+  - AlamofireObjectMapper (5.2.1):
+    - Alamofire (~> 4.7)
+    - ObjectMapper (~> 3.4)
   - FacebookCore (0.9.0):
     - FBSDKCoreKit (~> 5.0)
   - FacebookLogin (0.9.0):
@@ -23,29 +27,74 @@ PODS:
     - FBSDKShareKit/Share (= 5.6.0)
   - FBSDKShareKit/Share (5.6.0):
     - FBSDKCoreKit (~> 5.0)
+  - libwebp (1.0.3):
+    - libwebp/demux (= 1.0.3)
+    - libwebp/mux (= 1.0.3)
+    - libwebp/webp (= 1.0.3)
+  - libwebp/demux (1.0.3):
+    - libwebp/webp
+  - libwebp/mux (1.0.3):
+    - libwebp/demux
+  - libwebp/webp (1.0.3)
+  - LinearProgressView (2.0.1)
+  - ListPlaceholder (1.4)
+  - Moya (13.0.1):
+    - Moya/Core (= 13.0.1)
+  - Moya/Core (13.0.1):
+    - Alamofire (~> 4.1)
+    - Result (~> 4.1)
+  - ObjectMapper (3.5.1)
+  - Result (4.1.0)
+  - SDWebImage/Core (4.4.7)
+  - SDWebImage/WebP (4.4.7):
+    - libwebp (< 2.0, >= 0.5)
+    - SDWebImage/Core
 
 DEPENDENCIES:
+  - AlamofireObjectMapper
   - FacebookCore
   - FacebookLogin
   - FacebookShare
+  - LinearProgressView (~> 2.0)
+  - ListPlaceholder
+  - Moya
+  - SDWebImage/WebP
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - AlamofireObjectMapper
     - FacebookCore
     - FacebookLogin
     - FacebookShare
     - FBSDKCoreKit
     - FBSDKLoginKit
     - FBSDKShareKit
+    - libwebp
+    - LinearProgressView
+    - ListPlaceholder
+    - Moya
+    - ObjectMapper
+    - Result
+    - SDWebImage
 
 SPEC CHECKSUMS:
+  Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
+  AlamofireObjectMapper: 1989f690e982b71921b9253f53a4f33a9bc00d88
   FacebookCore: ba86524b66cfa86d0f8e65d08faa8504a9f732dd
   FacebookLogin: 6cee9fd6e1fe976fe8f7eec199e27b28b14f5d63
   FacebookShare: 85968ad1b1606c4944fb154924e425fd29184ea5
   FBSDKCoreKit: d6655a343868d4bb5c29a60859bab07c3be14a0b
   FBSDKLoginKit: c5a623de88a6b0cda35b35582921f6cec2efcc36
   FBSDKShareKit: 0d8c4cfd5c1f185d5f9c26d79758b141086e1251
+  libwebp: 057912d6d0abfb6357d8bb05c0ea470301f5d61e
+  LinearProgressView: 353d4d45dc599b83cc4b43f14e6c0336aa6f3834
+  ListPlaceholder: 08ddaddf67520a20fc52cf37160fb56aa64d071d
+  Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
+  ObjectMapper: 70187b8941977c62ccfb423caf6b50be405cabf0
+  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
+  SDWebImage: c10d14a8883ebd89664f02a422006f66a85c0c5d
 
-PODFILE CHECKSUM: 04552f24c7cfeb6e1fde9372d2f5d4f3a8822e0e
+PODFILE CHECKSUM: d5f487143fddfe052ae3690372204978e14cf39a
 
 COCOAPODS: 1.7.5

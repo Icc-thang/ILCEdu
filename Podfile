@@ -15,5 +15,9 @@ target 'ICLEdu' do
  pod 'FacebookCore'
  pod 'FacebookLogin'
  pod 'FacebookShare'
-
+ pod 'AlamofireObjectMapper'
+ pod 'SDWebImage/WebP'
+ pod 'Moya'
+ pod 'ListPlaceholder'
+ pod 'LinearProgressView', '~> 2.0'
 end

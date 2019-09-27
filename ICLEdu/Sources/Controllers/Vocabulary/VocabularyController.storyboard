@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Vocabulary View Controller-->
+        <scene sceneID="tev-RJ-dZc">
+            <objects>
+                <viewController storyboardIdentifier="VocabularyController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="x2U-YM-cy5" customClass="VocabularyViewController" customModule="ICLEdu" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HtF-sr-5qD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vya-vJ-Tsr" customClass="LinearProgressView" customModule="ICLEdu" customModuleProvider="target">
+                                <rect key="frame" x="16" y="52" width="382" height="35"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="iCw-dl-5YD"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="barColor">
+                                        <color key="value" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="trackColor">
+                                        <color key="value" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isCornersRounded" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="maximumValue">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="minimumValue">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="barInset">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="progress">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lbk-bN-lSf">
+                                <rect key="frame" x="0.0" y="87" width="414" height="775"/>
+                                <connections>
+                                    <segue destination="lKP-S3-Gqo" kind="embed" id="JYe-nd-wtQ"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Vya-vJ-Tsr" firstAttribute="leading" secondItem="18b-uD-P1V" secondAttribute="leading" constant="16" id="1SW-I1-53Z"/>
+                            <constraint firstItem="18b-uD-P1V" firstAttribute="trailing" secondItem="lbk-bN-lSf" secondAttribute="trailing" id="AhK-zw-hYa"/>
+                            <constraint firstItem="lbk-bN-lSf" firstAttribute="leading" secondItem="18b-uD-P1V" secondAttribute="leading" id="M9Y-RK-JLX"/>
+                            <constraint firstItem="Vya-vJ-Tsr" firstAttribute="top" secondItem="18b-uD-P1V" secondAttribute="top" constant="8" id="MVj-3F-38a"/>
+                            <constraint firstItem="18b-uD-P1V" firstAttribute="trailing" secondItem="Vya-vJ-Tsr" secondAttribute="trailing" constant="16" id="NpT-Yw-hUA"/>
+                            <constraint firstItem="18b-uD-P1V" firstAttribute="bottom" secondItem="lbk-bN-lSf" secondAttribute="bottom" id="WEU-xF-LNI"/>
+                            <constraint firstItem="lbk-bN-lSf" firstAttribute="top" secondItem="Vya-vJ-Tsr" secondAttribute="bottom" id="vrl-9t-FkU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="18b-uD-P1V"/>
+                    </view>
+                    <connections>
+                        <outlet property="progressPercent" destination="Vya-vJ-Tsr" id="hKp-pJ-9Ag"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fEa-1t-izK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="163.768115942029" y="59.598214285714285"/>
+        </scene>
+        <!--Vocabulary Collection View Controller-->
+        <scene sceneID="uwl-KI-xu4">
+            <objects>
+                <collectionViewController id="lKP-S3-Gqo" customClass="VocabularyCollectionViewController" customModule="ICLEdu" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" id="qKU-rT-ySr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="775"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wgs-aY-yke">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells/>
+                        <connections>
+                            <outlet property="dataSource" destination="lKP-S3-Gqo" id="XUn-P2-39M"/>
+                            <outlet property="delegate" destination="lKP-S3-Gqo" id="Zrj-II-MfF"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fdc-Jo-W5e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1087" y="78"/>
+        </scene>
+    </scenes>
+</document>

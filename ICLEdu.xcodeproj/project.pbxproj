@@ -3,17 +3,44 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		482BBBA7C0B8A7AFA955ADC5 /* Pods_ICLEdu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5335EDD87122537728C72CCE /* Pods_ICLEdu.framework */; };
+		6C0DF43B2334D1980056A094 /* VocabularyController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C0DF43A2334D1980056A094 /* VocabularyController.storyboard */; };
+		6C0DF43D2334D9E40056A094 /* VocabularyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C0DF43C2334D9E40056A094 /* VocabularyViewController.swift */; };
+		6C0DF4462334DAE50056A094 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C0DF4452334DAE50056A094 /* ProfileViewController.swift */; };
+		6C0DF4482334DAFF0056A094 /* LessonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C0DF4472334DAFF0056A094 /* LessonViewController.swift */; };
+		6C0DF44A2334DB0F0056A094 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C0DF4492334DB0F0056A094 /* MenuViewController.swift */; };
+		6C0DF45123385F050056A094 /* LessonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C0DF44F23385F050056A094 /* LessonCell.swift */; };
+		6C0DF45223385F050056A094 /* LessonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C0DF45023385F050056A094 /* LessonCell.xib */; };
+		6C0DF45623385F220056A094 /* HeaderLessonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C0DF45423385F220056A094 /* HeaderLessonCell.swift */; };
+		6C0DF45723385F220056A094 /* HeaderLessonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C0DF45523385F220056A094 /* HeaderLessonCell.xib */; };
+		6C0DF45E2339B3EB0056A094 /* ProfileController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C0DF45D2339B3EB0056A094 /* ProfileController.storyboard */; };
+		6C0DF4602339B4270056A094 /* LessonController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C0DF45F2339B4270056A094 /* LessonController.storyboard */; };
+		6C0DF4652339BAC90056A094 /* NavCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C0DF4632339BAC90056A094 /* NavCell.swift */; };
+		6C0DF4662339BAC90056A094 /* NavCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C0DF4642339BAC90056A094 /* NavCell.xib */; };
+		6C43C89223348F5800230882 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C43C89023348F5800230882 /* CircleImage.swift */; };
+		6C43C89323348F5800230882 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C43C89123348F5800230882 /* CardView.swift */; };
+		6C43C8A42334AF6500230882 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C43C8A32334AF6500230882 /* LoginPresenter.swift */; };
 		6C5952AF233350C000515B62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5952AE233350C000515B62 /* AppDelegate.swift */; };
 		6C5952B1233350C000515B62 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5952B0233350C000515B62 /* ViewController.swift */; };
 		6C5952B4233350C000515B62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C5952B2233350C000515B62 /* Main.storyboard */; };
 		6C5952B6233350C100515B62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C5952B5233350C100515B62 /* Assets.xcassets */; };
 		6C5952B9233350C100515B62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C5952B7233350C100515B62 /* LaunchScreen.storyboard */; };
 		6C5952C4233350C100515B62 /* ICLEduTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5952C3233350C100515B62 /* ICLEduTests.swift */; };
+		6CB39CC0233BA5B70098A363 /* VocabularyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB39CBE233BA5B70098A363 /* VocabularyCell.swift */; };
+		6CB39CC1233BA5B70098A363 /* VocabularyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CB39CBF233BA5B70098A363 /* VocabularyCell.xib */; };
+		6CB39CC5233BA9340098A363 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB39CC3233BA9340098A363 /* CardCell.swift */; };
+		6CB39CC6233BA9340098A363 /* CardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CB39CC4233BA9340098A363 /* CardCell.xib */; };
+		6CB39CEC233DB4970098A363 /* LinearProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB39CEB233DB4970098A363 /* LinearProgressView.swift */; };
+		6CB39D16233DD8D50098A363 /* VocabularyCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB39D15233DD8D50098A363 /* VocabularyCollectionViewController.swift */; };
+		6CB39D18233DF10B0098A363 /* VocabularyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB39D17233DF10B0098A363 /* VocabularyPresenter.swift */; };
+		6CDEB902233A036000420ABE /* ModifyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDEB901233A036000420ABE /* ModifyProfileViewController.swift */; };
+		6CDEB904233A037700420ABE /* ModifyProfileController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CDEB903233A037700420ABE /* ModifyProfileController.storyboard */; };
+		6CDEB914233A175500420ABE /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDEB913233A175500420ABE /* Color.swift */; };
+		6CDEB91A233B196000420ABE /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDEB919233B196000420ABE /* Card.swift */; };
 		D50E4974CB20813462F4AACC /* Pods_ICLEduTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91767D1E209C55370D77754 /* Pods_ICLEduTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +58,22 @@
 		2F4A356827C6357FBC0D7A99 /* Pods-ICLEduTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ICLEduTests.release.xcconfig"; path = "Target Support Files/Pods-ICLEduTests/Pods-ICLEduTests.release.xcconfig"; sourceTree = "<group>"; };
 		4D8032B96284BA667232B6C4 /* Pods-ICLEdu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ICLEdu.debug.xcconfig"; path = "Target Support Files/Pods-ICLEdu/Pods-ICLEdu.debug.xcconfig"; sourceTree = "<group>"; };
 		5335EDD87122537728C72CCE /* Pods_ICLEdu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ICLEdu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C0DF43A2334D1980056A094 /* VocabularyController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = VocabularyController.storyboard; sourceTree = "<group>"; };
+		6C0DF43C2334D9E40056A094 /* VocabularyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyViewController.swift; sourceTree = "<group>"; };
+		6C0DF4452334DAE50056A094 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		6C0DF4472334DAFF0056A094 /* LessonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonViewController.swift; sourceTree = "<group>"; };
+		6C0DF4492334DB0F0056A094 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		6C0DF44F23385F050056A094 /* LessonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonCell.swift; sourceTree = "<group>"; };
+		6C0DF45023385F050056A094 /* LessonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LessonCell.xib; sourceTree = "<group>"; };
+		6C0DF45423385F220056A094 /* HeaderLessonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderLessonCell.swift; sourceTree = "<group>"; };
+		6C0DF45523385F220056A094 /* HeaderLessonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderLessonCell.xib; sourceTree = "<group>"; };
+		6C0DF45D2339B3EB0056A094 /* ProfileController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileController.storyboard; sourceTree = "<group>"; };
+		6C0DF45F2339B4270056A094 /* LessonController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LessonController.storyboard; sourceTree = "<group>"; };
+		6C0DF4632339BAC90056A094 /* NavCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavCell.swift; sourceTree = "<group>"; };
+		6C0DF4642339BAC90056A094 /* NavCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavCell.xib; sourceTree = "<group>"; };
+		6C43C89023348F5800230882 /* CircleImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
+		6C43C89123348F5800230882 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		6C43C8A32334AF6500230882 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		6C5952AB233350C000515B62 /* ICLEdu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ICLEdu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C5952AE233350C000515B62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6C5952B0233350C000515B62 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -41,6 +84,17 @@
 		6C5952BF233350C100515B62 /* ICLEduTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ICLEduTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C5952C3233350C100515B62 /* ICLEduTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICLEduTests.swift; sourceTree = "<group>"; };
 		6C5952C5233350C100515B62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6CB39CBE233BA5B70098A363 /* VocabularyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyCell.swift; sourceTree = "<group>"; };
+		6CB39CBF233BA5B70098A363 /* VocabularyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VocabularyCell.xib; sourceTree = "<group>"; };
+		6CB39CC3233BA9340098A363 /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
+		6CB39CC4233BA9340098A363 /* CardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardCell.xib; sourceTree = "<group>"; };
+		6CB39CEB233DB4970098A363 /* LinearProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearProgressView.swift; sourceTree = "<group>"; };
+		6CB39D15233DD8D50098A363 /* VocabularyCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyCollectionViewController.swift; sourceTree = "<group>"; };
+		6CB39D17233DF10B0098A363 /* VocabularyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyPresenter.swift; sourceTree = "<group>"; };
+		6CDEB901233A036000420ABE /* ModifyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyProfileViewController.swift; sourceTree = "<group>"; };
+		6CDEB903233A037700420ABE /* ModifyProfileController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ModifyProfileController.storyboard; sourceTree = "<group>"; };
+		6CDEB913233A175500420ABE /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		6CDEB919233B196000420ABE /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		6E3A27F1B1789C3E493A9E4B /* Pods-ICLEduTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ICLEduTests.debug.xcconfig"; path = "Target Support Files/Pods-ICLEduTests/Pods-ICLEduTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7E53901940DC13FDAADC0166 /* Pods-ICLEdu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ICLEdu.release.xcconfig"; path = "Target Support Files/Pods-ICLEdu/Pods-ICLEdu.release.xcconfig"; sourceTree = "<group>"; };
 		E91767D1E209C55370D77754 /* Pods_ICLEduTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ICLEduTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,7 +128,6 @@
 				6E3A27F1B1789C3E493A9E4B /* Pods-ICLEduTests.debug.xcconfig */,
 				2F4A356827C6357FBC0D7A99 /* Pods-ICLEduTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -85,6 +138,164 @@
 				E91767D1E209C55370D77754 /* Pods_ICLEduTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6C0DF4392334D1800056A094 /* Vocabulary */ = {
+			isa = PBXGroup;
+			children = (
+				6C0DF43A2334D1980056A094 /* VocabularyController.storyboard */,
+				6C0DF43C2334D9E40056A094 /* VocabularyViewController.swift */,
+				6CB39D15233DD8D50098A363 /* VocabularyCollectionViewController.swift */,
+				6CB39D17233DF10B0098A363 /* VocabularyPresenter.swift */,
+			);
+			path = Vocabulary;
+			sourceTree = "<group>";
+		};
+		6C0DF4422334DAA70056A094 /* Lesson */ = {
+			isa = PBXGroup;
+			children = (
+				6C0DF4472334DAFF0056A094 /* LessonViewController.swift */,
+				6C0DF45F2339B4270056A094 /* LessonController.storyboard */,
+			);
+			path = Lesson;
+			sourceTree = "<group>";
+		};
+		6C0DF4432334DAAF0056A094 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				6C0DF4492334DB0F0056A094 /* MenuViewController.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		6C0DF4442334DAD30056A094 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				6CDEB900233A032300420ABE /* Modify Profile */,
+				6C0DF4452334DAE50056A094 /* ProfileViewController.swift */,
+				6C0DF45D2339B3EB0056A094 /* ProfileController.storyboard */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		6C0DF44B23385E750056A094 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				6C0DF44D23385EC50056A094 /* Modules */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		6C0DF44D23385EC50056A094 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				6CDEB915233B184B00420ABE /* Vocabulary Cell */,
+				6CDEB905233A0DD100420ABE /* Lesson Cell */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		6C0DF44E23385ED90056A094 /* LessonCell */ = {
+			isa = PBXGroup;
+			children = (
+				6C0DF44F23385F050056A094 /* LessonCell.swift */,
+				6C0DF45023385F050056A094 /* LessonCell.xib */,
+			);
+			path = LessonCell;
+			sourceTree = "<group>";
+		};
+		6C0DF45323385F0D0056A094 /* Header Lesson Cell */ = {
+			isa = PBXGroup;
+			children = (
+				6C0DF45423385F220056A094 /* HeaderLessonCell.swift */,
+				6C0DF45523385F220056A094 /* HeaderLessonCell.xib */,
+			);
+			path = "Header Lesson Cell";
+			sourceTree = "<group>";
+		};
+		6C0DF4622339B9EF0056A094 /* Nav Cell */ = {
+			isa = PBXGroup;
+			children = (
+				6C0DF4632339BAC90056A094 /* NavCell.swift */,
+				6C0DF4642339BAC90056A094 /* NavCell.xib */,
+			);
+			path = "Nav Cell";
+			sourceTree = "<group>";
+		};
+		6C43C8942334917200230882 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				6C43C898233491B100230882 /* Foundations */,
+				6C43C897233491A500230882 /* Network */,
+				6C43C8962334919D00230882 /* Models */,
+				6C43C8952334919200230882 /* Controllers */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		6C43C8952334919200230882 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6C0DF4442334DAD30056A094 /* Profile */,
+				6C0DF4432334DAAF0056A094 /* Menu */,
+				6C0DF4422334DAA70056A094 /* Lesson */,
+				6C0DF4392334D1800056A094 /* Vocabulary */,
+				6C43C89B2334922E00230882 /* Login */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		6C43C8962334919D00230882 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6CDEB918233B194600420ABE /* Card Model */,
+				6C43C899233491DA00230882 /* Request */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6C43C897233491A500230882 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		6C43C898233491B100230882 /* Foundations */ = {
+			isa = PBXGroup;
+			children = (
+				6C0DF44B23385E750056A094 /* Components */,
+				6C43C89A2334920400230882 /* Extensions */,
+			);
+			path = Foundations;
+			sourceTree = "<group>";
+		};
+		6C43C899233491DA00230882 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		6C43C89A2334920400230882 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6C43C89123348F5800230882 /* CardView.swift */,
+				6C43C89023348F5800230882 /* CircleImage.swift */,
+				6CDEB913233A175500420ABE /* Color.swift */,
+				6CB39CEB233DB4970098A363 /* LinearProgressView.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		6C43C89B2334922E00230882 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				6C5952B2233350C000515B62 /* Main.storyboard */,
+				6C5952B0233350C000515B62 /* ViewController.swift */,
+				6C43C8A32334AF6500230882 /* LoginPresenter.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		6C5952A2233350C000515B62 = {
@@ -110,9 +321,8 @@
 		6C5952AD233350C000515B62 /* ICLEdu */ = {
 			isa = PBXGroup;
 			children = (
+				6C43C8942334917200230882 /* Sources */,
 				6C5952AE233350C000515B62 /* AppDelegate.swift */,
-				6C5952B0233350C000515B62 /* ViewController.swift */,
-				6C5952B2233350C000515B62 /* Main.storyboard */,
 				6C5952B5233350C100515B62 /* Assets.xcassets */,
 				6C5952B7233350C100515B62 /* LaunchScreen.storyboard */,
 				6C5952BA233350C100515B62 /* Info.plist */,
@@ -127,6 +337,52 @@
 				6C5952C5233350C100515B62 /* Info.plist */,
 			);
 			path = ICLEduTests;
+			sourceTree = "<group>";
+		};
+		6CB39CC2233BA90F0098A363 /* CardCell */ = {
+			isa = PBXGroup;
+			children = (
+				6CB39CC3233BA9340098A363 /* CardCell.swift */,
+				6CB39CC4233BA9340098A363 /* CardCell.xib */,
+			);
+			path = CardCell;
+			sourceTree = "<group>";
+		};
+		6CDEB900233A032300420ABE /* Modify Profile */ = {
+			isa = PBXGroup;
+			children = (
+				6CDEB901233A036000420ABE /* ModifyProfileViewController.swift */,
+				6CDEB903233A037700420ABE /* ModifyProfileController.storyboard */,
+			);
+			path = "Modify Profile";
+			sourceTree = "<group>";
+		};
+		6CDEB905233A0DD100420ABE /* Lesson Cell */ = {
+			isa = PBXGroup;
+			children = (
+				6C0DF4622339B9EF0056A094 /* Nav Cell */,
+				6C0DF45323385F0D0056A094 /* Header Lesson Cell */,
+				6C0DF44E23385ED90056A094 /* LessonCell */,
+			);
+			path = "Lesson Cell";
+			sourceTree = "<group>";
+		};
+		6CDEB915233B184B00420ABE /* Vocabulary Cell */ = {
+			isa = PBXGroup;
+			children = (
+				6CB39CC2233BA90F0098A363 /* CardCell */,
+				6CB39CBE233BA5B70098A363 /* VocabularyCell.swift */,
+				6CB39CBF233BA5B70098A363 /* VocabularyCell.xib */,
+			);
+			path = "Vocabulary Cell";
+			sourceTree = "<group>";
+		};
+		6CDEB918233B194600420ABE /* Card Model */ = {
+			isa = PBXGroup;
+			children = (
+				6CDEB919233B196000420ABE /* Card.swift */,
+			);
+			path = "Card Model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,9 +469,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C0DF45E2339B3EB0056A094 /* ProfileController.storyboard in Resources */,
+				6C0DF43B2334D1980056A094 /* VocabularyController.storyboard in Resources */,
+				6C0DF45223385F050056A094 /* LessonCell.xib in Resources */,
+				6CB39CC1233BA5B70098A363 /* VocabularyCell.xib in Resources */,
+				6C0DF45723385F220056A094 /* HeaderLessonCell.xib in Resources */,
+				6C0DF4602339B4270056A094 /* LessonController.storyboard in Resources */,
 				6C5952B9233350C100515B62 /* LaunchScreen.storyboard in Resources */,
+				6CB39CC6233BA9340098A363 /* CardCell.xib in Resources */,
+				6CDEB904233A037700420ABE /* ModifyProfileController.storyboard in Resources */,
 				6C5952B6233350C100515B62 /* Assets.xcassets in Resources */,
 				6C5952B4233350C000515B62 /* Main.storyboard in Resources */,
+				6C0DF4662339BAC90056A094 /* NavCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,7 +563,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C5952B1233350C000515B62 /* ViewController.swift in Sources */,
+				6C0DF44A2334DB0F0056A094 /* MenuViewController.swift in Sources */,
+				6C0DF45623385F220056A094 /* HeaderLessonCell.swift in Sources */,
 				6C5952AF233350C000515B62 /* AppDelegate.swift in Sources */,
+				6C0DF43D2334D9E40056A094 /* VocabularyViewController.swift in Sources */,
+				6CB39CC0233BA5B70098A363 /* VocabularyCell.swift in Sources */,
+				6CB39CEC233DB4970098A363 /* LinearProgressView.swift in Sources */,
+				6CDEB914233A175500420ABE /* Color.swift in Sources */,
+				6CDEB91A233B196000420ABE /* Card.swift in Sources */,
+				6C0DF45123385F050056A094 /* LessonCell.swift in Sources */,
+				6C43C89323348F5800230882 /* CardView.swift in Sources */,
+				6C0DF4652339BAC90056A094 /* NavCell.swift in Sources */,
+				6CB39D18233DF10B0098A363 /* VocabularyPresenter.swift in Sources */,
+				6C43C89223348F5800230882 /* CircleImage.swift in Sources */,
+				6CB39D16233DD8D50098A363 /* VocabularyCollectionViewController.swift in Sources */,
+				6CDEB902233A036000420ABE /* ModifyProfileViewController.swift in Sources */,
+				6C0DF4462334DAE50056A094 /* ProfileViewController.swift in Sources */,
+				6C0DF4482334DAFF0056A094 /* LessonViewController.swift in Sources */,
+				6C43C8A42334AF6500230882 /* LoginPresenter.swift in Sources */,
+				6CB39CC5233BA9340098A363 /* CardCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,7 +674,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -446,7 +729,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -462,12 +745,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B6Z4TQHJDC;
 				INFOPLIST_FILE = ICLEdu/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.IDGHOLDINGS.ICLEdu;
+				PRODUCT_BUNDLE_IDENTIFIER = com.idghodings.icledu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -480,12 +765,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B6Z4TQHJDC;
 				INFOPLIST_FILE = ICLEdu/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.IDGHOLDINGS.ICLEdu;
+				PRODUCT_BUNDLE_IDENTIFIER = com.idghodings.icledu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
