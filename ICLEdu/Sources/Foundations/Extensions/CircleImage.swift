@@ -40,4 +40,11 @@ extension UIButton{
         self.layer.borderWidth = 1
         self.layer.borderColor = UIColor.deepBlue.cgColor
     }
+    func LoginButton(){
+        self.layer.backgroundColor = UIColor.clear.cgColor
+        self.layer.cornerRadius = 5
+        self.layer.borderWidth = 1
+        self.layer.borderColor = UIColor.orange.cgColor
+        self.setTitleColor(UIColor.orange, for: .normal)
+    }
 }

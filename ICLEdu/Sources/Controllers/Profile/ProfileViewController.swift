@@ -39,7 +39,7 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func logOut(_ sender: Any) {
-        UserDefaults.standard.set(false, forKey: "status")
+        UserDefaults.standard.set(2, forKey: "status")
         
     }
     

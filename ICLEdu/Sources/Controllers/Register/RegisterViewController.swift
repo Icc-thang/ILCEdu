@@ -11,9 +11,8 @@ import SDWebImage
 import FacebookCore
 import FacebookLogin
 import SwiftyJSON
-import FBSDKLoginKit
 
-class ModifyProfileViewController: UIViewController {
+class RegisterViewController: UIViewController {
     
     @IBOutlet var btnFacebook: UIButton!
     
@@ -33,9 +32,13 @@ class ModifyProfileViewController: UIViewController {
     
     @IBOutlet weak var profileView: UIView!
     
+    @IBOutlet weak var emailTextField: UITextField!
+    
+    @IBOutlet weak var passwordTextField: UITextField!
+    
     var datePicker : UIDatePicker?
     
-    private let presenterMP = PresenterModifyProfile()
+    private let presenterMP = PresenterRegister()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -53,7 +56,7 @@ class ModifyProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenterMP.delegateModify = self as? DelegateModifyProfile
+        presenterMP.delegateRegister = self as? DelegateRegister
         btnFacebook.BorderButton()
     }
     
@@ -67,7 +70,7 @@ class ModifyProfileViewController: UIViewController {
         let manager = LoginManager()
         manager.logIn(permissions: [ .publicProfile, .email], viewController: self) { (result) in
             switch result {
-            case .success(let granted, let declined, let token):
+            case .success( _, _, let token):
                 print("token is : \(token)")
                 let param = ["fields": "email, name, picture.type(large)"]
                 GraphRequest(graphPath: "me", parameters: param).start { (connection, result, error) in
@@ -78,11 +81,12 @@ class ModifyProfileViewController: UIViewController {
                         let avatar = dict["picture"]["data"]["url"].stringValue
                         let fb_id = dict["id"].stringValue
                         print(dict)
-
+                        //check id facebook nếu có trong cơ sở dữ liệu thì đăng nhập.
+                        self.presenterMP.getProfileFBData(avatar: avatar , name: name, email: email, fbID: fb_id)
                         
-                        self.presenterMP.getProfileFBData(avatar: avatar , name: name)
                         self.profileView.isHidden = false
                         self.saveButton.isHidden = false
+                        self.btnFacebook.setTitle("Thank you!",for: .normal)
                         self.setupUI()
                     }
                 }
@@ -105,6 +109,8 @@ class ModifyProfileViewController: UIViewController {
         
         fullNameTextField.text = presenterMP.fullName
         
+        emailTextField.text = presenterMP.email
+        
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
         
@@ -122,23 +128,29 @@ class ModifyProfileViewController: UIViewController {
     @IBAction func saveProfile(_ sender: UIButton) {
         
         if fullNameTextField.text == "" {
-            fullNameTextField.placeholder = "Điền thông tin còn trống!"
+            fullNameTextField.placeholder = "Nhập họ và tên!"
         }
         if addressTextField.text == "" {
-            addressTextField.placeholder = "Điền thông tin còn trống!"
+            addressTextField.placeholder = "Nhập địa chỉ!"
         }
         if genderTextField.text == "" {
-            genderTextField.placeholder = "Điền thông tin còn trống!"
+            genderTextField.placeholder = "Nhập giới tính!"
         }
         if dateOfBirthDay.text == "" {
-            dateOfBirthDay.placeholder = "Điền thông tin còn trống!"
+            dateOfBirthDay.placeholder = "Nhập ngày sinh!"
         }
         if phoneNumberTextField.text == "" {
-            phoneNumberTextField.placeholder = "Điền thông tin còn trống!"
+            phoneNumberTextField.placeholder = "Nhập số điện thoại!"
         }
-        if fullNameTextField?.text != "" && addressTextField?.text != "" && genderTextField?.text != "" && dateOfBirthDay?.text != "" && phoneNumberTextField?.text != "" {
-            
-            UserDefaults.standard.set(true, forKey: "status")
+        if emailTextField.text == "" {
+            emailTextField.placeholder = "Nhập email!"
+        }
+        if passwordTextField.text == "" {
+            passwordTextField.placeholder = "Nhập mật khẩu!"
+        }
+        if fullNameTextField?.text != "" && addressTextField?.text != "" && genderTextField?.text != "" && dateOfBirthDay?.text != "" && phoneNumberTextField?.text != "" &&  passwordTextField.text != "" && emailTextField.text != "" {
+            //set key login 
+            UserDefaults.standard.set(1, forKey: "status")
             
             //push to lesson view controller
             let storyboard = UIStoryboard(name: "LessonController", bundle: Bundle.main)
@@ -150,7 +162,7 @@ class ModifyProfileViewController: UIViewController {
     }
 }
 
-extension ModifyProfileViewController: UITextFieldDelegate{
+extension RegisterViewController: UITextFieldDelegate{
     // Start Editing The Text Field
     func textFieldDidBeginEditing(_ textField: UITextField) {
         moveTextField(textField, moveDistance: -150, up: true)
