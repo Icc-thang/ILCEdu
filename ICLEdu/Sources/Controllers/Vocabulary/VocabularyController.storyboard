@@ -44,26 +44,36 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lbk-bN-lSf">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Xcq-y7-Czf">
                                 <rect key="frame" x="0.0" y="87" width="414" height="775"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mZg-fz-rJx">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
                                 <connections>
-                                    <segue destination="lKP-S3-Gqo" kind="embed" id="JYe-nd-wtQ"/>
+                                    <outlet property="dataSource" destination="x2U-YM-cy5" id="A5c-ta-fXE"/>
+                                    <outlet property="delegate" destination="x2U-YM-cy5" id="FSK-La-usx"/>
                                 </connections>
-                            </containerView>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Vya-vJ-Tsr" firstAttribute="leading" secondItem="18b-uD-P1V" secondAttribute="leading" constant="16" id="1SW-I1-53Z"/>
-                            <constraint firstItem="18b-uD-P1V" firstAttribute="trailing" secondItem="lbk-bN-lSf" secondAttribute="trailing" id="AhK-zw-hYa"/>
-                            <constraint firstItem="lbk-bN-lSf" firstAttribute="leading" secondItem="18b-uD-P1V" secondAttribute="leading" id="M9Y-RK-JLX"/>
+                            <constraint firstItem="Xcq-y7-Czf" firstAttribute="top" secondItem="Vya-vJ-Tsr" secondAttribute="bottom" id="AJM-ED-paX"/>
+                            <constraint firstItem="18b-uD-P1V" firstAttribute="bottom" secondItem="Xcq-y7-Czf" secondAttribute="bottom" id="C2C-bO-xQB"/>
+                            <constraint firstItem="Xcq-y7-Czf" firstAttribute="leading" secondItem="18b-uD-P1V" secondAttribute="leading" id="MAS-3y-BYy"/>
                             <constraint firstItem="Vya-vJ-Tsr" firstAttribute="top" secondItem="18b-uD-P1V" secondAttribute="top" constant="8" id="MVj-3F-38a"/>
                             <constraint firstItem="18b-uD-P1V" firstAttribute="trailing" secondItem="Vya-vJ-Tsr" secondAttribute="trailing" constant="16" id="NpT-Yw-hUA"/>
-                            <constraint firstItem="18b-uD-P1V" firstAttribute="bottom" secondItem="lbk-bN-lSf" secondAttribute="bottom" id="WEU-xF-LNI"/>
-                            <constraint firstItem="lbk-bN-lSf" firstAttribute="top" secondItem="Vya-vJ-Tsr" secondAttribute="bottom" id="vrl-9t-FkU"/>
+                            <constraint firstItem="18b-uD-P1V" firstAttribute="trailing" secondItem="Xcq-y7-Czf" secondAttribute="trailing" id="Q6j-s8-hmL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="18b-uD-P1V"/>
                     </view>
                     <connections>
+                        <outlet property="collectionVocab" destination="Xcq-y7-Czf" id="DKR-8e-QRe"/>
                         <outlet property="progressPercent" destination="Vya-vJ-Tsr" id="hKp-pJ-9Ag"/>
                     </connections>
                 </viewController>
@@ -76,7 +86,7 @@
             <objects>
                 <collectionViewController id="lKP-S3-Gqo" customClass="VocabularyCollectionViewController" customModule="ICLEdu" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" id="qKU-rT-ySr">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="775"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wgs-aY-yke">

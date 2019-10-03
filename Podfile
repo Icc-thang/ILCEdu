@@ -20,4 +20,5 @@ target 'ICLEdu' do
  pod 'Moya'
  pod 'ListPlaceholder'
  pod 'LinearProgressView', '~> 2.0'
+ pod 'SwiftyJSON', '~> 4.0'
 end

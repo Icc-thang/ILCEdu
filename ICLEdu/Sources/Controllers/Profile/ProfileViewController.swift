@@ -8,11 +8,11 @@
 
 import UIKit
 import SDWebImage
+import FacebookLogin
 
 class ProfileViewController: UIViewController {
     
     @IBOutlet weak var pictureImageView: UIImageView!
-    @IBOutlet weak var modifyButton: UIButton!
     @IBOutlet weak var useNameLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var genderLabel: UILabel!
@@ -25,26 +25,22 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad(){
         super.viewDidLoad()
         
-        modifyButton.BorderButton()
-        modifyButton.setTitleColor(UIColor.deepBlue, for: .normal)
-
+        
         logoutButton.BorderButton()
         logoutButton.setTitleColor(UIColor.deepBlue, for: .normal)
-
+        
         pictureImageView.sd_setImage(with: URL(string: "https://i.pinimg.com/originals/b3/84/98/b38498a5830bd61ccef1b54d35a7de22.jpg" ))
         pictureImageView.CircleImage()
-    
+        
     }
     
     @IBAction func exit(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func changeProfile(_ sender: UIButton) {
-        let modifyProfileVC = UIStoryboard.init(name: "ModifyProfileController", bundle: nil).instantiateViewController(withIdentifier: "ModifyProfileController") as? ModifyProfileViewController
+    @IBAction func logOut(_ sender: Any) {
+        UserDefaults.standard.set(false, forKey: "status")
         
-        modifyProfileVC?.modalTransitionStyle = .coverVertical
-        self.present(modifyProfileVC!, animated: true, completion: nil)
     }
     
 }

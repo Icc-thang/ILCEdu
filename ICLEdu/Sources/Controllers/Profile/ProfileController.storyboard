@@ -20,48 +20,46 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RoE-Nm-jZf">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="614.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="589.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Bp-sU-s21">
                                                 <rect key="frame" x="0.0" y="16" width="414" height="165.5"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QBw-4b-2Gr">
-                                                        <rect key="frame" x="32" y="32" width="90" height="90"/>
+                                                        <rect key="frame" x="157" y="32" width="100" height="100"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="90" id="Ek8-gc-Laz"/>
+                                                            <constraint firstAttribute="width" constant="100" id="Ek8-gc-Laz"/>
                                                             <constraint firstAttribute="width" secondItem="QBw-4b-2Gr" secondAttribute="height" multiplier="1:1" id="OsE-nb-clG"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quoc Tuan Ta" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8G5-09-WP9">
-                                                        <rect key="frame" x="32" y="138" width="145" height="27.5"/>
+                                                        <rect key="frame" x="134.5" y="148" width="145" height="17.5"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U80-tc-pTk">
-                                                        <rect key="frame" x="278" y="57" width="120" height="40"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I1Q-iX-XM8">
+                                                        <rect key="frame" x="373" y="8" width="25" height="25"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="120" id="Mzu-Id-shp"/>
-                                                            <constraint firstAttribute="height" constant="40" id="xja-Uj-Phz"/>
+                                                            <constraint firstAttribute="height" constant="25" id="ehO-uE-ijI"/>
+                                                            <constraint firstAttribute="width" constant="25" id="sQF-av-9Pk"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                        <state key="normal" title="Chỉnh sửa hồ sơ">
-                                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        </state>
+                                                        <state key="normal" image="ic_exit"/>
                                                         <connections>
-                                                            <action selector="changeProfile:" destination="r15-9N-hbG" eventType="touchUpInside" id="c48-8L-83i"/>
+                                                            <action selector="exit:" destination="r15-9N-hbG" eventType="touchUpInside" id="LdI-NU-eWB"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
                                                     <constraint firstItem="QBw-4b-2Gr" firstAttribute="top" secondItem="6Bp-sU-s21" secondAttribute="top" constant="32" id="3Ca-In-rYr"/>
-                                                    <constraint firstItem="8G5-09-WP9" firstAttribute="leading" secondItem="QBw-4b-2Gr" secondAttribute="leading" id="8mF-og-PTj"/>
-                                                    <constraint firstItem="QBw-4b-2Gr" firstAttribute="leading" secondItem="6Bp-sU-s21" secondAttribute="leading" constant="32" id="ASL-Id-PiU"/>
-                                                    <constraint firstAttribute="trailing" secondItem="U80-tc-pTk" secondAttribute="trailing" constant="16" id="FkT-a5-MZn"/>
+                                                    <constraint firstAttribute="trailing" secondItem="I1Q-iX-XM8" secondAttribute="trailing" constant="16" id="DOC-E1-ZpT"/>
+                                                    <constraint firstAttribute="bottom" secondItem="I1Q-iX-XM8" secondAttribute="bottom" constant="132.5" id="GFd-vW-lRN"/>
                                                     <constraint firstItem="8G5-09-WP9" firstAttribute="top" secondItem="QBw-4b-2Gr" secondAttribute="bottom" constant="16" id="a7Q-z3-YDF"/>
-                                                    <constraint firstItem="U80-tc-pTk" firstAttribute="centerY" secondItem="QBw-4b-2Gr" secondAttribute="centerY" id="p5k-S3-hye"/>
+                                                    <constraint firstItem="8G5-09-WP9" firstAttribute="centerX" secondItem="QBw-4b-2Gr" secondAttribute="centerX" id="cRy-hE-Ezn"/>
+                                                    <constraint firstItem="QBw-4b-2Gr" firstAttribute="centerX" secondItem="6Bp-sU-s21" secondAttribute="centerX" id="gBl-f4-cgm"/>
                                                     <constraint firstAttribute="bottom" secondItem="8G5-09-WP9" secondAttribute="bottom" id="uE0-KT-YnM"/>
+                                                    <constraint firstItem="I1Q-iX-XM8" firstAttribute="top" secondItem="6Bp-sU-s21" secondAttribute="top" constant="8" id="xDc-n0-mn0"/>
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="qHg-Aa-dI6">
@@ -170,40 +168,30 @@
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ps-J2-Jen">
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ps-J2-Jen">
                                                 <rect key="frame" x="16" y="517.5" width="382" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="chD-yz-tXX"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <state key="normal" title="Đăng xuất"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I1Q-iX-XM8">
-                                                <rect key="frame" x="194.5" y="573.5" width="25" height="25"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="25" id="ehO-uE-ijI"/>
-                                                    <constraint firstAttribute="width" constant="25" id="sQF-av-9Pk"/>
-                                                </constraints>
-                                                <state key="normal" image="ic_exit"/>
                                                 <connections>
-                                                    <action selector="exit:" destination="r15-9N-hbG" eventType="touchUpInside" id="LdI-NU-eWB"/>
+                                                    <action selector="logOut:" destination="r15-9N-hbG" eventType="touchUpInside" id="uqM-Ty-U2H"/>
                                                 </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="2Ps-J2-Jen" secondAttribute="trailing" constant="16" id="00P-Qm-zdM"/>
+                                            <constraint firstAttribute="bottom" secondItem="2Ps-J2-Jen" secondAttribute="bottom" constant="32" id="1j0-Hy-cVD"/>
                                             <constraint firstAttribute="trailing" secondItem="qHg-Aa-dI6" secondAttribute="trailing" constant="32" id="4hr-8F-tdT"/>
                                             <constraint firstAttribute="trailing" secondItem="6Bp-sU-s21" secondAttribute="trailing" id="5S8-u1-hGk"/>
-                                            <constraint firstItem="I1Q-iX-XM8" firstAttribute="top" secondItem="2Ps-J2-Jen" secondAttribute="bottom" constant="16" id="POv-GH-8K5"/>
                                             <constraint firstItem="6Bp-sU-s21" firstAttribute="leading" secondItem="RoE-Nm-jZf" secondAttribute="leading" id="QsY-9M-xLT"/>
                                             <constraint firstItem="2Ps-J2-Jen" firstAttribute="centerX" secondItem="qHg-Aa-dI6" secondAttribute="centerX" id="WVm-EL-hCY"/>
-                                            <constraint firstItem="I1Q-iX-XM8" firstAttribute="centerX" secondItem="2Ps-J2-Jen" secondAttribute="centerX" id="YDv-sc-jMx"/>
                                             <constraint firstItem="2Ps-J2-Jen" firstAttribute="leading" secondItem="RoE-Nm-jZf" secondAttribute="leading" constant="16" id="Zfk-r1-K4s"/>
                                             <constraint firstItem="2Ps-J2-Jen" firstAttribute="top" secondItem="qHg-Aa-dI6" secondAttribute="bottom" constant="24" id="aig-ja-sva"/>
                                             <constraint firstItem="qHg-Aa-dI6" firstAttribute="top" secondItem="6Bp-sU-s21" secondAttribute="bottom" constant="16" id="oTi-9Q-Q6S"/>
                                             <constraint firstItem="6Bp-sU-s21" firstAttribute="top" secondItem="RoE-Nm-jZf" secondAttribute="top" constant="16" id="roP-He-c10"/>
-                                            <constraint firstAttribute="bottom" secondItem="I1Q-iX-XM8" secondAttribute="bottom" constant="16" id="sCT-m1-pnc"/>
                                             <constraint firstItem="qHg-Aa-dI6" firstAttribute="leading" secondItem="RoE-Nm-jZf" secondAttribute="leading" constant="32" id="xbn-kS-bKh"/>
                                         </constraints>
                                     </view>
@@ -235,7 +223,6 @@
                         <outlet property="exitButton" destination="I1Q-iX-XM8" id="ALO-Nu-Gcy"/>
                         <outlet property="genderLabel" destination="bcc-5C-Esu" id="Gb5-UF-yln"/>
                         <outlet property="logoutButton" destination="2Ps-J2-Jen" id="lPW-rh-nf7"/>
-                        <outlet property="modifyButton" destination="U80-tc-pTk" id="ESZ-3s-p6t"/>
                         <outlet property="phoneNumberLabel" destination="Tci-Bi-Hgi" id="4y9-Pv-Qwk"/>
                         <outlet property="pictureImageView" destination="QBw-4b-2Gr" id="9gm-HH-7pR"/>
                         <outlet property="useNameLabel" destination="8G5-09-WP9" id="CRW-nO-Cef"/>
