@@ -38,7 +38,7 @@ class RegisterViewController: UIViewController {
     
     var datePicker : UIDatePicker?
     
-    private let presenterMP = PresenterRegister()
+    private let presenterRegister = PresenterRegister()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -56,8 +56,8 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenterMP.delegateRegister = self as? DelegateRegister
-        btnFacebook.BorderButton()
+        presenterRegister.delegateRegister = self as? DelegateRegister
+        btnFacebook.FacebookButton()
     }
     
     @objc func dateChange(datePicker: UIDatePicker ) {
@@ -82,11 +82,11 @@ class RegisterViewController: UIViewController {
                         let fb_id = dict["id"].stringValue
                         print(dict)
                         //check id facebook nếu có trong cơ sở dữ liệu thì đăng nhập.
-                        self.presenterMP.getProfileFBData(avatar: avatar , name: name, email: email, fbID: fb_id)
+                        self.presenterRegister.getProfileFBData(avatar: avatar , name: name, email: email, fbID: fb_id)
                         
                         self.profileView.isHidden = false
                         self.saveButton.isHidden = false
-                        self.btnFacebook.setTitle("Thank you!",for: .normal)
+                        self.btnFacebook.setTitle("Cảm ơn!",for: .normal)
                         self.setupUI()
                     }
                 }
@@ -102,14 +102,14 @@ class RegisterViewController: UIViewController {
     }
     
     func setupUI(){
-        profilePicture.sd_setImage(with: URL(string:"\(presenterMP.avatarURL ?? "Không có dữ liệu cho ảnh")"))
+        profilePicture.sd_setImage(with: URL(string:"\(presenterRegister.avatarURL ?? "Không có dữ liệu cho ảnh")"))
         profilePicture.CircleImage()
         
-        saveButton.BorderButton()
+        saveButton.LoginButton()
         
-        fullNameTextField.text = presenterMP.fullName
+        fullNameTextField.text = presenterRegister.fullName
         
-        emailTextField.text = presenterMP.email
+        emailTextField.text = presenterRegister.email
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)

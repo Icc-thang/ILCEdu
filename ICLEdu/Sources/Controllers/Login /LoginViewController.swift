@@ -12,7 +12,7 @@ import FacebookLogin
 import SwiftyJSON
 
 class LoginViewController: UIViewController {
-
+    
     @IBOutlet weak var emailTextField: UITextField!
     
     @IBOutlet weak var passwordTextField: UITextField!
@@ -20,7 +20,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     
     @IBOutlet weak var loginFacebookButton: UIButton!
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -37,16 +37,16 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loginFacebookButton.BorderButton()
+        loginFacebookButton.FacebookButton()
         loginButton.LoginButton()
         // Do any additional setup after loading the view.
     }
-
+    
     @IBAction func loginFB(_ sender: Any) {
         let manager = LoginManager()
         manager.logIn(permissions: [ .publicProfile, .email], viewController: self) { (result) in
             switch result {
-            case .success(let granted, let declined, let token):
+            case .success(_, _, let token):
                 print("token is : \(token)")
                 let param = ["fields": "email, name, picture.type(large)"]
                 GraphRequest(graphPath: "me", parameters: param).start { (connection, result, error) in
@@ -54,7 +54,19 @@ class LoginViewController: UIViewController {
                         let dict = JSON(result)
                         let fb_id = dict["id"].stringValue
                         // check fb_id với id user trong database. Trùng thì đăng nhập
-                        print(fb_id)
+                        print("id facebook: \(fb_id)")
+                        if fb_id == " chỗ này là id get từ database user " {
+                            // chuyển sang màn hình LessonController
+                            // bắn id facebook sang màn hình lesson
+                            let lessonVC = UIStoryboard(name: "LessonController", bundle: nil).instantiateViewController(withIdentifier: "LessonController") as! LessonViewController
+                            self.navigationController?.pushViewController(lessonVC, animated: true)
+                        }else {
+                            //log thông báo
+                            print("Không tìm thấy id facebook trùng khớp")
+                            //trường hợp thay đổi tài khoản fb, id ko tồn tại => chuyển sang màn hình RegisterController
+                            let registerVC = UIStoryboard(name: "RegisterController", bundle: nil).instantiateViewController(withIdentifier: "RegisterController") as! RegisterViewController
+                            self.navigationController?.pushViewController(registerVC, animated: true)
+                        }
                     }
                 }
             case .cancelled:
