@@ -24,7 +24,7 @@ class PresenterRegister {
     var email: String?
     var fbID: String?
     
-    func getProfileFBData(avatar:String?, name:String?, email:String?, fbID:String?)  {
+    func setProfileFBData(avatar:String?, name:String?, email:String?, fbID:String?)  {
         self.avatarURL = avatar
         self.fullName = name
         self.email = email

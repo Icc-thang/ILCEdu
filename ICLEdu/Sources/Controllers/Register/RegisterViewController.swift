@@ -14,8 +14,6 @@ import SwiftyJSON
 
 class RegisterViewController: UIViewController {
     
-    @IBOutlet var btnFacebook: UIButton!
-    
     @IBOutlet weak var profilePicture: UIImageView!
     
     @IBOutlet weak var saveButton: UIButton!
@@ -57,48 +55,11 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenterRegister.delegateRegister = self as? DelegateRegister
-        btnFacebook.FacebookButton()
+        setupUI()
     }
     
-    @objc func dateChange(datePicker: UIDatePicker ) {
-        let dateFormat = DateFormatter()
-        dateFormat.dateFormat = "dd/MM/yyyy"
-        dateOfBirthDay.text = dateFormat.string(from: datePicker.date)
-    }
-    
-    @IBAction func loginWithFacebook(_ sender: Any) {
-        let manager = LoginManager()
-        manager.logIn(permissions: [ .publicProfile, .email], viewController: self) { (result) in
-            switch result {
-            case .success( _, _, let token):
-                print("token is : \(token)")
-                let param = ["fields": "email, name, picture.type(large)"]
-                GraphRequest(graphPath: "me", parameters: param).start { (connection, result, error) in
-                    if let result = result {
-                        let dict = JSON(result)
-                        let email = dict["email"].stringValue
-                        let name = dict["name"].stringValue
-                        let avatar = dict["picture"]["data"]["url"].stringValue
-                        let fb_id = dict["id"].stringValue
-                        print(dict)
-                        //check id facebook nếu có trong cơ sở dữ liệu thì đăng nhập.
-                        self.presenterRegister.getProfileFBData(avatar: avatar , name: name, email: email, fbID: fb_id)
-                        
-                        self.profileView.isHidden = false
-                        self.saveButton.isHidden = false
-                        self.btnFacebook.setTitle("Cảm ơn!",for: .normal)
-                        self.setupUI()
-                    }
-                }
-            case .cancelled:
-                print("Cancelled")
-                break
-            case .failed(let err):
-                print("login failed, error:\(err)")
-                break
-            }
-        }
-        
+    func getDataFB(avatar: String , name: String, email: String, fbID: String){
+        self.presenterRegister.setProfileFBData(avatar: avatar , name: name, email: email, fbID: fbID)
     }
     
     func setupUI(){
@@ -119,6 +80,12 @@ class RegisterViewController: UIViewController {
         datePicker?.datePickerMode = .date
         dateOfBirthDay.inputView = datePicker
         datePicker?.addTarget(self, action: #selector(dateChange(datePicker: )), for: .valueChanged)
+    }
+    
+    @objc func dateChange(datePicker: UIDatePicker ) {
+        let dateFormat = DateFormatter()
+        dateFormat.dateFormat = "dd/MM/yyyy"
+        dateOfBirthDay.text = dateFormat.string(from: datePicker.date)
     }
     
     @objc func dismissKeyboard() {
@@ -149,8 +116,8 @@ class RegisterViewController: UIViewController {
             passwordTextField.placeholder = "Nhập mật khẩu!"
         }
         if fullNameTextField?.text != "" && addressTextField?.text != "" && genderTextField?.text != "" && dateOfBirthDay?.text != "" && phoneNumberTextField?.text != "" &&  passwordTextField.text != "" && emailTextField.text != "" {
-            //set key login 
-            UserDefaults.standard.set(1, forKey: "status")
+             //set key for login
+             UserDefaults.standard.set(true, forKey: "status")
             
             //push to lesson view controller
             let storyboard = UIStoryboard(name: "LessonController", bundle: Bundle.main)

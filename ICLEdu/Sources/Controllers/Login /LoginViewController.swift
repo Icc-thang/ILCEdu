@@ -38,7 +38,6 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loginFacebookButton.FacebookButton()
-        loginButton.LoginButton()
         // Do any additional setup after loading the view.
     }
     
@@ -53,9 +52,14 @@ class LoginViewController: UIViewController {
                     if let result = result {
                         let dict = JSON(result)
                         let fb_id = dict["id"].stringValue
+                        let email = dict["email"].stringValue
+                        let name = dict["name"].stringValue
+                        let avatar = dict["picture"]["data"]["url"].stringValue
                         // check fb_id với id user trong database. Trùng thì đăng nhập
                         print("id facebook: \(fb_id)")
-                        if fb_id == " chỗ này là id get từ database user " {
+                        if fb_id == "2365889166999084" {
+                            //set key for login
+                            UserDefaults.standard.set(true, forKey: "status")
                             // chuyển sang màn hình LessonController
                             // bắn id facebook sang màn hình lesson
                             let lessonVC = UIStoryboard(name: "LessonController", bundle: nil).instantiateViewController(withIdentifier: "LessonController") as! LessonViewController
@@ -65,6 +69,7 @@ class LoginViewController: UIViewController {
                             print("Không tìm thấy id facebook trùng khớp")
                             //trường hợp thay đổi tài khoản fb, id ko tồn tại => chuyển sang màn hình RegisterController
                             let registerVC = UIStoryboard(name: "RegisterController", bundle: nil).instantiateViewController(withIdentifier: "RegisterController") as! RegisterViewController
+                            registerVC.getDataFB(avatar: avatar, name: name, email: email, fbID: fb_id)
                             self.navigationController?.pushViewController(registerVC, animated: true)
                         }
                     }
@@ -80,9 +85,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func login(_ sender: Any) {
-        //set key for login
-        UserDefaults.standard.set(1, forKey: "status")
-        
+    
         //push to lesson view controller
         let storyboard = UIStoryboard(name: "LessonController", bundle: Bundle.main)
         let lessonVC = storyboard.instantiateViewController(withIdentifier: "LessonController") as! LessonViewController

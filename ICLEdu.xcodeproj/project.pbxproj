@@ -12,7 +12,7 @@
 		6C0DF43D2334D9E40056A094 /* VocabularyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C0DF43C2334D9E40056A094 /* VocabularyViewController.swift */; };
 		6C0DF4462334DAE50056A094 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C0DF4452334DAE50056A094 /* ProfileViewController.swift */; };
 		6C0DF4482334DAFF0056A094 /* LessonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C0DF4472334DAFF0056A094 /* LessonViewController.swift */; };
-		6C0DF44A2334DB0F0056A094 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C0DF4492334DB0F0056A094 /* MenuViewController.swift */; };
+		6C0DF44A2334DB0F0056A094 /* ProcessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C0DF4492334DB0F0056A094 /* ProcessViewController.swift */; };
 		6C0DF45123385F050056A094 /* LessonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C0DF44F23385F050056A094 /* LessonCell.swift */; };
 		6C0DF45223385F050056A094 /* LessonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C0DF45023385F050056A094 /* LessonCell.xib */; };
 		6C0DF45623385F220056A094 /* HeaderLessonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C0DF45423385F220056A094 /* HeaderLessonCell.swift */; };
@@ -64,7 +64,7 @@
 		6C0DF43C2334D9E40056A094 /* VocabularyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyViewController.swift; sourceTree = "<group>"; };
 		6C0DF4452334DAE50056A094 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		6C0DF4472334DAFF0056A094 /* LessonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonViewController.swift; sourceTree = "<group>"; };
-		6C0DF4492334DB0F0056A094 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		6C0DF4492334DB0F0056A094 /* ProcessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessViewController.swift; sourceTree = "<group>"; };
 		6C0DF44F23385F050056A094 /* LessonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonCell.swift; sourceTree = "<group>"; };
 		6C0DF45023385F050056A094 /* LessonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LessonCell.xib; sourceTree = "<group>"; };
 		6C0DF45423385F220056A094 /* HeaderLessonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderLessonCell.swift; sourceTree = "<group>"; };
@@ -163,12 +163,12 @@
 			path = Lesson;
 			sourceTree = "<group>";
 		};
-		6C0DF4432334DAAF0056A094 /* Menu */ = {
+		6C0DF4432334DAAF0056A094 /* Process */ = {
 			isa = PBXGroup;
 			children = (
-				6C0DF4492334DB0F0056A094 /* MenuViewController.swift */,
+				6C0DF4492334DB0F0056A094 /* ProcessViewController.swift */,
 			);
-			path = Menu;
+			path = Process;
 			sourceTree = "<group>";
 		};
 		6C0DF4442334DAD30056A094 /* Profile */ = {
@@ -242,7 +242,7 @@
 				88DCB72E234457A2004DF4C2 /* Switcher  */,
 				6CDEB900233A032300420ABE /* Register */,
 				6C0DF4442334DAD30056A094 /* Profile */,
-				6C0DF4432334DAAF0056A094 /* Menu */,
+				6C0DF4432334DAAF0056A094 /* Process */,
 				6C0DF4422334DAA70056A094 /* Lesson */,
 				6C0DF4392334D1800056A094 /* Vocabulary */,
 			);
@@ -578,7 +578,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				88FF67F3234731B300A353B2 /* ButtonExtension.swift in Sources */,
-				6C0DF44A2334DB0F0056A094 /* MenuViewController.swift in Sources */,
+				6C0DF44A2334DB0F0056A094 /* ProcessViewController.swift in Sources */,
 				6C0DF45623385F220056A094 /* HeaderLessonCell.swift in Sources */,
 				6C5952AF233350C000515B62 /* AppDelegate.swift in Sources */,
 				6C0DF43D2334D9E40056A094 /* VocabularyViewController.swift in Sources */,

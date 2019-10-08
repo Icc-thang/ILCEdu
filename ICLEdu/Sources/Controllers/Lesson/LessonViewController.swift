@@ -102,8 +102,9 @@ extension LessonViewController: UICollectionViewDataSource, UICollectionViewDele
             let profileVC = UIStoryboard.init(name: "ProfileController", bundle: nil).instantiateViewController(withIdentifier: "ProfileController") as? ProfileViewController
 //            self.navigationController?.pushViewController(profileVC!, animated: true)
 //            let profileVC = ProfileViewController()
-            profileVC?.modalTransitionStyle = .coverVertical
-            self.present(profileVC!, animated: true, completion: nil)
+//            profileVC?.modalTransitionStyle = .coverVertical
+//            self.present(profileVC!, animated: true, completion: nil)
+            self.navigationController?.pushViewController(profileVC!, animated: true)
         }
         if indexPath.row == 1  {
             print("banner")

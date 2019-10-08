@@ -24,8 +24,7 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad(){
         super.viewDidLoad()
-        
-        
+
         logoutButton.BorderButton()
         logoutButton.setTitleColor(UIColor.deepBlue, for: .normal)
         
@@ -34,13 +33,11 @@ class ProfileViewController: UIViewController {
         
     }
     
-    @IBAction func exit(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
     @IBAction func logOut(_ sender: Any) {
-        UserDefaults.standard.set(2, forKey: "status")
-        
+        UserDefaults.standard.set(false, forKey: "status")
+        //
+        let rootVC = UIStoryboard(name: "LoginController", bundle: nil).instantiateViewController(withIdentifier: "LoginController") as! LoginViewController
+            navigationController?.pushViewController(rootVC, animated: true)
     }
     
 }

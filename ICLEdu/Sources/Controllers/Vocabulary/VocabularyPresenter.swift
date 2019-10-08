@@ -13,7 +13,7 @@ protocol DelegateVocabulary:class {
 class PresenterVocabulary{
     weak var delegateVocabulary: DelegateVocabulary?
     
-    var numberOfVocab:Int? = 10
+    var numberOfVocab:Int? = 30
     var positionOfVocab:Int?
     
     convenience init(delegate : DelegateVocabulary){

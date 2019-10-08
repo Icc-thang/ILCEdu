@@ -11,7 +11,7 @@ import SDWebImage
 
 class VocabularyViewController: UIViewController,UICollectionViewDelegate ,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout  {
     
-    
+    let postionVocab: Int = 1
     @IBOutlet weak var collectionVocab: UICollectionView!
     @IBOutlet weak var progressPercent: LinearProgressView!
     private let presenterVocabulary = PresenterVocabulary()
@@ -47,8 +47,6 @@ class VocabularyViewController: UIViewController,UICollectionViewDelegate ,UICol
         return pc
     }()
     
-    let postionVocab: Int = 1
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         presenterVocabulary.delegateVocabulary = self as? DelegateVocabulary
@@ -83,15 +81,15 @@ class VocabularyViewController: UIViewController,UICollectionViewDelegate ,UICol
         btnPrev.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 32).isActive = true
         btnPrev.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         
-        pageControl.centerYAnchor.constraint(equalTo: btnNext.centerYAnchor).isActive = true
-        pageControl.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+//        pageControl.centerYAnchor.constraint(equalTo: btnNext.centerYAnchor).isActive = true
+//        pageControl.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let scrollPos = scrollView.contentOffset.x / view.frame.width
         pageControl.currentPage = Int(scrollPos)
+//        progressPercent.setProgress(Float(postionVocab + pageControl.currentPage), animated: true)
     }
-    var positon:Int?
     
     @objc func handleNextPage(button: UIButton) {
         
@@ -103,14 +101,14 @@ class VocabularyViewController: UIViewController,UICollectionViewDelegate ,UICol
             progressPercent.setProgress(Float(postionVocab + current), animated: true)
             if current < 0 {
                 current = 0
-                
+
             }
         } else {
             current += 1
             progressPercent.setProgress(Float(postionVocab + current), animated: true)
             if current == presenterVocabulary.numberOfVocab {
                 current = (presenterVocabulary.numberOfVocab ?? 0) - 1
-     
+
             }
         }
         
