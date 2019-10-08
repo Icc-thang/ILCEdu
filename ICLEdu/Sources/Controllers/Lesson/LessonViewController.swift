@@ -98,20 +98,21 @@ extension LessonViewController: UICollectionViewDataSource, UICollectionViewDele
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
-            let profileVC = UIStoryboard.init(name: "ProfileController", bundle: nil).instantiateViewController(withIdentifier: "ProfileController") as? ProfileViewController
+//        if indexPath.row == 0 {
+//            let profileVC = UIStoryboard.init(name: "ProfileController", bundle: nil).instantiateViewController(withIdentifier: "ProfileController") as? ProfileViewController
 //            self.navigationController?.pushViewController(profileVC!, animated: true)
 //            let profileVC = ProfileViewController()
 //            profileVC?.modalTransitionStyle = .coverVertical
 //            self.present(profileVC!, animated: true, completion: nil)
-            self.navigationController?.pushViewController(profileVC!, animated: true)
-        }
-        if indexPath.row == 1  {
-            print("banner")
-        }
+//            self.navigationController?.pushViewController(profileVC!, animated: true)
+//        }
+//        if indexPath.row == 1  {
+//            print("banner")
+//        }
         if indexPath.row != 0 && indexPath.row != 1 {
             let vocabularyVC = UIStoryboard.init(name: "VocabularyController", bundle: nil).instantiateViewController(withIdentifier: "VocabularyController") as? VocabularyViewController
             vocabularyVC?.getNameLesson(nameLesson: "Bài \(indexPath.row)")
+            vocabularyVC?.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(vocabularyVC!, animated: true)
         }
     }

@@ -62,8 +62,8 @@ class LoginViewController: UIViewController {
                             UserDefaults.standard.set(true, forKey: "status")
                             // chuyển sang màn hình LessonController
                             // bắn id facebook sang màn hình lesson
-                            let lessonVC = UIStoryboard(name: "LessonController", bundle: nil).instantiateViewController(withIdentifier: "LessonController") as! LessonViewController
-                            self.navigationController?.pushViewController(lessonVC, animated: true)
+                            let tabbarVC = UIStoryboard(name: "TabbarController", bundle: nil).instantiateViewController(withIdentifier: "TabbarController") as! BubbleTabBarController
+                            self.navigationController?.pushViewController(tabbarVC, animated: true)
                         }else {
                             //log thông báo
                             print("Không tìm thấy id facebook trùng khớp")

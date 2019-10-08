@@ -120,10 +120,9 @@ class RegisterViewController: UIViewController {
              UserDefaults.standard.set(true, forKey: "status")
             
             //push to lesson view controller
-            let storyboard = UIStoryboard(name: "LessonController", bundle: Bundle.main)
-            let lessonVC = storyboard.instantiateViewController(withIdentifier: "LessonController") as! LessonViewController
+            let tabbarVC = UIStoryboard(name: "TabbarController", bundle: nil).instantiateViewController(withIdentifier: "TabbarController") as! BubbleTabBarController
             if let navigator = navigationController {
-                navigator.pushViewController(lessonVC, animated: true)
+                navigator.pushViewController(tabbarVC, animated: true)
             }
         }
     }

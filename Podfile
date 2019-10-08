@@ -21,4 +21,5 @@ target 'ICLEdu' do
  pod 'ListPlaceholder'
  pod 'LinearProgressView', '~> 2.0'
  pod 'SwiftyJSON', '~> 4.0'
+ pod 'PieCharts'
 end
