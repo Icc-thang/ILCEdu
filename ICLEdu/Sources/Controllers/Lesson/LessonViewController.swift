@@ -12,14 +12,6 @@ import SDWebImage
 class LessonViewController: UIViewController {
     
     @IBOutlet weak var lessonCollectionView: UICollectionView!
-    var userName:String?
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        userName = "Tuan Ta"
-        collectionViewSetUp()
-    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -33,6 +25,12 @@ class LessonViewController: UIViewController {
         
         // Show the Navigation Bar
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        collectionViewSetUp()
     }
     
     func collectionViewSetUp(){
@@ -70,7 +68,7 @@ extension LessonViewController: UICollectionViewDataSource, UICollectionViewDele
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.row == 0 {
             let navCell = collectionView.dequeueReusableCell(withReuseIdentifier: "NavCell", for: indexPath) as! NavCell
-            navCell.parseDataForNav(userName: "Quoc Tuan Ta", userImageUrl: "https://i.pinimg.com/originals/b3/84/98/b38498a5830bd61ccef1b54d35a7de22.jpg")
+            navCell.parseDataForNav(userName: profileData?.name ?? "", userImageUrl: profileData?.avatar ?? "")
             return navCell
         }
         if indexPath.row == 1 {

@@ -7,22 +7,48 @@
 //
 
 import UIKit
+import Moya
+import ObjectMapper
 
 class SwitchViewController: UIViewController {
+    var rootVC : UIViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let status = UserDefaults.standard.bool(forKey: "status")
-        var rootVC : UIViewController?
-        
-        print(status)
-        
-        if(status == true){
-            rootVC = UIStoryboard(name: "TabbarController", bundle: nil).instantiateViewController(withIdentifier: "TabbarController") as! BubbleTabBarController
-        }else {
+        switchView()
+    }
+    
+    func switchView(){
+        if(token == nil || token == ""){
             rootVC = UIStoryboard(name: "LoginController", bundle: nil).instantiateViewController(withIdentifier: "LoginController") as! LoginViewController
+            self.navigationController?.pushViewController(rootVC!, animated: false)
+        }else {
+            
+            rootVC = UIStoryboard(name: "TabbarController", bundle: nil).instantiateViewController(withIdentifier: "TabbarController") as! BubbleTabBarController
+            getDataForProfile(view: rootVC!)
         }
-        self.navigationController?.pushViewController(rootVC!, animated: false)
+    }
+    
+    func getDataForProfile(view: UIViewController){
+        let profileProvider = MoyaProvider<ProfileRequest>()
+        profileProvider.request(.getProfile){ (result) in
+            switch result {
+            case .success(let response):
+                do{
+                    let json = try response.mapJSON()
+                    guard let dataJSON = Mapper<ProfileModel>().map(JSONObject: json)
+                        else{
+                            return
+                    }
+                    profileData = dataJSON
+                    print("profile data: \(dataJSON)")
+                    self.navigationController?.pushViewController(view, animated: false)
+                }catch{
+                    print("error TOKEN VALUE for HEADER")
+                }
+            case .failure(_):
+                print("Fail connect")
+            }
+        }
     }
 }

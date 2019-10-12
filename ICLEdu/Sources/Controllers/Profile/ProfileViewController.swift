@@ -13,31 +13,42 @@ import FacebookLogin
 class ProfileViewController: UIViewController {
     
     @IBOutlet weak var pictureImageView: UIImageView!
-    @IBOutlet weak var useNameLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var genderLabel: UILabel!
     @IBOutlet weak var birthdayLabel: UILabel!
     @IBOutlet weak var phoneNumberLabel: UILabel!
     @IBOutlet weak var admissionLabel: UILabel!
     @IBOutlet weak var logoutButton: UIButton!
-    @IBOutlet weak var exitButton: UIButton!
     
     override func viewDidLoad(){
         super.viewDidLoad()
-
+        setupUI()
+        
+    }
+    func setupUI(){
         logoutButton.BorderButton()
         logoutButton.setTitleColor(UIColor.deepBlue, for: .normal)
-        
-        pictureImageView.sd_setImage(with: URL(string: "https://i.pinimg.com/originals/b3/84/98/b38498a5830bd61ccef1b54d35a7de22.jpg" ))
         pictureImageView.CircleImage()
-        
+        self.navigationItem.title = profileData?.name ?? ""
+        pictureImageView.sd_setImage(with: URL(string: profileData?.avatar ?? "" ))
+        addressLabel.text = profileData?.address
+        genderLabel.text = profileData?.gender
+        birthdayLabel.text = profileData?.birthday
+        phoneNumberLabel.text = "\(profileData?.phone ?? 0)"
     }
     
     @IBAction func logOut(_ sender: Any) {
-        UserDefaults.standard.set(false, forKey: "status")
-        //
-        let rootVC = UIStoryboard(name: "LoginController", bundle: nil).instantiateViewController(withIdentifier: "LoginController") as! LoginViewController
-            navigationController?.pushViewController(rootVC, animated: true)
+        UserDefaults.standard.set(nil, forKey: "authorization")
+        
+        //        let loginManager = LoginManager()
+        //        loginManager.logOut()
+        
+        let alertController = UIAlertController(
+            title: "Logout",
+            message: "Logged out.",
+            preferredStyle: .alert
+        )
+        present(alertController, animated: true, completion: nil)
     }
     
 }

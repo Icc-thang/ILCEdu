@@ -12,7 +12,7 @@ import FacebookCore
 import FacebookLogin
 import SwiftyJSON
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: UIViewController, UIActionSheetDelegate {
     
     @IBOutlet weak var profilePicture: UIImageView!
     
@@ -22,7 +22,7 @@ class RegisterViewController: UIViewController {
     //home town
     @IBOutlet weak var addressTextField: UITextField!
     // male or female
-    @IBOutlet weak var genderTextField: UITextField!
+    @IBOutlet weak var genderButton: UIButton!
     //birthday
     @IBOutlet weak var dateOfBirthDay: UITextField!
     // phone number
@@ -31,8 +31,6 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var profileView: UIView!
     
     @IBOutlet weak var emailTextField: UITextField!
-    
-    @IBOutlet weak var passwordTextField: UITextField!
     
     var datePicker : UIDatePicker?
     
@@ -54,12 +52,13 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenterRegister.delegateRegister = self as? DelegateRegister
+        presenterRegister.delegateRegister = self
         setupUI()
     }
     
-    func getDataFB(avatar: String , name: String, email: String, fbID: String){
-        self.presenterRegister.setProfileFBData(avatar: avatar , name: name, email: email, fbID: fbID)
+    func getDataFB(avatar: String , name: String, email: String, memberID: Int){
+        self.presenterRegister.setProfileFBData(avatar: avatar , name: name, email: email, memberID: memberID )
+            member_ID = memberID
     }
     
     func setupUI(){
@@ -92,6 +91,31 @@ class RegisterViewController: UIViewController {
         view.endEditing(true)
     }
     
+    @IBAction func gender(_ sender: Any) {
+        // create an actionSheet
+        let actionSheetController: UIAlertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        // create an action
+        let firstAction: UIAlertAction = UIAlertAction(title: "Male", style: .default) { action -> Void in
+            self.genderButton.setTitle("Male", for: .normal)
+        }
+        
+        let secondAction: UIAlertAction = UIAlertAction(title: "Female", style: .default) { action -> Void in
+            self.genderButton.setTitle("Female", for: .normal)
+        }
+        
+        let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .cancel) { action -> Void in }
+        
+        // add actions
+        actionSheetController.addAction(firstAction)
+        actionSheetController.addAction(secondAction)
+        actionSheetController.addAction(cancelAction)
+        
+        present(actionSheetController, animated: true) {
+            print("option menu presented")
+        }
+    }
+    
     @IBAction func saveProfile(_ sender: UIButton) {
         
         if fullNameTextField.text == "" {
@@ -99,9 +123,6 @@ class RegisterViewController: UIViewController {
         }
         if addressTextField.text == "" {
             addressTextField.placeholder = "Nhập địa chỉ!"
-        }
-        if genderTextField.text == "" {
-            genderTextField.placeholder = "Nhập giới tính!"
         }
         if dateOfBirthDay.text == "" {
             dateOfBirthDay.placeholder = "Nhập ngày sinh!"
@@ -112,12 +133,15 @@ class RegisterViewController: UIViewController {
         if emailTextField.text == "" {
             emailTextField.placeholder = "Nhập email!"
         }
-        if passwordTextField.text == "" {
-            passwordTextField.placeholder = "Nhập mật khẩu!"
-        }
-        if fullNameTextField?.text != "" && addressTextField?.text != "" && genderTextField?.text != "" && dateOfBirthDay?.text != "" && phoneNumberTextField?.text != "" &&  passwordTextField.text != "" && emailTextField.text != "" {
-             //set key for login
-             UserDefaults.standard.set(true, forKey: "status")
+        if fullNameTextField?.text != "" && addressTextField?.text != "" && dateOfBirthDay?.text != "" && phoneNumberTextField?.text != "" && emailTextField.text != "" {
+            
+            presenterRegister.getDataForRegister(
+                member_name: presenterRegister.fullName ?? "",
+                member_gender: genderButton.titleLabel?.text ?? "",
+                member_email: presenterRegister.email ?? "",
+                member_address: addressTextField?.text ?? "",
+                member_birthday: dateOfBirthDay.text ?? "",
+                member_phone: Int(phoneNumberTextField?.text ?? "0") ?? 0)
             
             //push to lesson view controller
             let tabbarVC = UIStoryboard(name: "TabbarController", bundle: nil).instantiateViewController(withIdentifier: "TabbarController") as! BubbleTabBarController
@@ -125,6 +149,13 @@ class RegisterViewController: UIViewController {
                 navigator.pushViewController(tabbarVC, animated: true)
             }
         }
+    }
+}
+
+extension RegisterViewController: DelegateRegister{
+    func getDataRegister() {
+        //set tokenDB
+         UserDefaults.standard.set(self.presenterRegister.registerModel?.access_token ?? "", forKey: "authorization")
     }
 }
 

@@ -8,22 +8,32 @@
 
 import UIKit
 
+let noteCell = "NoteCell"
+let processCell = "ProcessCell"
+
 class ProcessViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Tổng quan"
-        tableView.register(UINib(nibName: "ProcessCell", bundle: nil), forCellReuseIdentifier: "ProcessCell")
+        tableView.register(UINib(nibName: processCell, bundle: nil), forCellReuseIdentifier: processCell)
+        tableView.register(UINib(nibName: noteCell, bundle: nil), forCellReuseIdentifier: noteCell)
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 2
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let processCell = tableView.dequeueReusableCell(withIdentifier: "ProcessCell") as! ProcessCell
-        return processCell
+        if indexPath.row == 0{
+            let cell = tableView.dequeueReusableCell(withIdentifier: processCell) as! ProcessCell
+            return cell
+        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: noteCell) as! NoteCell
+        return cell
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        return tableView.frame.width
+        if indexPath.row == 0{
+            return tableView.bounds.width
+        }
+        return 100
     }
 }

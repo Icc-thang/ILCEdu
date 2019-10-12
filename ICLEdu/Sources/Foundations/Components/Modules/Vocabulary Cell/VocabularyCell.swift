@@ -36,6 +36,7 @@ class VocabularyCell: UICollectionViewCell {
     
     @IBAction func showVietnamese(_ sender: Any) {
         vietnameseLabel.text = vietnameseVocabulary ?? "Không có dữ liệu tiếng Việt 🙇‍♂️"
+        vietnameseLabel.isHidden = false
     }
     
     func setDataForVocabularyCell(imageCard:String?, japanese:String?, vietnamese:String?, listenLink:String?){
@@ -70,6 +71,6 @@ extension VocabularyCell : UICollectionViewDelegate, UICollectionViewDataSource,
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: cardCollection.frame.width, height: cardCollection.frame.height)
+        return CGSize(width: cardCollection.frame.width, height: cardCollection.frame.width)
     }
 }
