@@ -20,24 +20,13 @@ class PresenterLogin{
         self.init()
         self.delegateLogin = delegate
     }
-
+    
     let loginProvider = MoyaProvider<LoginRequest>()
     
     var loginModel : LoginFBModel?
     
-    var name:String?
-    var email:String?
-    var avatar:String?
-    
-    func facebookData(avatar: String , name: String, email: String){
-        self.name = name
-        self.email = email
-        self.avatar = avatar
-    }
-    
     func getDataForLogin(tokenFB : String?){
-        print(tokenFB ?? "token nil")
-        loginProvider.request(LoginRequest.loginFB(tokenFB: tokenFB ?? "token FB không tồn tại")) { (result) in
+        loginProvider.request(LoginRequest.loginFB(tokenFB: tokenFB ?? "")) { (result) in
             switch result {
             case .success(let response):
                 do{
@@ -50,10 +39,10 @@ class PresenterLogin{
                     self.delegateLogin?.getDataLogin()
                     print(dataJSON)
                 }catch{
-                    print("error get Data")
+                    print("error get Data Login")
                 }
-            case .failure(_):
-                print("Fail connect")
+            case .failure(let err):
+                print("Nội dung lỗi đăng nhập Facebook: \(err)")
             }
         }
     }

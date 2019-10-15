@@ -14,7 +14,7 @@ extension UIButton{
         self.layer.backgroundColor = UIColor.clear.cgColor
         self.layer.cornerRadius = 5
         self.layer.borderWidth = 1
-        self.layer.borderColor = UIColor.deepBlue.cgColor
+        self.layer.borderColor = UIColor.colorBlue.cgColor
     }
     
     func FacebookButton(){

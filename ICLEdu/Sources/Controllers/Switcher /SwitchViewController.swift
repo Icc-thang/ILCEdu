@@ -46,8 +46,8 @@ class SwitchViewController: UIViewController {
                 }catch{
                     print("error TOKEN VALUE for HEADER")
                 }
-            case .failure(_):
-                print("Fail connect")
+            case .failure(let err):
+                print("Nội dung lỗi: \(err)")
             }
         }
     }

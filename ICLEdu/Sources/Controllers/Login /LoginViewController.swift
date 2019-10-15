@@ -46,26 +46,26 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginFB(_ sender: Any) {
         let manager = LoginManager()
-        manager.logIn(permissions: [ .publicProfile, .email], viewController: self) { (result) in
+        manager.logIn(permissions: [ .publicProfile], viewController: self) { (result) in
             switch result {
             case .success(_, _, _):
-                self.presenterLogin.getDataForLogin(tokenFB: AccessToken.current?.tokenString)
-                
+                print("tokenFacebook : \(AccessToken.current?.tokenString ?? "")")
+                self.presenterLogin.getDataForLogin(tokenFB: AccessToken.current?.tokenString ?? "")
                 let param = ["fields": "email, name, picture.type(large)"]
                 GraphRequest(graphPath: "me", parameters: param).start { (connection, result, error) in
                     if let result = result {
                         let dict = JSON(result)
-                        let email = dict["email"].stringValue
                         let name = dict["name"].stringValue
                         let avatar = dict["picture"]["data"]["url"].stringValue
-                        self.presenterLogin.facebookData(avatar: avatar, name: name, email: email)
+                        UserDefaults.standard.set(avatar, forKey: "avatar")
+                        UserDefaults.standard.set(name, forKey: "name")
                     }
                 }
             case .cancelled:
                 print("Cancelled")
                 break
             case .failed(let err):
-                print("login failed, error:\(err)")
+                print("Đăng nhập Facebook không thành công, nội dung lỗi: \(err)")
                 break
             }
         }
@@ -74,21 +74,24 @@ class LoginViewController: UIViewController {
 extension LoginViewController: LoginDelegate {
     func getDataLogin() {
         //log thông báo
-        if self.presenterLogin.loginModel?.registered ?? false == true {
+//        if(token == nil || token == ""){
+//            let registerVC = UIStoryboard(name: "RegisterController", bundle: nil).instantiateViewController(withIdentifier: "RegisterController") as! RegisterViewController
+//            registerVC.getDataFB(avatar: self.presenterLogin.avatar ?? "",
+//                                 name: self.presenterLogin.name ?? "",
+//                                 memberID: self.presenterLogin.loginModel?.id ?? 0)
+//            self.navigationController?.pushViewController(registerVC, animated: true)
             //set key for login
-            UserDefaults.standard.set(self.presenterLogin.loginModel?.access_token ?? "", forKey: "authorization")
-            
-            let tabbarVC = UIStoryboard(name: "TabbarController", bundle: nil).instantiateViewController(withIdentifier: "TabbarController") as! BubbleTabBarController
-            self.navigationController?.pushViewController(tabbarVC, animated: true)
-            
-            
-        }else {
-            let registerVC = UIStoryboard(name: "RegisterController", bundle: nil).instantiateViewController(withIdentifier: "RegisterController") as! RegisterViewController
-            registerVC.getDataFB(avatar: self.presenterLogin.avatar ?? "",
-                                 name: self.presenterLogin.name ?? "",
-                                 email: self.presenterLogin.email ?? "",
-                                 memberID: self.presenterLogin.loginModel?.id ?? 0)
-            self.navigationController?.pushViewController(registerVC, animated: true)
-        }
+//        }else {
+//            //set key for login
+//            UserDefaults.standard.set(self.presenterLogin.loginModel?.access_token ?? "", forKey: "authorization")
+//
+//            let tabbarVC = UIStoryboard(name: "TabbarController", bundle: nil).instantiateViewController(withIdentifier: "TabbarController") as! BubbleTabBarController
+//            self.navigationController?.pushViewController(tabbarVC, animated: true)
+//        }
+        
+        UserDefaults.standard.set(self.presenterLogin.loginModel?.access_token ?? "", forKey: "authorization")
+        
+        let tabbarVC = UIStoryboard(name: "TabbarController", bundle: nil).instantiateViewController(withIdentifier: "TabbarController") as! BubbleTabBarController
+        self.navigationController?.pushViewController(tabbarVC, animated: true)
     }
 }

@@ -27,10 +27,11 @@ class ProfileViewController: UIViewController {
     }
     func setupUI(){
         logoutButton.BorderButton()
-        logoutButton.setTitleColor(UIColor.deepBlue, for: .normal)
+        logoutButton.setTitleColor(UIColor.colorBlue, for: .normal)
         pictureImageView.CircleImage()
         self.navigationItem.title = profileData?.name ?? ""
         pictureImageView.sd_setImage(with: URL(string: profileData?.avatar ?? "" ))
+//        print(profileData?.name)
         addressLabel.text = profileData?.address
         genderLabel.text = profileData?.gender
         birthdayLabel.text = profileData?.birthday
@@ -38,10 +39,10 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func logOut(_ sender: Any) {
-        UserDefaults.standard.set(nil, forKey: "authorization")
+        UserDefaults.standard.set("", forKey: "authorization")
         
-        //        let loginManager = LoginManager()
-        //        loginManager.logOut()
+        let loginManager = LoginManager()
+        loginManager.logOut()
         
         let alertController = UIAlertController(
             title: "Logout",

@@ -13,10 +13,10 @@ import UIKit
 extension UIColor{
     //static color
     
-    static let deepGreen = UIColor().colorFromHex("7ED321")
-    static let deepGray = UIColor().colorFromHex("8B8B8B")
-    static let deepRed = UIColor().colorFromHex("D72031")
-    static let deepBlue = UIColor().colorFromHex("4169E1")
+    static let colorGreen = UIColor().colorFromHex("02B83E")
+    static let colorGray = UIColor().colorFromHex("8B8B8B")
+    static let colorRed = UIColor().colorFromHex("D72031")
+    static let colorBlue = UIColor().colorFromHex("4169E1")
     
     func colorFromHex(_ hex: String) -> UIColor {
         var hexString = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()

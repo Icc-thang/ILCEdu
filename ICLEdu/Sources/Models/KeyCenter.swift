@@ -7,16 +7,24 @@
 //
 
 import Foundation
-//
-let baseUrl:String = "https://townwork.vn/api/auth"
 
-//meberID
-var member_ID:Int?
+// baseURLAPI
+let baseUrl:String = "https://townwork.vn/api"
 
-//Access Token
-let token = UserDefaults.standard.string(forKey: "authorization")
+// avatar
+let avatar = UserDefaults.standard.string(forKey: "avatar")
+
+// name
+let name = UserDefaults.standard.string(forKey: "name")
+
+// access Token
+let tokenFacebook = UserDefaults.standard.string(forKey: "authorization")
+
 // for Header ->
-let tokenDB = "Bearer \(token ?? "")"
+let tokenDatabase = "Bearer \(tokenFacebook ?? "")"
+
+// baseURL for image + audio
+let baseUrlMedia:String = "https://townwork.vn/"
 
 //profile Data
 var profileData:ProfileModel?
