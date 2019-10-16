@@ -15,7 +15,7 @@ struct RegisterModel : Mappable {
     var id : Int?
     var token_type : String?
     var expires_at : String?
-    
+    var message : String?
     init?(map: Map) {
         
     }
@@ -27,5 +27,6 @@ struct RegisterModel : Mappable {
         id <- map["id"]
         token_type <- map["token_type"]
         expires_at <- map["expires_at"]
+        message <- map["message"]
     }
 }

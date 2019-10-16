@@ -46,9 +46,9 @@
 		<true/>
 	</dict>
 	<key>UILaunchStoryboardName</key>
-	<string>LaunchScreen</string>
+	<string>LoginController</string>
 	<key>UIMainStoryboardFile</key>
-	<string>Main</string>
+	<string>LoginController</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

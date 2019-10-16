@@ -30,7 +30,13 @@ class LessonViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        collectionViewSetUp()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+     
+            collectionViewSetUp()
+
     }
     
     func collectionViewSetUp(){
@@ -68,7 +74,7 @@ extension LessonViewController: UICollectionViewDataSource, UICollectionViewDele
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.row == 0 {
             let navCell = collectionView.dequeueReusableCell(withReuseIdentifier: "NavCell", for: indexPath) as! NavCell
-            navCell.parseDataForNav(userName: profileData?.name ?? "", userImageUrl: profileData?.avatar ?? "")
+            navCell.parseDataForNav(userName: name, userImageUrl: avatar)
             return navCell
         }
         if indexPath.row == 1 {

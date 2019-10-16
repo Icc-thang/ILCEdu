@@ -44,7 +44,7 @@ extension ProfileRequest:TargetType{
     
     
     var headers: [String : String]? {
-        return ["Authorization": tokenDatabase ]
+        return ["Authorization": tokenHeader ]
     }
     
     

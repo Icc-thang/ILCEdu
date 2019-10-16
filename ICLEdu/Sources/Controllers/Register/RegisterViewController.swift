@@ -21,8 +21,6 @@ class RegisterViewController: UIViewController, UIActionSheetDelegate {
     @IBOutlet weak var fullNameTextField: UITextField!
     //home town
     @IBOutlet weak var addressTextField: UITextField!
-    // male or female
-    @IBOutlet weak var genderButton: UIButton!
     //birthday
     @IBOutlet weak var dateOfBirthDay: UITextField!
     // phone number
@@ -32,9 +30,17 @@ class RegisterViewController: UIViewController, UIActionSheetDelegate {
     
     @IBOutlet weak var emailTextField: UITextField!
     
+    @IBOutlet weak var dotComTextField: UITextField!
+    
+    var gender:String? = "Nữ"
+    
     var datePicker : UIDatePicker?
     
+    @IBOutlet weak var segmentGender: UISegmentedControl!
+    
     private let presenterRegister = PresenterRegister()
+    
+    var numberContentSub:String?
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -56,20 +62,13 @@ class RegisterViewController: UIViewController, UIActionSheetDelegate {
         setupUI()
     }
     
-    func getDataFB(avatar: String , name: String, email: String, memberID: Int){
-        self.presenterRegister.setProfileFBData(avatar: avatar , name: name, email: email, memberID: memberID )
-            member_ID = memberID
-    }
-    
     func setupUI(){
-        profilePicture.sd_setImage(with: URL(string:"\(presenterRegister.avatarURL ?? "Không có dữ liệu cho ảnh")"))
+        profilePicture.sd_setImage(with: URL(string:avatar!))
         profilePicture.CircleImage()
         
         saveButton.LoginButton()
         
-        fullNameTextField.text = presenterRegister.fullName
-        
-        emailTextField.text = presenterRegister.email
+        fullNameTextField.text = name
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
@@ -79,7 +78,9 @@ class RegisterViewController: UIViewController, UIActionSheetDelegate {
         datePicker?.datePickerMode = .date
         dateOfBirthDay.inputView = datePicker
         datePicker?.addTarget(self, action: #selector(dateChange(datePicker: )), for: .valueChanged)
+        
     }
+    
     
     @objc func dateChange(datePicker: UIDatePicker ) {
         let dateFormat = DateFormatter()
@@ -91,28 +92,14 @@ class RegisterViewController: UIViewController, UIActionSheetDelegate {
         view.endEditing(true)
     }
     
-    @IBAction func gender(_ sender: Any) {
-        // create an actionSheet
-        let actionSheetController: UIAlertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        
-        // create an action
-        let firstAction: UIAlertAction = UIAlertAction(title: "Male", style: .default) { action -> Void in
-            self.genderButton.setTitle("Male", for: .normal)
-        }
-        
-        let secondAction: UIAlertAction = UIAlertAction(title: "Female", style: .default) { action -> Void in
-            self.genderButton.setTitle("Female", for: .normal)
-        }
-        
-        let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .cancel) { action -> Void in }
-        
-        // add actions
-        actionSheetController.addAction(firstAction)
-        actionSheetController.addAction(secondAction)
-        actionSheetController.addAction(cancelAction)
-        
-        present(actionSheetController, animated: true) {
-            print("option menu presented")
+    @IBAction func selectGender(_ sender: Any) {
+        switch segmentGender.selectedSegmentIndex {
+        case 0:
+            gender = "Nữ"
+        case 1:
+            gender = "Nam"
+        default:
+            break
         }
     }
     
@@ -133,33 +120,64 @@ class RegisterViewController: UIViewController, UIActionSheetDelegate {
         if emailTextField.text == "" {
             emailTextField.placeholder = "Nhập email!"
         }
-        if fullNameTextField?.text != "" && addressTextField?.text != "" && dateOfBirthDay?.text != "" && phoneNumberTextField?.text != "" && emailTextField.text != "" {
+        
+        if dotComTextField.text == "" {
+            dotComTextField.placeholder = "***.com"
+        }
+        
+        let string = phoneNumberTextField.text!.prefix(10)
+        let slice = string.prefix(2)
+        
+        if string.count < 10 {
+            phoneNumberTextField.text = ""
+            phoneNumberTextField.placeholder = "số điện thoại không hợp lệ"}
+        
+        if fullNameTextField?.text != "" && slice == "09" || slice == "08" || slice == "07" || slice == "05" || slice == "03" && addressTextField?.text != "" && dateOfBirthDay?.text != "" && emailTextField.text != "" {
+            
+            //
+            print("email : \(emailTextField.text ?? "")@\(dotComTextField.text ?? "")")
+            print("name: \(fullNameTextField.text!)")
+            print("gender: \(gender ?? "")")
+            print("address: \(addressTextField.text!)")
+            print("birth day: \(dateOfBirthDay.text!)")
+            print("phone number: \(phoneNumberTextField!.text!)")
+            print("memberID: \(member_id)")
             
             presenterRegister.getDataForRegister(
-                member_name: presenterRegister.fullName ?? "",
-                member_gender: genderButton.titleLabel?.text ?? "",
-                member_email: presenterRegister.email ?? "",
+                member_name: fullNameTextField.text!,
+                member_gender: gender ?? "",
+                member_email: "\(emailTextField.text ?? "")@\(dotComTextField.text ?? "")",
                 member_address: addressTextField?.text ?? "",
                 member_birthday: dateOfBirthDay.text ?? "",
-                member_phone: Int(phoneNumberTextField?.text ?? "0") ?? 0)
-            
-            //push to lesson view controller
-            let tabbarVC = UIStoryboard(name: "TabbarController", bundle: nil).instantiateViewController(withIdentifier: "TabbarController") as! BubbleTabBarController
-            if let navigator = navigationController {
-                navigator.pushViewController(tabbarVC, animated: true)
-            }
+                member_phone: phoneNumberTextField?.text ?? "0")
         }
     }
+    
+    @IBAction func phoneNumberChange(_ sender: UITextField) {
+        maxLength(textField: phoneNumberTextField, max: 10)
+    }
+    
 }
 
 extension RegisterViewController: DelegateRegister{
     func getDataRegister() {
-        //set tokenDB
-         UserDefaults.standard.set(self.presenterRegister.registerModel?.access_token ?? "", forKey: "authorization")
+        if(tokenDatabase != nil || tokenDatabase != ""){
+            UserDefaults.standard.set(self.presenterRegister.registerModel?.access_token ?? "", forKey: "authorization")
+            let tabbarVC = UIStoryboard(name: "TabbarController", bundle: nil).instantiateViewController(withIdentifier: "TabbarController") as! BubbleTabBarController
+            self.navigationController?.pushViewController(tabbarVC, animated: true)
+        }
     }
 }
 
 extension RegisterViewController: UITextFieldDelegate{
+    func maxLength(textField: UITextField, max: Int){
+        let length = textField.text?.count
+        let content = textField.text
+        if length! > max{
+            let index = content?.index(content!.startIndex, offsetBy: max)
+            textField.text = textField.text?.substring(to: index!)
+        }
+    }
     // Start Editing The Text Field
     func textFieldDidBeginEditing(_ textField: UITextField) {
         moveTextField(textField, moveDistance: -150, up: true)

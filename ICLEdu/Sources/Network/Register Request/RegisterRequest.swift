@@ -10,7 +10,7 @@ import Foundation
 import Moya
 
 enum RegisterRequest{
-    case register(member_name: String, member_email:String, member_gender: String, member_address:String, member_birthday:String, member_phone:Int)
+    case register(member_name: String, member_email:String, member_gender: String, member_address:String, member_birthday:String, member_phone:String)
 }
 
 extension RegisterRequest: TargetType{
@@ -21,7 +21,7 @@ extension RegisterRequest: TargetType{
     var path: String {
         switch self {
         case .register(_):
-            return "register/\(member_ID ?? 0)"
+            return "auth/register/\(member_id)"
         }
     }
     
@@ -35,12 +35,22 @@ extension RegisterRequest: TargetType{
     var sampleData: Data {
         return Data()
     }
+     
+    var parameters: [String: Any]? {
+        switch self {
+        case .register(let name, let email,let gender, let address, let birthday, let phone):
+            return ["name": name,"email": email, "gender":gender, "address": address, "birthday": birthday, "phone": phone]
+        }
+    }
+    
+    var parameterEncoding: Moya.ParameterEncoding {
+        return JSONEncoding.default
+    }
     
     var task: Task {
         switch self {
-        case .register(let member_name, let member_email, let member_gender, let member_address, let member_birthday, let member_phone):
-            
-            return .requestParameters(parameters: ["name": member_name,"email": member_email, "gender":member_gender, "address": member_address, "birthday": member_birthday, "phone": member_phone], encoding: URLEncoding.default)
+        case .register(_):
+            return .requestParameters(parameters: parameters!, encoding: parameterEncoding)
         }
     }
     

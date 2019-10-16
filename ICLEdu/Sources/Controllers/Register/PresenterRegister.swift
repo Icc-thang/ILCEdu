@@ -23,22 +23,19 @@ class PresenterRegister {
     
     var avatarURL: String?
     var fullName: String?
-    var email: String?
     var ID: Int?
     
-    func setProfileFBData(avatar:String?, name:String?, email:String?, memberID:Int?)  {
+    func setProfileFBData(avatar:String?, name:String?, memberID:Int?)  {
         self.avatarURL = avatar
         self.fullName = name
-        self.email = email
         self.ID = memberID
     }
     
     let registerProvider = MoyaProvider<RegisterRequest>()
-
+    
     var registerModel : RegisterModel?
-
-    func getDataForRegister(member_name: String, member_gender: String, member_email:String, member_address:String, member_birthday:String, member_phone:Int){
-
+    
+    func getDataForRegister(member_name: String, member_gender: String, member_email:String, member_address:String, member_birthday:String, member_phone:String){
         registerProvider.request(.register(member_name: member_name, member_email: member_email, member_gender: member_gender, member_address: member_address, member_birthday: member_birthday, member_phone: member_phone)) { (result) in
             switch result {
             case .success(let response):
@@ -49,14 +46,16 @@ class PresenterRegister {
                             return
                     }
                     self.registerModel = dataJSON
+                    
                     self.delegateRegister?.getDataRegister()
                     print(dataJSON)
                 }catch{
-                    print("error get Data")
+                    print("error get Data Register")
                 }
             case .failure(_):
                 print("Fail connect")
             }
         }
     }
+
 }

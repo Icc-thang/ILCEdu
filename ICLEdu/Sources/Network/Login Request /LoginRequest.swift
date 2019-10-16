@@ -21,7 +21,7 @@ extension LoginRequest: TargetType{
     var path: String {
         switch self {
         case .loginFB(_):
-            return "login/facebook"
+            return "auth/login/facebook"
         }
     }
     
