@@ -131,26 +131,28 @@ class RegisterViewController: UIViewController, UIActionSheetDelegate {
         if string.count < 10 {
             phoneNumberTextField.text = ""
             phoneNumberTextField.placeholder = "số điện thoại không hợp lệ"}
-        
-        if fullNameTextField?.text != "" && slice == "09" || slice == "08" || slice == "07" || slice == "05" || slice == "03" && addressTextField?.text != "" && dateOfBirthDay?.text != "" && emailTextField.text != "" {
-            
-            //
-            print("email : \(emailTextField.text ?? "")@\(dotComTextField.text ?? "")")
-            print("name: \(fullNameTextField.text!)")
-            print("gender: \(gender ?? "")")
-            print("address: \(addressTextField.text!)")
-            print("birth day: \(dateOfBirthDay.text!)")
-            print("phone number: \(phoneNumberTextField!.text!)")
-            print("memberID: \(member_id)")
-            
-            presenterRegister.getDataForRegister(
-                member_name: fullNameTextField.text!,
-                member_gender: gender ?? "",
-                member_email: "\(emailTextField.text ?? "")@\(dotComTextField.text ?? "")",
-                member_address: addressTextField?.text ?? "",
-                member_birthday: dateOfBirthDay.text ?? "",
-                member_phone: phoneNumberTextField?.text ?? "0")
+        if slice == "09" || slice == "08" || slice == "07" || slice == "05" || slice == "03"{
+            if fullNameTextField?.text != "" && addressTextField?.text != "" && dateOfBirthDay?.text != "" && emailTextField.text != "" {
+                
+                //
+                print("email : \(emailTextField.text ?? "")@\(dotComTextField.text ?? "")")
+                print("name: \(fullNameTextField.text!)")
+                print("gender: \(gender ?? "")")
+                print("address: \(addressTextField.text!)")
+                print("birth day: \(dateOfBirthDay.text!)")
+                print("phone number: \(phoneNumberTextField!.text!)")
+                print("memberID: \(member_id)")
+                
+                presenterRegister.getDataForRegister(
+                    member_name: fullNameTextField.text!,
+                    member_gender: gender ?? "",
+                    member_email: "\(emailTextField.text ?? "")@\(dotComTextField.text ?? "")",
+                    member_address: addressTextField?.text ?? "",
+                    member_birthday: dateOfBirthDay.text ?? "",
+                    member_phone: phoneNumberTextField?.text ?? "0")
+            }
         }
+        
     }
     
     @IBAction func phoneNumberChange(_ sender: UITextField) {
@@ -161,10 +163,12 @@ class RegisterViewController: UIViewController, UIActionSheetDelegate {
 
 extension RegisterViewController: DelegateRegister{
     func getDataRegister() {
-        if(tokenDatabase != nil || tokenDatabase != ""){
-            UserDefaults.standard.set(self.presenterRegister.registerModel?.access_token ?? "", forKey: "authorization")
+        UserDefaults.standard.set(self.presenterRegister.registerModel?.access_token ?? "", forKey: "authorization")
+        if UserDefaults.standard.string(forKey: "authorization") != nil{
             let tabbarVC = UIStoryboard(name: "TabbarController", bundle: nil).instantiateViewController(withIdentifier: "TabbarController") as! BubbleTabBarController
             self.navigationController?.pushViewController(tabbarVC, animated: true)
+        }else{
+            print("Error register")
         }
     }
 }

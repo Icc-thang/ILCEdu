@@ -35,7 +35,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KKN-PL-aQW">
-                                <rect key="frame" x="10" y="88" width="394" height="715"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="P54-la-kA9">
                                     <size key="itemSize" width="50" height="50"/>
@@ -44,14 +44,18 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BKQ-An-6Ti" id="w3j-PO-WtN"/>
+                                    <outlet property="delegate" destination="BKQ-An-6Ti" id="bHR-uY-X31"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="KKN-PL-aQW" firstAttribute="top" secondItem="5Eq-q6-P8x" secondAttribute="top" id="5X7-5F-QEz"/>
-                            <constraint firstItem="KKN-PL-aQW" firstAttribute="leading" secondItem="5Eq-q6-P8x" secondAttribute="leading" constant="10" id="ipJ-zv-g4I"/>
-                            <constraint firstItem="5Eq-q6-P8x" firstAttribute="trailing" secondItem="KKN-PL-aQW" secondAttribute="trailing" constant="10" id="tso-GK-aKv"/>
-                            <constraint firstItem="5Eq-q6-P8x" firstAttribute="bottom" secondItem="KKN-PL-aQW" secondAttribute="bottom" constant="10" id="ykX-1p-JLO"/>
+                            <constraint firstItem="KKN-PL-aQW" firstAttribute="leading" secondItem="5Eq-q6-P8x" secondAttribute="leading" id="ipJ-zv-g4I"/>
+                            <constraint firstItem="5Eq-q6-P8x" firstAttribute="trailing" secondItem="KKN-PL-aQW" secondAttribute="trailing" id="tso-GK-aKv"/>
+                            <constraint firstItem="5Eq-q6-P8x" firstAttribute="bottom" secondItem="KKN-PL-aQW" secondAttribute="bottom" id="ykX-1p-JLO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5Eq-q6-P8x"/>
                     </view>
@@ -67,17 +71,17 @@
         <!--Menu-->
         <scene sceneID="DZ4-Yv-pgo">
             <objects>
-                <tableViewController id="NIp-Ez-wjO" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="gDT-yP-IKz">
+                <tableViewController id="NIp-Ez-wjO" customClass="MenuViewController" customModule="ICLEdu" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="gDT-yP-IKz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="pz8-7F-bvJ">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pz8-7F-bvJ" id="DV0-O7-xFP">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -93,11 +97,11 @@
             </objects>
             <point key="canvasLocation" x="919" y="-883"/>
         </scene>
-        <!--Bài học-->
+        <!--語彙-->
         <scene sceneID="GCt-SC-sfh">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fa8-NF-70f" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Bài học" image="ic_lesson" id="MfV-kp-bEo"/>
+                    <tabBarItem key="tabBarItem" title="語彙" image="ic_lesson" id="MfV-kp-bEo"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bSZ-AL-UGE">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -112,11 +116,11 @@
             </objects>
             <point key="canvasLocation" x="10" y="-1658"/>
         </scene>
-        <!--Menu-->
+        <!--メニュー-->
         <scene sceneID="Y8s-mV-7UE">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4yZ-FW-Bix" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Menu" image="ic_menu" id="u8A-v6-oME"/>
+                    <tabBarItem key="tabBarItem" title="メニュー" image="ic_menu" id="u8A-v6-oME"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="Vr2-7j-i7J">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>

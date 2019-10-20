@@ -33,7 +33,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loginFacebookButton.FacebookButton()
+        //        loginFacebookButton.FacebookButton()
         presenterLogin.delegateLogin = self
     }
     
@@ -67,7 +67,8 @@ class LoginViewController: UIViewController {
 extension LoginViewController: LoginDelegate {
     func getDataLogin() {
         UserDefaults.standard.set(self.presenterLogin.loginModel?.id ?? 0, forKey: "ID")
-        if self.presenterLogin.loginModel?.access_token == nil || self.presenterLogin.loginModel?.access_token == "" {
+        
+        if self.presenterLogin.loginModel?.access_token == "" {
             let registerVC = UIStoryboard(name: "RegisterController", bundle: nil).instantiateViewController(withIdentifier: "RegisterController") as! RegisterViewController
             self.navigationController?.pushViewController(registerVC, animated: true)
             

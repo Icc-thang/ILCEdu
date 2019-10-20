@@ -24,7 +24,7 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="barColor">
-                                        <color key="value" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="trackColor">
                                         <color key="value" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -37,7 +37,7 @@
                                         <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="barInset">
-                                        <real key="value" value="3"/>
+                                        <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="progress">
                                         <real key="value" value="0.0"/>
@@ -45,8 +45,8 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Xcq-y7-Czf">
-                                <rect key="frame" x="0.0" y="87" width="414" height="775"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <rect key="frame" x="0.0" y="103" width="414" height="685"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mZg-fz-rJx">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -59,20 +59,52 @@
                                     <outlet property="delegate" destination="x2U-YM-cy5" id="FSK-La-usx"/>
                                 </connections>
                             </collectionView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="LZ1-iE-vtg">
+                                <rect key="frame" x="80" y="804" width="254" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OND-my-hNk">
+                                        <rect key="frame" x="0.0" y="0.0" width="102" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                        <state key="normal" title="前"/>
+                                        <connections>
+                                            <action selector="previousButton:" destination="x2U-YM-cy5" eventType="touchUpInside" id="Xrm-b9-W5z"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ee3-UV-QGe">
+                                        <rect key="frame" x="152" y="0.0" width="102" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <state key="normal" title="次へ"/>
+                                        <connections>
+                                            <action selector="nextButton:" destination="x2U-YM-cy5" eventType="touchUpInside" id="bl1-SX-xf2"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="P63-WU-9CV"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Vya-vJ-Tsr" firstAttribute="leading" secondItem="18b-uD-P1V" secondAttribute="leading" constant="16" id="1SW-I1-53Z"/>
-                            <constraint firstItem="Xcq-y7-Czf" firstAttribute="top" secondItem="Vya-vJ-Tsr" secondAttribute="bottom" id="AJM-ED-paX"/>
-                            <constraint firstItem="18b-uD-P1V" firstAttribute="bottom" secondItem="Xcq-y7-Czf" secondAttribute="bottom" id="C2C-bO-xQB"/>
+                            <constraint firstItem="LZ1-iE-vtg" firstAttribute="bottom" secondItem="18b-uD-P1V" secondAttribute="bottom" constant="-8" id="39V-tV-VRc"/>
+                            <constraint firstItem="Xcq-y7-Czf" firstAttribute="top" secondItem="Vya-vJ-Tsr" secondAttribute="bottom" constant="16" id="AJM-ED-paX"/>
+                            <constraint firstItem="LZ1-iE-vtg" firstAttribute="leading" secondItem="18b-uD-P1V" secondAttribute="leading" constant="80" id="L5m-IZ-IsP"/>
                             <constraint firstItem="Xcq-y7-Czf" firstAttribute="leading" secondItem="18b-uD-P1V" secondAttribute="leading" id="MAS-3y-BYy"/>
                             <constraint firstItem="Vya-vJ-Tsr" firstAttribute="top" secondItem="18b-uD-P1V" secondAttribute="top" constant="8" id="MVj-3F-38a"/>
                             <constraint firstItem="18b-uD-P1V" firstAttribute="trailing" secondItem="Vya-vJ-Tsr" secondAttribute="trailing" constant="16" id="NpT-Yw-hUA"/>
                             <constraint firstItem="18b-uD-P1V" firstAttribute="trailing" secondItem="Xcq-y7-Czf" secondAttribute="trailing" id="Q6j-s8-hmL"/>
+                            <constraint firstItem="LZ1-iE-vtg" firstAttribute="top" secondItem="Xcq-y7-Czf" secondAttribute="bottom" constant="16" id="yHe-Al-SMZ"/>
+                            <constraint firstItem="LZ1-iE-vtg" firstAttribute="centerX" secondItem="Xcq-y7-Czf" secondAttribute="centerX" id="yn0-yM-wGY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="18b-uD-P1V"/>
                     </view>
                     <connections>
+                        <outlet property="buttonNext" destination="Ee3-UV-QGe" id="mR8-1n-CJq"/>
+                        <outlet property="buttonPrev" destination="OND-my-hNk" id="7zm-Xc-nJI"/>
                         <outlet property="collectionVocab" destination="Xcq-y7-Czf" id="DKR-8e-QRe"/>
                         <outlet property="progressPercent" destination="Vya-vJ-Tsr" id="hKp-pJ-9Ag"/>
                     </connections>

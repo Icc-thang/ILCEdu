@@ -16,16 +16,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tokyo" translatesAutoresizingMaskIntoConstraints="NO" id="Bw2-iR-kvV">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="Bw2-iR-kvV">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mWO-u5-Oue">
-                                <rect key="frame" x="90" y="762" width="234" height="50"/>
-                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logocom" translatesAutoresizingMaskIntoConstraints="NO" id="XhW-G5-TKm">
+                                <rect key="frame" x="20" y="803" width="100" height="39"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="idgholdings.vn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uys-XZ-jQY">
+                                <rect key="frame" x="274.5" y="812" width="119.5" height="21"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="18"/>
+                                <color key="textColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NSL-yB-yMK">
+                                <rect key="frame" x="60" y="623" width="294" height="50"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_facebook" translatesAutoresizingMaskIntoConstraints="NO" id="C9r-Vz-u8r">
+                                        <rect key="frame" x="16" y="8" width="34" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="C9r-Vz-u8r" secondAttribute="height" multiplier="1:1" id="kBn-ma-oFN"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Đăng nhập" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Yu-0O-Obx">
+                                        <rect key="frame" x="66" y="8" width="212" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="S7g-vp-YZO"/>
+                                    <constraint firstItem="5Yu-0O-Obx" firstAttribute="leading" secondItem="C9r-Vz-u8r" secondAttribute="trailing" constant="16" id="0y5-lM-XJw"/>
+                                    <constraint firstItem="5Yu-0O-Obx" firstAttribute="centerY" secondItem="C9r-Vz-u8r" secondAttribute="centerY" id="IZT-BS-VcO"/>
+                                    <constraint firstItem="C9r-Vz-u8r" firstAttribute="leading" secondItem="NSL-yB-yMK" secondAttribute="leading" constant="16" id="LrI-rj-aFc"/>
+                                    <constraint firstItem="5Yu-0O-Obx" firstAttribute="height" secondItem="C9r-Vz-u8r" secondAttribute="height" id="MCE-7p-SKi"/>
+                                    <constraint firstAttribute="height" constant="50" id="nxK-f5-gS9"/>
+                                    <constraint firstItem="C9r-Vz-u8r" firstAttribute="top" secondItem="NSL-yB-yMK" secondAttribute="top" constant="8" id="pMT-1s-OiT"/>
+                                    <constraint firstAttribute="trailing" secondItem="5Yu-0O-Obx" secondAttribute="trailing" constant="16" id="qh8-VC-hxz"/>
+                                    <constraint firstAttribute="bottom" secondItem="C9r-Vz-u8r" secondAttribute="bottom" constant="8" id="uHl-03-byL"/>
                                 </constraints>
-                                <state key="normal" title="Đăng nhập với Facebook"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mWO-u5-Oue">
+                                <rect key="frame" x="60" y="623" width="294" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <action selector="loginFB:" destination="J9b-qz-lJ1" eventType="touchUpInside" id="7wb-Bi-leA"/>
                                 </connections>
@@ -33,13 +66,21 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="L6f-s9-mgZ" firstAttribute="trailing" secondItem="uys-XZ-jQY" secondAttribute="trailing" constant="20" id="6QU-I4-WV7"/>
+                            <constraint firstItem="L6f-s9-mgZ" firstAttribute="bottom" secondItem="XhW-G5-TKm" secondAttribute="bottom" constant="20" id="6SA-FE-2qK"/>
+                            <constraint firstItem="XhW-G5-TKm" firstAttribute="leading" secondItem="L6f-s9-mgZ" secondAttribute="leading" constant="20" id="8cv-XT-ndo"/>
+                            <constraint firstItem="NSL-yB-yMK" firstAttribute="centerX" secondItem="Bw2-iR-kvV" secondAttribute="centerX" id="950-bE-JqD"/>
+                            <constraint firstItem="uys-XZ-jQY" firstAttribute="centerY" secondItem="XhW-G5-TKm" secondAttribute="centerY" id="MCp-Nv-EqP"/>
                             <constraint firstItem="Bw2-iR-kvV" firstAttribute="leading" secondItem="L6f-s9-mgZ" secondAttribute="leading" id="N1E-Kf-1cE"/>
-                            <constraint firstItem="L6f-s9-mgZ" firstAttribute="bottom" secondItem="mWO-u5-Oue" secondAttribute="bottom" constant="50" id="aPJ-2c-tcn"/>
+                            <constraint firstItem="mWO-u5-Oue" firstAttribute="width" secondItem="NSL-yB-yMK" secondAttribute="width" id="TWa-Bd-To2"/>
+                            <constraint firstItem="mWO-u5-Oue" firstAttribute="centerX" secondItem="NSL-yB-yMK" secondAttribute="centerX" id="VZB-zE-cuW"/>
                             <constraint firstAttribute="bottom" secondItem="Bw2-iR-kvV" secondAttribute="bottom" id="afD-2t-z0u"/>
                             <constraint firstItem="Bw2-iR-kvV" firstAttribute="top" secondItem="tcC-nJ-2hf" secondAttribute="top" id="kI6-FM-pA2"/>
+                            <constraint firstItem="NSL-yB-yMK" firstAttribute="leading" secondItem="L6f-s9-mgZ" secondAttribute="leading" constant="60" id="kLh-WG-fMT"/>
                             <constraint firstItem="Bw2-iR-kvV" firstAttribute="trailing" secondItem="L6f-s9-mgZ" secondAttribute="trailing" id="lxc-R2-Hvm"/>
-                            <constraint firstItem="mWO-u5-Oue" firstAttribute="leading" secondItem="L6f-s9-mgZ" secondAttribute="leading" constant="90" id="nI2-yC-Qr2"/>
-                            <constraint firstItem="mWO-u5-Oue" firstAttribute="centerX" secondItem="Bw2-iR-kvV" secondAttribute="centerX" id="xAG-ra-xPn"/>
+                            <constraint firstItem="mWO-u5-Oue" firstAttribute="height" secondItem="NSL-yB-yMK" secondAttribute="height" id="nXY-uo-qP0"/>
+                            <constraint firstItem="XhW-G5-TKm" firstAttribute="top" secondItem="NSL-yB-yMK" secondAttribute="bottom" constant="130" id="tHZ-IP-jxt"/>
+                            <constraint firstItem="mWO-u5-Oue" firstAttribute="centerY" secondItem="NSL-yB-yMK" secondAttribute="centerY" id="zPA-Uj-YMt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="L6f-s9-mgZ"/>
                     </view>
@@ -72,6 +113,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="tokyo" width="1868" height="2430"/>
+        <image name="bg" width="495" height="879"/>
+        <image name="ic_facebook" width="43" height="43"/>
+        <image name="logocom" width="100" height="39"/>
     </resources>
 </document>

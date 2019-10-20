@@ -21,12 +21,12 @@ class PresenterLogin{
         self.delegateLogin = delegate
     }
     
-    let loginProvider = MoyaProvider<LoginRequest>()
+    let loginProvider = MoyaProvider<APIRequest>()
     
     var loginModel : LoginFBModel?
     
     func getDataForLogin(tokenFB : String?){
-        loginProvider.request(LoginRequest.loginFB(tokenFB: tokenFB ?? "")) { (result) in
+        loginProvider.request(.loginFB(tokenFB: tokenFB ?? "")) { (result) in
             switch result {
             case .success(let response):
                 do{

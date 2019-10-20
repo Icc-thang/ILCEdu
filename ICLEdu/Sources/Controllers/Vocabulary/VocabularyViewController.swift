@@ -9,36 +9,18 @@
 import UIKit
 import SDWebImage
 
-class VocabularyViewController: UIViewController,UICollectionViewDelegate ,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout  {
+let vocabularyCell = "VocabularyCell"
+let cardCell = "CardCell"
+class VocabularyViewController: UIViewController{
     
-    let postionVocab: Int = 1
+    @IBOutlet weak var buttonNext: UIButton!
+    @IBOutlet weak var buttonPrev: UIButton!
+    
     @IBOutlet weak var collectionVocab: UICollectionView!
+    
     @IBOutlet weak var progressPercent: LinearProgressView!
+    
     private let presenterVocabulary = PresenterVocabulary()
-    
-    let btnNext: UIButton = {
-        let btn = UIButton(type: .system)
-        btn.setTitle("NEXT", for: .normal)
-        btn.setTitleColor(.systemGray, for: .normal)
-        btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
-        btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.addTarget(self, action: #selector(handleNextPage), for:
-            .touchUpInside)
-        btn.tag = 1
-        return btn
-    }()
-    
-    let btnPrev: UIButton = {
-        let btn = UIButton(type: .system)
-        btn.setTitle("PREV", for: .normal)
-        btn.setTitleColor(.systemGray, for: .normal)
-        btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
-        btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.addTarget(self, action: #selector(handleNextPage), for:
-            .touchUpInside)
-        btn.tag = 0
-        return btn
-    }()
     
     let pageControl: UIPageControl = {
         let pc = UIPageControl()
@@ -49,13 +31,20 @@ class VocabularyViewController: UIViewController,UICollectionViewDelegate ,UICol
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenterVocabulary.delegateVocabulary = self as? DelegateVocabulary
+        presenterVocabulary.delegateVocabulary = self
+        presenterVocabulary.getVocabList()
         setupProgress()
         setupUI()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        print("BACK")
+    }
+    
     func setupProgress(){
-        progressPercent.maximumValue = Float(presenterVocabulary.numberOfVocab ?? 0)
+        progressPercent.trackColor = UIColor.colorGreen
+        progressPercent.maximumValue = Float(presenterVocabulary.vocabCount ?? 0)
         progressPercent.setProgress(Float(postionVocab), animated: true)
     }
     
@@ -63,77 +52,93 @@ class VocabularyViewController: UIViewController,UICollectionViewDelegate ,UICol
         self.navigationItem.title = "\(nameLesson)"
     }
     
+    func getKeyFromLesson(vocabCount:Int, idLesson:Int){
+        presenterVocabulary.keyFromLesson(vocabCount: vocabCount, idLesson: idLesson)
+    }
+    
     func setupUI(){
-        //register
-        collectionVocab.register(UINib(nibName: "VocabularyCell", bundle: nil), forCellWithReuseIdentifier: "VocabularyCell")
+        buttonPrev.BorderButton()
+        buttonNext.BorderButton()
+        //
+        collectionVocab.register(UINib(nibName: vocabularyCell, bundle: nil), forCellWithReuseIdentifier: vocabularyCell)
         collectionVocab.isPagingEnabled = true
         collectionVocab.showsHorizontalScrollIndicator = false
-        pageControl.numberOfPages = presenterVocabulary.numberOfVocab ?? 0
-        
-        [btnNext, btnPrev, pageControl].forEach {
-            view.addSubview($0) }
-        
-        btnNext.heightAnchor.constraint(equalToConstant: 48).isActive = true
-        btnNext.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -32).isActive = true
-        btnNext.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        
-        btnPrev.heightAnchor.constraint(equalToConstant: 48).isActive = true
-        btnPrev.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 32).isActive = true
-        btnPrev.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        
-//        pageControl.centerYAnchor.constraint(equalTo: btnNext.centerYAnchor).isActive = true
-//        pageControl.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        pageControl.numberOfPages = presenterVocabulary.vocabCount ?? 0
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let scrollPos = scrollView.contentOffset.x / view.frame.width
         pageControl.currentPage = Int(scrollPos)
-//        progressPercent.setProgress(Float(postionVocab + pageControl.currentPage), animated: true)
     }
     
+    @IBAction func previousButton(_ sender: UIButton) {
+        handleNextPage(button: buttonPrev)
+    }
+    
+    @IBAction func nextButton(_ sender: UIButton) {
+        handleNextPage(button: buttonNext)
+    }
+    
+    let postionVocab: Int = 1
+    
     @objc func handleNextPage(button: UIButton) {
-        
         var indexPath: IndexPath!
         var current = pageControl.currentPage
         
         if button.tag == 0 {
             current -= 1
-            progressPercent.setProgress(Float(postionVocab + current), animated: true)
+//            progressPercent.setProgress(Float(postionVocab + current), animated: true)
             if current < 0 {
                 current = 0
-
             }
         } else {
             current += 1
-            progressPercent.setProgress(Float(postionVocab + current), animated: true)
-            if current == presenterVocabulary.numberOfVocab {
-                current = (presenterVocabulary.numberOfVocab ?? 0) - 1
-
+            progressPercent.setProgress(Float(1 + current), animated: true)
+            if current == presenterVocabulary.vocabCount {
+                current = (presenterVocabulary.vocabCount ?? 0) - 1
             }
         }
         
         indexPath = IndexPath(item: current, section: 0)
         collectionVocab.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
     }
+
+}
+
+extension VocabularyViewController: DelegateVocabulary{
+    func getListVocab() {
+        collectionVocab.reloadData()
+    }
+}
+
+extension VocabularyViewController: UICollectionViewDelegate ,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return presenterVocabulary.numberOfVocab ?? 0
+        return presenterVocabulary.vocabCount ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "VocabularyCell", for: indexPath) as! VocabularyCell
-        
-        cell.setDataForVocabularyCell(imageCard: "https://c1.staticflickr.com/9/8112/8477434985_5f637b7d84_z.jpg", japanese: "たまご", vietnamese: "Quả Trứng", listenLink: "null")
-        
+        let indexP = indexPath.row
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: vocabularyCell, for: indexPath) as! VocabularyCell
+        cell.setDataForVocabularyCell(
+            imageCard: self.presenterVocabulary.vocabList?[indexPath.row].vocab_image,
+            japanese: self.presenterVocabulary.vocabList?[indexPath.row].vocab_jp,
+            kanji: self.presenterVocabulary.vocabList?[indexPath.row].vocab_kanji,
+            example: self.presenterVocabulary.vocabList?[indexPath.row].vocab_example,
+            vietnamVocab: self.presenterVocabulary.vocabList?[indexPath.row].vocab_vi,
+            audioLink: self.presenterVocabulary.vocabList?[indexPath.row].vocab_audio
+            )
+
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
+        let width = collectionView.frame.width
+        let height = collectionView.frame.height
+        return CGSize(width: width, height: height)
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
-    
 }

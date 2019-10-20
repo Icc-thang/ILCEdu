@@ -31,7 +31,7 @@ class PresenterRegister {
         self.ID = memberID
     }
     
-    let registerProvider = MoyaProvider<RegisterRequest>()
+    let registerProvider = MoyaProvider<APIRequest>()
     
     var registerModel : RegisterModel?
     

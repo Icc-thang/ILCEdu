@@ -14,18 +14,26 @@ class CardCell: UICollectionViewCell {
     
     @IBOutlet weak var japanLabel: UILabel!
     
+    @IBOutlet weak var kanjiLabel: UILabel!
     
-    func setDataForCardCell(imageUrl:String?, japanese:String?) {
-        frontImageView.sd_setImage(with: URL(string: imageUrl ?? "Không có đường dẫn cho card"))
+    @IBOutlet weak var exampleLabel: UILabel!
+    
+    func setDataForCardCell(imageUrl:String?, japanese:String?, kanji:String?, example:String?) {
+        
+        frontImageView.sd_setImage(with: URL(string: baseUrlMedia + (imageUrl ?? "")))
 
         frontImageView.CardView()
+    
+        japanLabel.text = japanese ?? ""
         
-        japanLabel.text = japanese ?? "Không có dữ liệu tiếng Nhật 🙇‍♂️"
+        kanjiLabel.text = kanji ?? ""
+        
+        exampleLabel.text = example ?? ""
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        japanLabel.textColor = UIColor.colorGreen
     }
     
     

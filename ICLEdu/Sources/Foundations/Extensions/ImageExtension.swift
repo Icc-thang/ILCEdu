@@ -11,8 +11,8 @@ import UIKit
 extension UIImageView{
     func CircleImage()  {
         self.layer.cornerRadius = self.frame.size.width / 2
-        self.layer.borderWidth = 1
-        self.layer.borderColor = UIColor.gray.cgColor
+//        self.layer.borderWidth = 1
+//        self.layer.borderColor = UIColor.gray.cgColor
         self.clipsToBounds = true
         
     }

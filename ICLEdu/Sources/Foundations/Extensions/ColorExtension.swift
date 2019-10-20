@@ -13,7 +13,7 @@ import UIKit
 extension UIColor{
     //static color
     
-    static let colorGreen = UIColor().colorFromHex("02B83E")
+    static let colorGreen = UIColor().colorFromHex("00C4A4")
     static let colorGray = UIColor().colorFromHex("8B8B8B")
     static let colorRed = UIColor().colorFromHex("D72031")
     static let colorBlue = UIColor().colorFromHex("4169E1")

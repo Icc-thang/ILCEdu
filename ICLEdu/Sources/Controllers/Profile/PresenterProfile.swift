@@ -21,7 +21,7 @@ class PresenterProfile {
         self.delegateProfile = delegate
     }
     
-    let profileProvider = MoyaProvider<ProfileRequest>()
+    let profileProvider = MoyaProvider<APIRequest>()
     
     var profileModel : ProfileModel?
     
@@ -39,7 +39,7 @@ class PresenterProfile {
                     self.delegateProfile?.getDataProfile()
                     print("profile data: \(dataJSON)")
                 }catch{
-                    print("error get Data")
+                    print("error get data Profile")
                 }
             case .failure(_):
                 print("Fail connect")

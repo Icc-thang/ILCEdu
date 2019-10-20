@@ -7,20 +7,29 @@
 //
 
 import UIKit
+import AVFoundation
 
 class VocabularyCell: UICollectionViewCell {
     
     @IBOutlet weak var cardCollection: UICollectionView!
     
-    var vietnameseVocabulary:String?
-    
     var isOpen:Bool = false
     
     var imageCardCell:String?
     
+    var kanjiVocab:String?
+    
+    var exampleVocab:String?
+    
     var japaneseCardCell:String?
     
-    @IBOutlet weak var vietnameseLabel: UILabel!
+    var vietnam:String?
+    
+    var audioLink:String?
+    
+    var player : AVPlayer?
+    
+    @IBOutlet weak var vietnamVocab: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,24 +37,38 @@ class VocabularyCell: UICollectionViewCell {
         cardCollection.dataSource = self
         //register
         cardCollection.register(UINib(nibName: "CardCell", bundle: nil), forCellWithReuseIdentifier: "CardCell")
+        vietnamVocab.isHidden = true
     }
     
-    @IBAction func listenJapanese(_ sender: Any) {
-        
-    }
-    
-    @IBAction func showVietnamese(_ sender: Any) {
-        vietnameseLabel.text = vietnameseVocabulary ?? "Không có dữ liệu tiếng Việt 🙇‍♂️"
-        vietnameseLabel.isHidden = false
-    }
-    
-    func setDataForVocabularyCell(imageCard:String?, japanese:String?, vietnamese:String?, listenLink:String?){
-        imageCardCell = imageCard ?? "không có dữ liệu hình ảnh 🙇‍♂️"
-        japaneseCardCell = japanese ?? "Không có dữ liệu tiếng Nhật 🙇‍♂️"
-        vietnameseVocabulary = vietnamese ?? "Không có dữ liệu tiếng Việt 🙇‍♂️"
+    func setDataForVocabularyCell(imageCard:String?, japanese:String?, kanji:String?, example:String?, vietnamVocab:String?, audioLink:String?){
+        self.imageCardCell = imageCard ?? ""
+        self.japaneseCardCell = japanese ?? ""
+        self.kanjiVocab = kanji ?? ""
+        self.exampleVocab = example ?? ""
+        self.vietnamVocab.text = vietnamVocab ?? ""
+        playerInit(baseUrlMedia+(audioLink ?? ""))
         cardCollection.reloadData()
     }
+    
+
+    
+    @IBAction func vietnameseShow(_ sender: Any) {
+        vietnamVocab.isHidden = false
+    }
+    
+    @IBAction func audioListen(_ sender: Any) {
+        player!.seek(to: CMTime.zero)
+        player!.play()
+    }
+    
+    func playerInit(_ linkAudio:String) {
+        let url = URL(string: linkAudio)
+        let playerItem:AVPlayerItem = AVPlayerItem(url: url!)
+        player = AVPlayer(playerItem: playerItem)
+    }
+    
 }
+
 extension VocabularyCell : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -54,7 +77,7 @@ extension VocabularyCell : UICollectionViewDelegate, UICollectionViewDataSource,
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cardCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCell", for: indexPath) as! CardCell
-        cardCell.setDataForCardCell(imageUrl: imageCardCell ?? "Không có dữ liệu hình ảnh 🙇‍♂️" , japanese: japaneseCardCell ?? "Không có dữ liệu tiếng Nhật 🙇‍♂️")
+        cardCell.setDataForCardCell(imageUrl: imageCardCell ?? "" , japanese: japaneseCardCell ?? "", kanji: kanjiVocab, example: exampleVocab)
         return cardCell
     }
     

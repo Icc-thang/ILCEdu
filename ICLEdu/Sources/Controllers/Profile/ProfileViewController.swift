@@ -8,48 +8,35 @@
 
 import UIKit
 import SDWebImage
-import FacebookLogin
 
-class ProfileViewController: UIViewController {
-    
+
+class ProfileViewController: UIViewController, DelegateProfile {
+  
     @IBOutlet weak var pictureImageView: UIImageView!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var genderLabel: UILabel!
     @IBOutlet weak var birthdayLabel: UILabel!
     @IBOutlet weak var phoneNumberLabel: UILabel!
     @IBOutlet weak var admissionLabel: UILabel!
-    @IBOutlet weak var logoutButton: UIButton!
+    
+    let presenterProfile = PresenterProfile()
     
     override func viewDidLoad(){
         super.viewDidLoad()
+        self.presenterProfile.delegateProfile = self
+        self.presenterProfile.getDataForProfile()
         setupUI()
         
     }
     func setupUI(){
-        logoutButton.BorderButton()
-        logoutButton.setTitleColor(UIColor.colorBlue, for: .normal)
         pictureImageView.CircleImage()
-        self.navigationItem.title = profileData?.name ?? ""
-        pictureImageView.sd_setImage(with: URL(string: profileData?.avatar ?? "" ))
-//        print(profileData?.name)
-        addressLabel.text = profileData?.address
-        genderLabel.text = profileData?.gender
-        birthdayLabel.text = profileData?.birthday
-        phoneNumberLabel.text = "\(profileData?.phone ?? 0)"
+        self.navigationItem.title = name
+        pictureImageView.sd_setImage(with: URL(string: avatar ?? ""))
     }
-    
-    @IBAction func logOut(_ sender: Any) {
-        UserDefaults.standard.set("", forKey: "authorization")
-        
-        let loginManager = LoginManager()
-        loginManager.logOut()
-        
-        let alertController = UIAlertController(
-            title: "Logout",
-            message: "Logged out.",
-            preferredStyle: .alert
-        )
-        present(alertController, animated: true, completion: nil)
-    }
-    
+    func getDataProfile() {
+          addressLabel.text = self.presenterProfile.profileModel?.address
+          genderLabel.text = self.presenterProfile.profileModel?.gender
+          birthdayLabel.text = self.presenterProfile.profileModel?.birthday
+          phoneNumberLabel.text = self.presenterProfile.profileModel?.phone
+      }
 }

@@ -20,15 +20,9 @@ let member_id = UserDefaults.standard.integer(forKey: "ID")
 // name
 let name = UserDefaults.standard.string(forKey: "name")
 
-// access Token
-let tokenDatabase = UserDefaults.standard.string(forKey: "authorization")
-
 // for Header ->
-let tokenHeader = "Bearer \(tokenDatabase ?? "")"
+let tokenHeader = "Bearer \(UserDefaults.standard.string(forKey: "authorization") ?? "")"
 
 // baseURL for image + audio
 let baseUrlMedia:String = "https://townwork.vn/"
-
-//profile Data
-var profileData:ProfileModel?
 

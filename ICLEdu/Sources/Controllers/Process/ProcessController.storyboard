@@ -13,8 +13,8 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7Wa-Fu-Zbx" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Tiến trình" image="ic_menu" id="pdO-eY-bcG"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="nRi-v4-isg">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nRi-v4-isg">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -29,7 +29,7 @@
         <!--Process View Controller-->
         <scene sceneID="gii-CW-vt2">
             <objects>
-                <tableViewController id="STK-6p-X9s" customClass="ProcessViewController" customModule="ICLEdu" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ProcessController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="STK-6p-X9s" customClass="ProcessViewController" customModule="ICLEdu" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="5Xw-X1-qVt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -15,9 +15,12 @@ class ProcessViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Tổng quan"
+      
         tableView.register(UINib(nibName: processCell, bundle: nil), forCellReuseIdentifier: processCell)
         tableView.register(UINib(nibName: noteCell, bundle: nil), forCellReuseIdentifier: noteCell)
+    }
+    func setTitle(title:String?){
+        self.navigationItem.title = title ?? ""
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 2
