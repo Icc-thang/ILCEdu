@@ -15,6 +15,7 @@ enum APIRequest{
     case getLessonData
     case getProfile
     case getVocab(lessonID:Int)
+    case lesson_vocab_position(lessonID : Int, vocab_position:Int)
 }
 
 extension APIRequest:TargetType{
@@ -35,6 +36,8 @@ extension APIRequest:TargetType{
             return "auth/user"
         case .getVocab(let lessonID):
             return "lesson/vocab/\(lessonID)"
+        case .lesson_vocab_position(let lessonID, _):
+            return "lesson/position/\(lessonID)"
         }
     }
     
@@ -43,6 +46,8 @@ extension APIRequest:TargetType{
         case .loginFB(_):
             return .post
         case .register(_):
+            return .post
+        case .lesson_vocab_position(_):
             return .post
         default:
             return .get
@@ -59,6 +64,8 @@ extension APIRequest:TargetType{
             return ["social_token" : tokenFB]
         case .register(let name, let email,let gender, let address, let birthday, let phone):
             return ["name": name,"email": email, "gender":gender, "address": address, "birthday": birthday, "phone": phone]
+        case .lesson_vocab_position(_, let vocab_position):
+            return ["lesson_vocab_position": vocab_position]
         default:
             return ["" : ""]
         }

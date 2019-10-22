@@ -19,7 +19,7 @@
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q9b-K8-I3k">
                         <rect key="frame" x="16" y="16" width="542" height="434"/>
-                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IWC-63-C8t" customClass="CardView" customModule="ICLEdu" customModuleProvider="target">
                         <rect key="frame" x="16" y="16" width="542" height="434"/>
@@ -50,7 +50,7 @@
                                                         <color key="value" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="trackColor">
-                                                        <color key="value" systemColor="systemTealColor" red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="value" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isCornersRounded" value="YES"/>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="maximumValue">
@@ -63,7 +63,7 @@
                                                         <real key="value" value="0.0"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="progress">
-                                                        <real key="value" value="9"/>
+                                                        <real key="value" value="8"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
@@ -82,13 +82,12 @@
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Q53-PS-ZGu">
                                 <rect key="frame" x="0.0" y="0.0" width="542" height="305"/>
-                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Q53-PS-ZGu" secondAttribute="height" multiplier="16:9" id="si1-O8-a9w"/>
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Q53-PS-ZGu" firstAttribute="centerX" secondItem="IWC-63-C8t" secondAttribute="centerX" id="Cdr-mt-Dc5"/>
                             <constraint firstAttribute="bottom" secondItem="hs0-yT-IVI" secondAttribute="bottom" constant="16" id="E5n-G2-NW4"/>
@@ -118,9 +117,9 @@
                 <outlet property="bgView" destination="Q9b-K8-I3k" id="LVX-H0-B5V"/>
                 <outlet property="lessonImageView" destination="Q53-PS-ZGu" id="40b-Ke-E4W"/>
                 <outlet property="lessonName" destination="4qS-50-ybf" id="upd-ul-Fc6"/>
-                <outlet property="lessonNumberVocab" destination="BbX-WP-dS4" id="UTr-gB-ylx"/>
                 <outlet property="lessonTitle" destination="TUQ-V6-Xjj" id="7uW-BC-MsI"/>
                 <outlet property="progress" destination="K73-q1-daa" id="plS-Xx-L0H"/>
+                <outlet property="progressLabel" destination="BbX-WP-dS4" id="FGU-b0-JGN"/>
             </connections>
             <point key="canvasLocation" x="544.92753623188412" y="320.08928571428572"/>
         </collectionViewCell>

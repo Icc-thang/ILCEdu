@@ -338,8 +338,8 @@
 		6C43C898233491B100230882 /* Foundations */ = {
 			isa = PBXGroup;
 			children = (
-				6C0DF44B23385E750056A094 /* Components */,
 				6C43C89A2334920400230882 /* Extensions */,
+				6C0DF44B23385E750056A094 /* Components */,
 			);
 			path = Foundations;
 			sourceTree = "<group>";

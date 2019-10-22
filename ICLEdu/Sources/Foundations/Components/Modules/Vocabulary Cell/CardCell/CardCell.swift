@@ -18,6 +18,8 @@ class CardCell: UICollectionViewCell {
     
     @IBOutlet weak var exampleLabel: UILabel!
     
+    @IBOutlet weak var view: UIView!
+    
     func setDataForCardCell(imageUrl:String?, japanese:String?, kanji:String?, example:String?) {
         
         frontImageView.sd_setImage(with: URL(string: baseUrlMedia + (imageUrl ?? "")))
@@ -36,12 +38,12 @@ class CardCell: UICollectionViewCell {
         japanLabel.textColor = UIColor.colorGreen
     }
     
-    
     func flip()  {
-        UIView.transition(from: frontImageView, to: japanLabel, duration: 0.3, options: [.transitionFlipFromLeft, .showHideTransitionViews] , completion: nil)
+        UIView.transition(from: frontImageView, to: view, duration: 0.3, options: [.transitionFlipFromLeft, .showHideTransitionViews] , completion: nil)
     }
     
     func flipBack(){
-        UIView.transition(from: japanLabel, to: frontImageView, duration: 0.3, options: [.transitionFlipFromLeft, .showHideTransitionViews] , completion: nil)
+        UIView.transition(from: view, to: frontImageView, duration: 0.3, options: [.transitionFlipFromLeft, .showHideTransitionViews] , completion: nil)
     }
+
 }

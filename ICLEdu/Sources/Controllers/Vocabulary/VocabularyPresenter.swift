@@ -17,18 +17,21 @@ protocol DelegateVocabulary:class {
 class PresenterVocabulary{
     weak var delegateVocabulary: DelegateVocabulary?
     
-    var positionOfVocab:Int?
-    
     convenience init(delegate : DelegateVocabulary){
         self.init()
         self.delegateVocabulary = delegate
     }
+    
+    var nameLesson: String?
     var vocabCount:Int?
     var idLesson:Int?
+    var positionVocab:Int?
     
-    func keyFromLesson(vocabCount:Int, idLesson:Int){
+    func keyFromLesson(nameLesson: String, vocabCount:Int, idLesson:Int, positionVocab:Int?){
+        self.nameLesson = nameLesson
         self.vocabCount = vocabCount
         self.idLesson = idLesson
+        self.positionVocab = positionVocab
     }
     
     let vocabProvider = MoyaProvider<APIRequest>()
@@ -47,10 +50,21 @@ class PresenterVocabulary{
                     print(dataJSON)
                     self.vocabList = dataJSON
                     self.delegateVocabulary?.getListVocab()
-
+                    
                 }catch{
-                    print("error get Data Lesson")
+                    print("Lỗi tải về danh sách từ vựng")
                 }
+            case .failure(let error):
+                print("Nội dung lỗi: \(error)")
+            }
+        }
+    }
+    
+    func postPosionVocab(vocab_position:Int){
+        vocabProvider.request(.lesson_vocab_position(lessonID: idLesson ?? 0, vocab_position: vocab_position)) {(result) in
+            switch result {
+            case .success(_):
+                print("Đẩy vị trí từ vựng hoàn tất")
             case .failure(let error):
                 print("Nội dung lỗi: \(error)")
             }

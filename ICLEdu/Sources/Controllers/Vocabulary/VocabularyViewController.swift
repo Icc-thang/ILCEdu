@@ -29,41 +29,41 @@ class VocabularyViewController: UIViewController{
         return pc
     }()
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        let positionVocab = pageControl.currentPage + 1
+        if positionVocab >= presenterVocabulary.positionVocab! {
+            self.presenterVocabulary.postPosionVocab(vocab_position: positionVocab )
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         presenterVocabulary.delegateVocabulary = self
         presenterVocabulary.getVocabList()
-        setupProgress()
         setupUI()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(true)
-        print("BACK")
-    }
-    
-    func setupProgress(){
-        progressPercent.trackColor = UIColor.colorGreen
-        progressPercent.maximumValue = Float(presenterVocabulary.vocabCount ?? 0)
-        progressPercent.setProgress(Float(postionVocab), animated: true)
-    }
-    
-    func getNameLesson(nameLesson: String){
-        self.navigationItem.title = "\(nameLesson)"
-    }
-    
-    func getKeyFromLesson(vocabCount:Int, idLesson:Int){
-        presenterVocabulary.keyFromLesson(vocabCount: vocabCount, idLesson: idLesson)
+    func getKeyFromLesson(nameLesson: String, vocabCount:Int, idLesson:Int, postionVocab:Int){
+        presenterVocabulary.keyFromLesson(nameLesson: nameLesson, vocabCount: vocabCount, idLesson: idLesson, positionVocab: postionVocab)
     }
     
     func setupUI(){
+        self.navigationItem.title = presenterVocabulary.nameLesson ?? ""
+        //
         buttonPrev.BorderButton()
         buttonNext.BorderButton()
+        // progressPercent
+        progressPercent.trackColor = UIColor.colorGreen
+        progressPercent.maximumValue = Float(presenterVocabulary.vocabCount ?? 0)
+        progressPercent.setProgress(Float(presenterVocabulary.positionVocab ?? 0), animated: true)
         //
         collectionVocab.register(UINib(nibName: vocabularyCell, bundle: nil), forCellWithReuseIdentifier: vocabularyCell)
         collectionVocab.isPagingEnabled = true
         collectionVocab.showsHorizontalScrollIndicator = false
         pageControl.numberOfPages = presenterVocabulary.vocabCount ?? 0
+        collectionVocab.layoutIfNeeded()
+        collectionVocab.scrollToItem(at: IndexPath(item: (presenterVocabulary.positionVocab ?? 0) - 1, section: 0), at: .centeredHorizontally, animated: true)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -79,7 +79,6 @@ class VocabularyViewController: UIViewController{
         handleNextPage(button: buttonNext)
     }
     
-    let postionVocab: Int = 1
     
     @objc func handleNextPage(button: UIButton) {
         var indexPath: IndexPath!
@@ -87,14 +86,20 @@ class VocabularyViewController: UIViewController{
         
         if button.tag == 0 {
             current -= 1
+            progressPercent.setProgress(Float(current + 1), animated: true)
+//            if current + 1 == presenterVocabulary.positionVocab ?? 0 {
+//                progressPercent.setProgress(Float(presenterVocabulary.positionVocab ?? 0), animated: true)
+//            }
 //            progressPercent.setProgress(Float(postionVocab + current), animated: true)
             if current < 0 {
+                progressPercent.setProgress(Float(1), animated: true)
                 current = 0
             }
         } else {
             current += 1
-            progressPercent.setProgress(Float(1 + current), animated: true)
+            progressPercent.setProgress(Float(current + 1), animated: true)
             if current == presenterVocabulary.vocabCount {
+                progressPercent.setProgress(Float(presenterVocabulary.vocabCount ?? 0), animated: true)
                 current = (presenterVocabulary.vocabCount ?? 0) - 1
             }
         }
@@ -102,7 +107,7 @@ class VocabularyViewController: UIViewController{
         indexPath = IndexPath(item: current, section: 0)
         collectionVocab.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
     }
-
+    
 }
 
 extension VocabularyViewController: DelegateVocabulary{
@@ -118,26 +123,25 @@ extension VocabularyViewController: UICollectionViewDelegate ,UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let indexP = indexPath.row
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: vocabularyCell, for: indexPath) as! VocabularyCell
+        
         cell.setDataForVocabularyCell(
             imageCard: self.presenterVocabulary.vocabList?[indexPath.row].vocab_image,
             japanese: self.presenterVocabulary.vocabList?[indexPath.row].vocab_jp,
             kanji: self.presenterVocabulary.vocabList?[indexPath.row].vocab_kanji,
             example: self.presenterVocabulary.vocabList?[indexPath.row].vocab_example,
             vietnamVocab: self.presenterVocabulary.vocabList?[indexPath.row].vocab_vi,
-            audioLink: self.presenterVocabulary.vocabList?[indexPath.row].vocab_audio
-            )
-
+            audioLink: self.presenterVocabulary.vocabList?[indexPath.row].vocab_audio)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = collectionView.frame.width
         let height = collectionView.frame.height
+        print(collectionView.frame.width)
         return CGSize(width: width, height: height)
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }

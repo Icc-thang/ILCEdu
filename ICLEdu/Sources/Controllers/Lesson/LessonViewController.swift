@@ -22,6 +22,11 @@ class LessonViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        presenterLesson.getDataForLesson()
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
@@ -32,7 +37,7 @@ class LessonViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenterLesson.delegateLesson = self
-        presenterLesson.getDataForLesson()
+        print(tokenHeader)
         collectionViewSetUp()
     }
     
@@ -57,22 +62,14 @@ extension LessonViewController: DelegateLesson {
 
 extension LessonViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
     
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        let roationTransform = CATransform3DTranslate(CATransform3DIdentity, 0, 10, 0)
-        cell.alpha = 0
-        cell.layer.transform = roationTransform
-        UIView.animate(withDuration: 0.75) {
-            cell.layer.transform = CATransform3DIdentity
-            cell.alpha = 1
-        }
-    }
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return presenterLesson.lesson?.n5?.count ?? 0
     }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: collectionView.frame.size.width, height: 100)
     }
+    
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if (kind == UICollectionView.elementKindSectionHeader) {
             
@@ -85,26 +82,50 @@ extension LessonViewController: UICollectionViewDataSource, UICollectionViewDele
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let lessonCell = collectionView.dequeueReusableCell(withReuseIdentifier: "LessonCell", for: indexPath) as! LessonCell
+        
+        var position:Int?
+        var finish:Int?
+        if presenterLesson.lesson?.n5?[indexPath.row].app_member_statistical?.isEmpty == true{
+            finish = 0
+            position = 0
+        }else{
+            finish = presenterLesson.lesson?.n5?[indexPath.row].app_member_statistical?[0].lesson_finish ?? 0
+            position = presenterLesson.lesson?.n5?[indexPath.row].app_member_statistical?[0].lesson_vocab_position ?? 0
+        }
+        
         lessonCell.parseDataLessonCell(
-            imgURL: presenterLesson.lesson?.n5?[indexPath.row].vocab_image,
-            name: presenterLesson.lesson?.n5?[indexPath.row].vocab_name,
-            title: presenterLesson.lesson?.n5?[indexPath.row].vocab_title,
-            numberOfVocab: presenterLesson.lesson?.n5?[indexPath.row].vocab_count)
+            imgURL: presenterLesson.lesson?.n5?[indexPath.row].image,
+            name: presenterLesson.lesson?.n5?[indexPath.row].name,
+            title: presenterLesson.lesson?.n5?[indexPath.row].title,
+            lesson_finish: finish,
+            numberOfVocab: presenterLesson.lesson?.n5?[indexPath.row].app_vocab_count ?? 0,
+            positionVocab: position)
+    
         return lessonCell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = (collectionView.frame.size.width - 16)
-//        let height = (collectionView.frame.size.height / 2)
+        //        let height = (collectionView.frame.size.height / 2)
         return CGSize.init(width: width , height: 360)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vocabularyVC = UIStoryboard.init(name: "VocabularyController", bundle: nil).instantiateViewController(withIdentifier: "VocabularyController") as? VocabularyViewController
-        vocabularyVC?.getNameLesson(nameLesson: presenterLesson.lesson?.n5?[indexPath.row].vocab_name ?? "")
-        vocabularyVC?.getKeyFromLesson(vocabCount: presenterLesson.lesson?.n5?[indexPath.row].vocab_count ?? 0, idLesson: presenterLesson.lesson?.n5?[indexPath.row].lesson_id ?? 0)
+        var position:Int?
+        if presenterLesson.lesson?.n5?[indexPath.row].app_member_statistical?.isEmpty == true{
+            position = 0
+        }else{
+            position = presenterLesson.lesson?.n5?[indexPath.row].app_member_statistical?[0].lesson_vocab_position ?? 0
+        }
+        
+        vocabularyVC?.getKeyFromLesson(
+            nameLesson: presenterLesson.lesson?.n5?[indexPath.row].name ?? "",
+            vocabCount: presenterLesson.lesson?.n5?[indexPath.row].app_vocab_count ?? 0,
+            idLesson: presenterLesson.lesson?.n5?[indexPath.row].id ?? 0,
+            postionVocab: position ?? 1)
+        
         vocabularyVC?.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vocabularyVC!, animated: true)
-        
     }
 }

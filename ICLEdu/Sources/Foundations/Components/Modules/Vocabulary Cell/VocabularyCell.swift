@@ -15,6 +15,8 @@ class VocabularyCell: UICollectionViewCell {
     
     var isOpen:Bool = false
     
+    var checkViClick:Bool = false
+    
     var imageCardCell:String?
     
     var kanjiVocab:String?
@@ -37,7 +39,12 @@ class VocabularyCell: UICollectionViewCell {
         cardCollection.dataSource = self
         //register
         cardCollection.register(UINib(nibName: "CardCell", bundle: nil), forCellWithReuseIdentifier: "CardCell")
-        vietnamVocab.isHidden = true
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.layoutIfNeeded()
+        self.vietnamVocab.isHidden = true
     }
     
     func setDataForVocabularyCell(imageCard:String?, japanese:String?, kanji:String?, example:String?, vietnamVocab:String?, audioLink:String?){
@@ -46,17 +53,26 @@ class VocabularyCell: UICollectionViewCell {
         self.kanjiVocab = kanji ?? ""
         self.exampleVocab = example ?? ""
         self.vietnamVocab.text = vietnamVocab ?? ""
-        playerInit(baseUrlMedia+(audioLink ?? ""))
+        playerInit(baseUrlMedia + (audioLink ?? ""))
         cardCollection.reloadData()
     }
     
-
-    
     @IBAction func vietnameseShow(_ sender: Any) {
-        vietnamVocab.isHidden = false
+        if checkViClick == false{
+            vietnamVocab.isHidden = false
+            checkViClick = true
+        }else{
+            vietnamVocab.isHidden = true
+            checkViClick = false
+        }
     }
     
     @IBAction func audioListen(_ sender: Any) {
+        do {
+           try AVAudioSession.sharedInstance().setCategory(.playback)
+        } catch(let error) {
+            print(error.localizedDescription)
+        }
         player!.seek(to: CMTime.zero)
         player!.play()
     }
@@ -92,8 +108,11 @@ extension VocabularyCell : UICollectionViewDelegate, UICollectionViewDataSource,
         }
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: cardCollection.frame.width, height: cardCollection.frame.width)
+        return CGSize(width: collectionView.frame.width , height: collectionView.frame.width )
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
     }
 }

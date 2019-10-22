@@ -40,6 +40,7 @@ class MenuViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 56
     }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
             let profileVC = UIStoryboard(name: "ProfileController", bundle: nil).instantiateViewController(withIdentifier: "ProfileController") as! ProfileViewController

@@ -11,7 +11,7 @@ import ObjectMapper
 
 struct Lesson:Mappable {
     
-    var n5 : [LessonModel]?
+    var n5 : [N5]?
 //    var n4 : [LessonModel]?
     
     init?(map: Map) {
@@ -25,25 +25,48 @@ struct Lesson:Mappable {
     }
 }
 
-struct LessonModel : Mappable {
-    var lesson_id : Int?
-    var vocab_name : String?
-    var vocab_image : String?
-    var vocab_title : String?
-    var vocab_level : String?
-    var vocab_count : Int?
-    
+struct N5 : Mappable {
+    var id : Int?
+    var name : String?
+    var image : String?
+    var title : String?
+    var level : String?
+    var app_vocab_count : Int?
+    var app_member_statistical : [App_member_statistical]?
+
     init?(map: Map) {
-        
+
     }
-    
+
     mutating func mapping(map: Map) {
-        lesson_id <- map["id"]
-        vocab_name <- map["name"]
-        vocab_image <- map["image"]
-        vocab_title <- map["title"]
-        vocab_level <- map["level"]
-        vocab_count <- map["app_vocab_count"]
+
+        id <- map["id"]
+        name <- map["name"]
+        image <- map["image"]
+        title <- map["title"]
+        level <- map["level"]
+        app_vocab_count <- map["app_vocab_count"]
+        app_member_statistical <- map["app_member_statistical"]
     }
-    
+
+}
+
+struct App_member_statistical : Mappable {
+    var member_id : Int?
+    var lesson_id : Int?
+    var lesson_vocab_position : Int?
+    var lesson_finish : Int?
+
+    init?(map: Map) {
+
+    }
+
+    mutating func mapping(map: Map) {
+
+        member_id <- map["member_id"]
+        lesson_id <- map["lesson_id"]
+        lesson_vocab_position <- map["lesson_vocab_position"]
+        lesson_finish <- map["lesson_finish"]
+    }
+
 }

@@ -39,7 +39,7 @@ class PresenterLesson {
                     self.delegateLesson?.getDataLesson()
                     print(dataJSON)
                 }catch{
-                    print("error get Data Lesson")
+                    print("Lỗi tải về danh sách bài học")
                 }
             case .failure(let error):
                 print("Nội dung lỗi: \(error)")
