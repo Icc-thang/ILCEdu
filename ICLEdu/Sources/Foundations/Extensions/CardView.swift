@@ -23,3 +23,9 @@ class CardView: UIView {
     }
     
 }
+
+extension UIView{
+    func FacebookButton(){
+        self.layer.cornerRadius = 5
+    }
+}

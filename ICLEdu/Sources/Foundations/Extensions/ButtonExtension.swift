@@ -18,14 +18,6 @@ extension UIButton{
         self.setTitleColor(UIColor.gray, for: .normal)
     }
     
-    func FacebookButton(){
-        self.layer.backgroundColor = UIColor.systemBlue.cgColor
-        self.layer.cornerRadius = 5
-        self.layer.borderWidth = 1
-        self.layer.borderColor = UIColor.systemBlue.cgColor
-        self.setTitleColor(UIColor.white, for: .normal)
-    }
-    
     func LoginButton(){
         self.layer.backgroundColor = UIColor.orange.cgColor
         self.layer.cornerRadius = 5

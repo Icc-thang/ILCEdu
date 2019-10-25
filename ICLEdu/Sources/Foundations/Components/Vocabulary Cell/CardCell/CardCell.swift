@@ -20,22 +20,23 @@ class CardCell: UICollectionViewCell {
     
     @IBOutlet weak var view: UIView!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        japanLabel.textColor = UIColor.colorGreen
+
+    }
+    
     func setDataForCardCell(imageUrl:String?, japanese:String?, kanji:String?, example:String?) {
         
         frontImageView.sd_setImage(with: URL(string: baseUrlMedia + (imageUrl ?? "")))
-
-        frontImageView.CardView()
-    
+        
+        frontImageView.CardImage()
+        
         japanLabel.text = japanese ?? ""
         
         kanjiLabel.text = kanji ?? ""
         
         exampleLabel.text = example ?? ""
-    }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        japanLabel.textColor = UIColor.colorGreen
     }
     
     func flip()  {
@@ -45,5 +46,5 @@ class CardCell: UICollectionViewCell {
     func flipBack(){
         UIView.transition(from: view, to: frontImageView, duration: 0.3, options: [.transitionFlipFromLeft, .showHideTransitionViews] , completion: nil)
     }
-
+    
 }

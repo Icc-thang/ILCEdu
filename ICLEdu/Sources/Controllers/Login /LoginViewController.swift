@@ -15,6 +15,7 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var loginFacebookButton: UIButton!
     
+    @IBOutlet weak var facebookView: UIView!
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -33,16 +34,15 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //        loginFacebookButton.FacebookButton()
         presenterLogin.delegateLogin = self
+        facebookView.FacebookButton()
     }
     
     @IBAction func loginFB(_ sender: Any) {
         let manager = LoginManager()
         manager.logIn(permissions: [ .publicProfile], viewController: self) { (result) in
             switch result {
-            case .success(_, _, _):
-                print("tokenFacebook : \(AccessToken.current?.tokenString ?? "")")
+            case .success(_):
                 self.presenterLogin.getDataForLogin(tokenFB: AccessToken.current?.tokenString ?? "")
                 let param = ["fields": "name, picture.type(large)"]
                 GraphRequest(graphPath: "me", parameters: param).start { (connection, result, error) in
@@ -66,8 +66,7 @@ class LoginViewController: UIViewController {
 }
 extension LoginViewController: LoginDelegate {
     func getDataLogin() {
-        UserDefaults.standard.set(self.presenterLogin.loginModel?.id ?? 0, forKey: "ID")
-        
+        UserDefaults.standard.set(presenterLogin.loginModel?.id ?? 0, forKey: "idMember")
         if self.presenterLogin.loginModel?.access_token == "" {
             let registerVC = UIStoryboard(name: "RegisterController", bundle: nil).instantiateViewController(withIdentifier: "RegisterController") as! RegisterViewController
             self.navigationController?.pushViewController(registerVC, animated: true)

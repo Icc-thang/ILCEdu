@@ -9,20 +9,19 @@
 import UIKit
 import SDWebImage
 
-let vocabularyCell = "VocabularyCell"
-let cardCell = "CardCell"
+fileprivate let vocabularyCell = "VocabularyCell"
+fileprivate let cardCell = "CardCell"
 class VocabularyViewController: UIViewController{
     
     @IBOutlet weak var buttonNext: UIButton!
     @IBOutlet weak var buttonPrev: UIButton!
-    
     @IBOutlet weak var collectionVocab: UICollectionView!
     
     @IBOutlet weak var progressPercent: LinearProgressView!
     
     private let presenterVocabulary = PresenterVocabulary()
     
-    let pageControl: UIPageControl = {
+    fileprivate let pageControl: UIPageControl = {
         let pc = UIPageControl()
         pc.currentPage = 0
         pc.translatesAutoresizingMaskIntoConstraints = false
@@ -36,7 +35,7 @@ class VocabularyViewController: UIViewController{
             self.presenterVocabulary.postPosionVocab(vocab_position: positionVocab )
         }
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         presenterVocabulary.delegateVocabulary = self
@@ -44,8 +43,8 @@ class VocabularyViewController: UIViewController{
         setupUI()
     }
     
-    func getKeyFromLesson(nameLesson: String, vocabCount:Int, idLesson:Int, postionVocab:Int){
-        presenterVocabulary.keyFromLesson(nameLesson: nameLesson, vocabCount: vocabCount, idLesson: idLesson, positionVocab: postionVocab)
+    func getKeyFromLesson(nameLesson: String, vocabCount:Int, idLesson:Int, postionVocab:Int, finish:Int){
+        presenterVocabulary.keyFromLesson(nameLesson: nameLesson, vocabCount: vocabCount, idLesson: idLesson, positionVocab: postionVocab, finish: finish)
     }
     
     func setupUI(){
@@ -55,15 +54,16 @@ class VocabularyViewController: UIViewController{
         buttonNext.BorderButton()
         // progressPercent
         progressPercent.trackColor = UIColor.colorGreen
-        progressPercent.maximumValue = Float(presenterVocabulary.vocabCount ?? 0)
-        progressPercent.setProgress(Float(presenterVocabulary.positionVocab ?? 0), animated: true)
+        progressPercent.maximumValue = Float(100)
+        progressPercent.setProgress(Float(presenterVocabulary.totalPercent ?? 0), animated: true)
+        //
+        pageControl.numberOfPages = presenterVocabulary.vocabCount ?? 0
         //
         collectionVocab.register(UINib(nibName: vocabularyCell, bundle: nil), forCellWithReuseIdentifier: vocabularyCell)
         collectionVocab.isPagingEnabled = true
         collectionVocab.showsHorizontalScrollIndicator = false
-        pageControl.numberOfPages = presenterVocabulary.vocabCount ?? 0
         collectionVocab.layoutIfNeeded()
-        collectionVocab.scrollToItem(at: IndexPath(item: (presenterVocabulary.positionVocab ?? 0) - 1, section: 0), at: .centeredHorizontally, animated: true)
+        collectionVocab.scrollToItem(at: IndexPath(item: (presenterVocabulary.positionVocab ?? 1) - 1, section: 0), at: .centeredHorizontally, animated: true)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -83,24 +83,22 @@ class VocabularyViewController: UIViewController{
     @objc func handleNextPage(button: UIButton) {
         var indexPath: IndexPath!
         var current = pageControl.currentPage
+        let vocabCount = presenterVocabulary.vocabCount ?? 0
+        let percentVocab = presenterVocabulary.percentOf1Vocab ?? 0
         
         if button.tag == 0 {
             current -= 1
-            progressPercent.setProgress(Float(current + 1), animated: true)
-//            if current + 1 == presenterVocabulary.positionVocab ?? 0 {
-//                progressPercent.setProgress(Float(presenterVocabulary.positionVocab ?? 0), animated: true)
-//            }
-//            progressPercent.setProgress(Float(postionVocab + current), animated: true)
             if current < 0 {
-                progressPercent.setProgress(Float(1), animated: true)
+                progressPercent.setProgress(Float(1 * Float(percentVocab)), animated: true)
                 current = 0
             }
+            progressPercent.setProgress(Float(Float(current + 1) * Float(percentVocab)), animated: true)
         } else {
             current += 1
-            progressPercent.setProgress(Float(current + 1), animated: true)
-            if current == presenterVocabulary.vocabCount {
-                progressPercent.setProgress(Float(presenterVocabulary.vocabCount ?? 0), animated: true)
-                current = (presenterVocabulary.vocabCount ?? 0) - 1
+            progressPercent.setProgress(Float(Float(current + 1) * Float(percentVocab)), animated: true)
+            if current == vocabCount {
+                progressPercent.setProgress(Float(100), animated: true)
+                current = vocabCount - 1
             }
         }
         
@@ -138,7 +136,6 @@ extension VocabularyViewController: UICollectionViewDelegate ,UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = collectionView.frame.width
         let height = collectionView.frame.height
-        print(collectionView.frame.width)
         return CGSize(width: width, height: height)
     }
     

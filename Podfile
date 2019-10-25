@@ -12,14 +12,14 @@ target 'ICLEdu' do
     # Pods for testing
   end
 
- pod 'FacebookCore'
- pod 'FacebookLogin'
- pod 'FacebookShare'
- pod 'AlamofireObjectMapper'
- pod 'SDWebImage/WebP'
- pod 'Moya'
- pod 'ListPlaceholder'
- pod 'LinearProgressView', '~> 2.0'
- pod 'SwiftyJSON', '~> 4.0'
- pod 'PieCharts'
+pod 'FacebookCore'
+pod 'FacebookLogin'
+pod 'FacebookShare'
+pod 'AlamofireObjectMapper'
+pod 'SDWebImage/WebP'
+pod 'LinearProgressView', '~> 2.0'
+pod 'SwiftyJSON', '~> 4.0'
+pod 'PieCharts'
+pod 'SkeletonView'
+pod 'Moya/RxSwift', '~> 13.0'
 end

@@ -7,22 +7,26 @@
 //
 
 import Foundation
+import Moya
+import SkeletonView
 
 // baseURLAPI
 let baseUrl:String = "https://townwork.vn/api/"
 
+// baseURL for image + audio
+let baseUrlMedia:String = "https://townwork.vn/"
+
+let avatarBase = "https://i.imgur.com/wNZd7oZ.png"
+
 // avatar
 let avatar = UserDefaults.standard.string(forKey: "avatar")
-
-//ID User
-let member_id = UserDefaults.standard.integer(forKey: "ID")
 
 // name
 let name = UserDefaults.standard.string(forKey: "name")
 
-// for Header ->
-let tokenHeader = "Bearer \(UserDefaults.standard.string(forKey: "authorization") ?? "")"
+//api provider
+let apiProvider = MoyaProvider<APIRequest>()
 
-// baseURL for image + audio
-let baseUrlMedia:String = "https://townwork.vn/"
-
+//
+let gradient = SkeletonGradient(baseColor: UIColor.colorGreen)
+let animation = SkeletonAnimationBuilder().makeSlidingAnimation(withDirection: .leftRight)

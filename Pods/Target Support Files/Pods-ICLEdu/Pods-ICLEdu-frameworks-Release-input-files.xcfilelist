@@ -8,11 +8,12 @@ ${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework
 ${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework
 ${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework
 ${BUILT_PRODUCTS_DIR}/LinearProgressView/LinearProgressView.framework
-${BUILT_PRODUCTS_DIR}/ListPlaceholder/ListPlaceholder.framework
 ${BUILT_PRODUCTS_DIR}/Moya/Moya.framework
 ${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework
 ${BUILT_PRODUCTS_DIR}/PieCharts/PieCharts.framework
 ${BUILT_PRODUCTS_DIR}/Result/Result.framework
+${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework
 ${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework
+${BUILT_PRODUCTS_DIR}/SkeletonView/SkeletonView.framework
 ${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework
 ${BUILT_PRODUCTS_DIR}/libwebp/libwebp.framework

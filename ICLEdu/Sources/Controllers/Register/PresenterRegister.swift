@@ -21,41 +21,19 @@ class PresenterRegister {
         self.delegateRegister = delegate
     }
     
-    var avatarURL: String?
-    var fullName: String?
-    var ID: Int?
-    
-    func setProfileFBData(avatar:String?, name:String?, memberID:Int?)  {
-        self.avatarURL = avatar
-        self.fullName = name
-        self.ID = memberID
-    }
-    
-    let registerProvider = MoyaProvider<APIRequest>()
-    
     var registerModel : RegisterModel?
     
-    func getDataForRegister(member_name: String, member_gender: String, member_email:String, member_address:String, member_birthday:String, member_phone:String){
-        registerProvider.request(.register(member_name: member_name, member_email: member_email, member_gender: member_gender, member_address: member_address, member_birthday: member_birthday, member_phone: member_phone)) { (result) in
-            switch result {
-            case .success(let response):
-                do{
-                    let json = try response.mapJSON()
-                    guard let dataJSON = Mapper<RegisterModel>().map(JSONObject: json)
-                        else{
-                            return
-                    }
-                    self.registerModel = dataJSON
-                    
-                    self.delegateRegister?.getDataRegister()
-                    print(dataJSON)
-                }catch{
-                    print("error get Data Register")
-                }
-            case .failure(_):
-                print("Fail connect")
-            }
+    func getDataForRegister(_ member_name: String,_ member_gender: String,_ member_email: String,
+                            _ member_address: String, _ member_birthday: String,_ member_phone: String){
+        
+        apiProvider.rx.request(.register(member_name, member_email, member_gender, member_address, member_birthday, member_phone))
+            .filterSuccessfulStatusCodes()
+            .mapJSON()
+            .subscribe(onSuccess: { json in
+                self.registerModel = Mapper<RegisterModel>().map(JSONObject: json)
+                self.delegateRegister?.getDataRegister()
+            }) { (err) in
+                print(err)
         }
     }
-
 }

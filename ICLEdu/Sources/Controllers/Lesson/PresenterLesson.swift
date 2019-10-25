@@ -22,29 +22,20 @@ class PresenterLesson {
         self.delegateLesson = delegate
     }
     
-    let lessonProvider = MoyaProvider<APIRequest>()
     var lesson: Lesson?
     
     func getDataForLesson(){
-        lessonProvider.request(.getLessonData) { (result) in
-            switch result {
-            case .success(let response):
-                do{
-                    let json = try response.mapJSON()
-                    guard let dataJSON = Mapper<Lesson>().map(JSONObject: json)
-                        else{
-                            return
-                    }
-                    self.lesson = dataJSON
-                    self.delegateLesson?.getDataLesson()
-                    print(dataJSON)
-                }catch{
-                    print("Lỗi tải về danh sách bài học")
-                }
-            case .failure(let error):
-                print("Nội dung lỗi: \(error)")
-            }
+        apiProvider.rx.request(.getLessonData)
+            .filterSuccessfulStatusCodes()
+            .mapJSON()
+            .do(onError: { error in
+                print(error)
+            })
+            .subscribe(onSuccess: { json in
+                self.lesson = Mapper<Lesson>().map(JSONObject: json)
+                self.delegateLesson?.getDataLesson()
+            }) { (error) in
+                print(error)
         }
     }
-    
 }

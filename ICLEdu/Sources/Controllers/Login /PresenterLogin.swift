@@ -21,29 +21,20 @@ class PresenterLogin{
         self.delegateLogin = delegate
     }
     
-    let loginProvider = MoyaProvider<APIRequest>()
+    let apiProvider = MoyaProvider<APIRequest>()
     
     var loginModel : LoginFBModel?
     
     func getDataForLogin(tokenFB : String?){
-        loginProvider.request(.loginFB(tokenFB: tokenFB ?? "")) { (result) in
-            switch result {
-            case .success(let response):
-                do{
-                    let json = try response.mapJSON()
-                    guard let dataJSON = Mapper<LoginFBModel>().map(JSONObject: json)
-                        else{
-                            return
-                    }
-                    self.loginModel = dataJSON
+        apiProvider.rx.request(.loginFB(tokenFB ?? ""))
+            .filterSuccessfulStatusCodes()
+            .mapJSON()
+            .subscribe(
+                onSuccess: { json in
+                    self.loginModel = Mapper<LoginFBModel>().map(JSONObject: json)
                     self.delegateLogin?.getDataLogin()
-                    print(dataJSON)
-                }catch{
-                    print("error get Data Login")
-                }
-            case .failure(let err):
-                print("Nội dung lỗi đăng nhập Facebook: \(err)")
-            }
+                    print("Log In:\(json)")
+            }) { (error) in print(error)
         }
     }
 }

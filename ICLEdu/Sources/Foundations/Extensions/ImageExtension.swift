@@ -7,14 +7,23 @@
 //
 
 import UIKit
-
+@IBDesignable
+class CircleAvatar: UIImageView {
+    
+    override func layoutSubviews() {
+        self.layer.cornerRadius = self.frame.size.width / 2
+        self.layer.borderWidth = 0.5
+        self.layer.borderColor = UIColor.gray.cgColor
+        self.clipsToBounds = true
+    }
+    
+}
 extension UIImageView{
     func CircleImage()  {
         self.layer.cornerRadius = self.frame.size.width / 2
-//        self.layer.borderWidth = 1
-//        self.layer.borderColor = UIColor.gray.cgColor
+        self.layer.borderWidth = 1
+        self.layer.borderColor = UIColor.gray.cgColor
         self.clipsToBounds = true
-        
     }
     
     func BorderImage()  {
@@ -27,7 +36,7 @@ extension UIImageView{
         self.layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: 20).cgPath
     }
     
-    func CardView(){
+    func CardImage(){
         self.layer.cornerRadius = 20.0
         self.clipsToBounds = true
     }

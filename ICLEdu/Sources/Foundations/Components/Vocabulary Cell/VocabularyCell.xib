@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,7 +21,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="422" height="593"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XC2-uI-ik6">
-                                <rect key="frame" x="16" y="422" width="390" height="65"/>
+                                <rect key="frame" x="16" y="414" width="390" height="65"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fgV-Al-9Yv">
                                         <rect key="frame" x="309" y="0.0" width="65" height="65"/>
@@ -56,19 +56,19 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IBy-d9-cSm">
-                                <rect key="frame" x="61" y="503" width="300" height="74"/>
+                                <rect key="frame" x="36" y="487" width="350" height="98"/>
                                 <subviews>
-                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7BM-d0-ycu">
-                                        <rect key="frame" x="0.0" y="26" width="300" height="22"/>
-                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="19"/>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7BM-d0-ycu">
+                                        <rect key="frame" x="0.0" y="34" width="350" height="30"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="Zkw-Hb-ntz"/>
                                     <constraint firstItem="7BM-d0-ycu" firstAttribute="width" secondItem="IBy-d9-cSm" secondAttribute="width" id="jOR-qE-icm"/>
+                                    <constraint firstAttribute="width" constant="350" id="oOG-eV-7xr"/>
                                     <constraint firstItem="7BM-d0-ycu" firstAttribute="centerX" secondItem="IBy-d9-cSm" secondAttribute="centerX" id="u23-wC-Zjh"/>
                                     <constraint firstItem="7BM-d0-ycu" firstAttribute="centerY" secondItem="IBy-d9-cSm" secondAttribute="centerY" id="xIG-OW-cn2"/>
                                 </constraints>
@@ -90,16 +90,16 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="XC2-uI-ik6" firstAttribute="top" secondItem="kbx-uC-ha3" secondAttribute="bottom" constant="16" id="04j-Fd-c3b"/>
+                            <constraint firstItem="XC2-uI-ik6" firstAttribute="top" secondItem="kbx-uC-ha3" secondAttribute="bottom" constant="8" id="04j-Fd-c3b"/>
                             <constraint firstAttribute="trailing" secondItem="XC2-uI-ik6" secondAttribute="trailing" constant="16" id="2sh-b4-2eL"/>
                             <constraint firstAttribute="trailing" secondItem="kbx-uC-ha3" secondAttribute="trailing" constant="16" id="EGG-gI-l9r"/>
                             <constraint firstItem="IBy-d9-cSm" firstAttribute="centerX" secondItem="XC2-uI-ik6" secondAttribute="centerX" id="LGd-UE-UO2"/>
                             <constraint firstItem="kbx-uC-ha3" firstAttribute="top" secondItem="vjr-C6-vyn" secondAttribute="top" constant="16" id="WtH-eM-vo2"/>
-                            <constraint firstAttribute="bottom" secondItem="IBy-d9-cSm" secondAttribute="bottom" constant="16" id="YCm-gt-Pxa"/>
+                            <constraint firstAttribute="bottom" secondItem="IBy-d9-cSm" secondAttribute="bottom" constant="8" id="YCm-gt-Pxa"/>
                             <constraint firstItem="XC2-uI-ik6" firstAttribute="leading" secondItem="vjr-C6-vyn" secondAttribute="leading" constant="16" id="a51-qh-tyf"/>
                             <constraint firstItem="kbx-uC-ha3" firstAttribute="leading" secondItem="vjr-C6-vyn" secondAttribute="leading" constant="16" id="pKW-os-bGn"/>
                             <constraint firstItem="kbx-uC-ha3" firstAttribute="centerX" secondItem="vjr-C6-vyn" secondAttribute="centerX" id="rx0-tr-Exk"/>
-                            <constraint firstItem="IBy-d9-cSm" firstAttribute="top" secondItem="XC2-uI-ik6" secondAttribute="bottom" constant="16" id="y0p-Ip-IcB"/>
+                            <constraint firstItem="IBy-d9-cSm" firstAttribute="top" secondItem="XC2-uI-ik6" secondAttribute="bottom" constant="8" id="y0p-Ip-IcB"/>
                         </constraints>
                     </view>
                 </subviews>

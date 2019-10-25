@@ -8,6 +8,7 @@
 
 import UIKit
 import SDWebImage
+
 class NavCell: UICollectionViewCell {
 
     @IBOutlet weak var timeLabel: UILabel!
@@ -16,12 +17,10 @@ class NavCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        userImageView.CircleImage()
         getDateTime()
     }
     
     func getDateTime(){
-     
         let date = Date()
         let format = DateFormatter()
         format.dateFormat = "dd/MM/yyy"
@@ -45,7 +44,7 @@ class NavCell: UICollectionViewCell {
     }
     func parseDataForNav(userName:String?, userImageUrl:String?){
         userNameLabel.text = "こんにちは, \(userName ?? "")"
-        userImageView?.sd_setImage(with: URL(string:"\(userImageUrl ?? "Không có dữ liệu cho ảnh đại diện")"))
+        userImageView?.sd_setImage(with: URL(string:"\(userImageUrl ?? "https://i.imgur.com/wNZd7oZ.png")"))
         
     }
 }

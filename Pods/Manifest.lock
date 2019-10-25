@@ -37,19 +37,21 @@ PODS:
     - libwebp/demux
   - libwebp/webp (1.0.3)
   - LinearProgressView (2.0.1)
-  - ListPlaceholder (1.4)
-  - Moya (13.0.1):
-    - Moya/Core (= 13.0.1)
   - Moya/Core (13.0.1):
     - Alamofire (~> 4.1)
     - Result (~> 4.1)
+  - Moya/RxSwift (13.0.1):
+    - Moya/Core
+    - RxSwift (~> 4.0)
   - ObjectMapper (3.5.1)
   - PieCharts (0.0.7)
   - Result (4.1.0)
+  - RxSwift (4.5.0)
   - SDWebImage/Core (4.4.7)
   - SDWebImage/WebP (4.4.7):
     - libwebp (< 2.0, >= 0.5)
     - SDWebImage/Core
+  - SkeletonView (1.8.2)
   - SwiftyJSON (4.3.0)
 
 DEPENDENCIES:
@@ -58,10 +60,10 @@ DEPENDENCIES:
   - FacebookLogin
   - FacebookShare
   - LinearProgressView (~> 2.0)
-  - ListPlaceholder
-  - Moya
+  - Moya/RxSwift (~> 13.0)
   - PieCharts
   - SDWebImage/WebP
+  - SkeletonView
   - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
@@ -76,12 +78,13 @@ SPEC REPOS:
     - FBSDKShareKit
     - libwebp
     - LinearProgressView
-    - ListPlaceholder
     - Moya
     - ObjectMapper
     - PieCharts
     - Result
+    - RxSwift
     - SDWebImage
+    - SkeletonView
     - SwiftyJSON
 
 SPEC CHECKSUMS:
@@ -95,14 +98,15 @@ SPEC CHECKSUMS:
   FBSDKShareKit: 0d8c4cfd5c1f185d5f9c26d79758b141086e1251
   libwebp: 057912d6d0abfb6357d8bb05c0ea470301f5d61e
   LinearProgressView: 353d4d45dc599b83cc4b43f14e6c0336aa6f3834
-  ListPlaceholder: 08ddaddf67520a20fc52cf37160fb56aa64d071d
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   ObjectMapper: 70187b8941977c62ccfb423caf6b50be405cabf0
   PieCharts: 30e50dfa7dc19e5b84e9878d32089673ef5d0453
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
+  RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
   SDWebImage: c10d14a8883ebd89664f02a422006f66a85c0c5d
+  SkeletonView: bb27c39857e5492136f02ee8a3aa78de55d12ecd
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: f5ee8711e5ba84f738b6544f3ac091fd9ad4a26d
+PODFILE CHECKSUM: d58156e2d147a033cfd7e11eabf418ce29c2764b
 
 COCOAPODS: 1.8.1

@@ -9,18 +9,53 @@
 import UIKit
 import FacebookLogin
 
-let menuCell = "MenuCell"
+fileprivate let menuCell = "MenuCell"
 class MenuViewController: UITableViewController {
-    let image = [avatar, "ic_chart", "ic_logout"]
-    let menuTitle = ["個人ページ", "分析", "ログアウト"]
+    
+    fileprivate let image = [avatar, "ic_logout"]
+    fileprivate let menuTitle = ["個人ページ", "ログアウト"]
+    
+    let presenterMenu = PresenterMenu()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // Hide the Navigation Bar
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        // Show the Navigation Bar
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.presenterMenu.getDataForProfile()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(tokenHeader)
+        self.presenterMenu.delegateMenu = self as? DelegateMenu
+        
         let menuNib = UINib(nibName: menuCell, bundle: nil)
         tableView.register(menuNib, forCellReuseIdentifier: menuCell)
     }
     
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 18))
+        let label = UILabel(frame: CGRect(x: 20, y: 20, width: tableView.frame.size.width, height: 50))
+        label.font = UIFont.boldSystemFont(ofSize: 25)
+        label.text = "MENU"
+        label.textColor = UIColor.black
+        view.addSubview(label)
+        
+        return view
+    }
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 70
+    }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return menuTitle.count
     }
@@ -28,7 +63,7 @@ class MenuViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0{
             let cell = tableView.dequeueReusableCell(withIdentifier: menuCell, for: indexPath) as! MenuCell
-            cell.setDataForMenu(menuSource: image[indexPath.row]!, title: menuTitle[indexPath.row])
+            cell.setDataForMenu(menuSource: image[indexPath.row], title: menuTitle[indexPath.row])
             return cell
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: menuCell, for: indexPath) as! MenuCell
@@ -45,26 +80,14 @@ class MenuViewController: UITableViewController {
         if indexPath.row == 0 {
             let profileVC = UIStoryboard(name: "ProfileController", bundle: nil).instantiateViewController(withIdentifier: "ProfileController") as! ProfileViewController
             profileVC.hidesBottomBarWhenPushed = true
+            profileVC.getDataProfile(profileData: presenterMenu.profileModel)
             self.navigationController?.pushViewController(profileVC, animated: true)
         }
         if indexPath.row == 1 {
-            let processVC = UIStoryboard(name: "ProcessController", bundle: nil).instantiateViewController(withIdentifier: "ProcessController") as! ProcessViewController
-            processVC.setTitle(title: menuTitle[indexPath.row])
-            processVC.hidesBottomBarWhenPushed = true
-            self.navigationController?.pushViewController(processVC, animated: true)
-        }
-        if indexPath.row == 2 {
             UserDefaults.standard.removeObject(forKey: "authorization")
             
             let loginManager = LoginManager()
             loginManager.logOut()
-            
-            let alertController = UIAlertController(
-                title: "ログアウト",
-                message: "終わります。",
-                preferredStyle: .alert
-            )
-            present(alertController, animated: true, completion: nil)
             
             let rootVC = UIStoryboard(name: "LoginController", bundle: nil).instantiateViewController(withIdentifier: "LoginController") as! LoginViewController
             let navVC = UINavigationController.init(rootViewController: rootVC)

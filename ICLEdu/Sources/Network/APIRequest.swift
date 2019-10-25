@@ -10,12 +10,12 @@ import Foundation
 import Moya
 
 enum APIRequest{
-    case loginFB(tokenFB: String)
-    case register(member_name: String, member_email:String, member_gender: String, member_address:String, member_birthday:String, member_phone:String)
+    case loginFB(_ tokenFB: String)
+    case register(_ member_name: String, _ member_email:String,_ member_gender: String,_ member_address:String, _ member_birthday:String,_ member_phone:String)
     case getLessonData
     case getProfile
-    case getVocab(lessonID:Int)
-    case lesson_vocab_position(lessonID : Int, vocab_position:Int)
+    case getVocab(_ lessonID:Int)
+    case lesson_vocab_position(_ lessonID : Int, _ vocab_position:Int)
 }
 
 extension APIRequest:TargetType{
@@ -29,7 +29,7 @@ extension APIRequest:TargetType{
         case .loginFB(_):
             return "auth/login/facebook"
         case .register(_):
-            return "auth/register/\(member_id)"
+            return "auth/register/\(UserDefaults.standard.integer(forKey: "idMember"))"
         case .getLessonData:
             return "lesson"
         case .getProfile:
@@ -86,7 +86,7 @@ extension APIRequest:TargetType{
         case .register(_):
             return ["X-Requested-With":"XMLHttpRequest"]
         default:
-            return ["Authorization": tokenHeader ]
+            return ["Authorization": "Bearer \(UserDefaults.standard.string(forKey: "authorization") ?? "")"]
         }
     }
 }

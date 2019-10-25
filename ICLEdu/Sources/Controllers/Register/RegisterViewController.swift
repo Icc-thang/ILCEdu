@@ -8,9 +8,6 @@
 
 import UIKit
 import SDWebImage
-import FacebookCore
-import FacebookLogin
-import SwiftyJSON
 
 class RegisterViewController: UIViewController, UIActionSheetDelegate {
     
@@ -30,28 +27,24 @@ class RegisterViewController: UIViewController, UIActionSheetDelegate {
     
     @IBOutlet weak var emailTextField: UITextField!
     
-    @IBOutlet weak var dotComTextField: UITextField!
-    
-    var gender:String? = "Nữ"
-    
-    var datePicker : UIDatePicker?
-    
     @IBOutlet weak var segmentGender: UISegmentedControl!
     
-    private let presenterRegister = PresenterRegister()
+    fileprivate let presenterRegister = PresenterRegister()
     
-    var numberContentSub:String?
+    fileprivate var numberContentSub:String?
+    
+    fileprivate var gender:String? = "Nữ"
+    
+    fileprivate var datePicker : UIDatePicker?
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         // Hide the Navigation Bar
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
         // Show the Navigation Bar
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
@@ -63,7 +56,7 @@ class RegisterViewController: UIViewController, UIActionSheetDelegate {
     }
     
     func setupUI(){
-        profilePicture.sd_setImage(with: URL(string:avatar!))
+        profilePicture.sd_setImage(with: URL(string:avatar ?? avatarBase))
         profilePicture.CircleImage()
         
         saveButton.LoginButton()
@@ -78,9 +71,7 @@ class RegisterViewController: UIViewController, UIActionSheetDelegate {
         datePicker?.datePickerMode = .date
         dateOfBirthDay.inputView = datePicker
         datePicker?.addTarget(self, action: #selector(dateChange(datePicker: )), for: .valueChanged)
-        
     }
-    
     
     @objc func dateChange(datePicker: UIDatePicker ) {
         let dateFormat = DateFormatter()
@@ -104,55 +95,59 @@ class RegisterViewController: UIViewController, UIActionSheetDelegate {
     }
     
     @IBAction func saveProfile(_ sender: UIButton) {
-        
-        if fullNameTextField.text == "" {
-            fullNameTextField.placeholder = "Nhập họ và tên!"
+
+        let emailString = emailTextField.text ?? ""
+        if isValidEmail(emailStr: emailString) == true {
+            print("Email đúng định dạng")
+        }else {
+            self.noticeTop("メールの形式が正しくありません。")
         }
-        if addressTextField.text == "" {
-            addressTextField.placeholder = "Nhập địa chỉ!"
+        let nameString = fullNameTextField.text ?? ""
+        let genderString = gender ?? ""
+        let addressString = addressTextField.text ?? ""
+        let dateString = dateOfBirthDay.text ?? ""
+        let phoneString = phoneNumberTextField.text!.prefix(10)
+        
+        if phoneString.count < 10 {
+            self.noticeTop("電話番号の形式が間違っています。")
+        }
+        if fullNameTextField.text == "" {
+            self.noticeTop("名前がありません。")
+        }
+        if  addressTextField.text == "" {
+            self.noticeTop("生年月日がありません。")
         }
         if dateOfBirthDay.text == "" {
-            dateOfBirthDay.placeholder = "Nhập ngày sinh!"
+            self.noticeTop("生年月日がありません。")
         }
         if phoneNumberTextField.text == "" {
-            phoneNumberTextField.placeholder = "Nhập số điện thoại!"
+            self.noticeTop("電話番号がありません。")
         }
         if emailTextField.text == "" {
-            emailTextField.placeholder = "Nhập email!"
+            self.noticeTop("メールがありません。")
         }
         
-        if dotComTextField.text == "" {
-            dotComTextField.placeholder = "***.com"
+        let slice = phoneString.prefix(2)
+        if slice == "09" || slice == "08" || slice == "07" || slice == "05" || slice == "03" {
+            print("ngon")
+        }else {
+            self.noticeTop("電話番号の形式が間違っています。")
         }
         
-        let string = phoneNumberTextField.text!.prefix(10)
-        let slice = string.prefix(2)
-        
-        if string.count < 10 {
-            phoneNumberTextField.text = ""
-            phoneNumberTextField.placeholder = "số điện thoại không hợp lệ"}
-        if slice == "09" || slice == "08" || slice == "07" || slice == "05" || slice == "03"{
-            if fullNameTextField?.text != "" && addressTextField?.text != "" && dateOfBirthDay?.text != "" && emailTextField.text != "" {
-                
-                //
-                print("email : \(emailTextField.text ?? "")@\(dotComTextField.text ?? "")")
-                print("name: \(fullNameTextField.text!)")
-                print("gender: \(gender ?? "")")
-                print("address: \(addressTextField.text!)")
-                print("birth day: \(dateOfBirthDay.text!)")
-                print("phone number: \(phoneNumberTextField!.text!)")
-                print("memberID: \(member_id)")
-                
-                presenterRegister.getDataForRegister(
-                    member_name: fullNameTextField.text!,
-                    member_gender: gender ?? "",
-                    member_email: "\(emailTextField.text ?? "")@\(dotComTextField.text ?? "")",
-                    member_address: addressTextField?.text ?? "",
-                    member_birthday: dateOfBirthDay.text ?? "",
-                    member_phone: phoneNumberTextField?.text ?? "0")
-            }
-        }
-        
+        presenterRegister.getDataForRegister(
+            nameString,
+            genderString,
+            emailString,
+            addressString,
+            dateString,
+            String(phoneString))
+    }
+    
+     func isValidEmail(emailStr:String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+
+        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailPred.evaluate(with: emailStr)
     }
     
     @IBAction func phoneNumberChange(_ sender: UITextField) {
@@ -163,12 +158,12 @@ class RegisterViewController: UIViewController, UIActionSheetDelegate {
 
 extension RegisterViewController: DelegateRegister{
     func getDataRegister() {
-        UserDefaults.standard.set(self.presenterRegister.registerModel?.access_token ?? "", forKey: "authorization")
-        if UserDefaults.standard.string(forKey: "authorization") != nil{
+        if presenterRegister.registerModel?.access_token == "" || presenterRegister.registerModel?.access_token == nil {
+            print("tạch")
+        }else {
+            UserDefaults.standard.set(self.presenterRegister.registerModel?.access_token ?? "", forKey: "authorization")
             let tabbarVC = UIStoryboard(name: "TabbarController", bundle: nil).instantiateViewController(withIdentifier: "TabbarController") as! BubbleTabBarController
             self.navigationController?.pushViewController(tabbarVC, animated: true)
-        }else{
-            print("Error register")
         }
     }
 }
