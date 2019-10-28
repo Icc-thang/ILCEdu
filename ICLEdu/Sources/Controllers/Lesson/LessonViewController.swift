@@ -131,20 +131,23 @@ extension LessonViewController: UICollectionViewDataSource, UICollectionViewDele
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vocabularyVC = UIStoryboard.init(name: vocabularyController, bundle: nil).instantiateViewController(withIdentifier: vocabularyController) as? VocabularyViewController
-
+        
         var position:Int?
+        var finish:Int?
         if presenterLesson.lesson?.n5?[indexPath.row].app_member_statistical?.isEmpty == true{
+            finish = 0
             position = 0
         }else{
+            finish = presenterLesson.lesson?.n5?[indexPath.row].app_member_statistical?[0].lesson_finish ?? 0
             position = presenterLesson.lesson?.n5?[indexPath.row].app_member_statistical?[0].lesson_vocab_position ?? 0
         }
-     
+        
         vocabularyVC?.getKeyFromLesson(
             nameLesson: presenterLesson.lesson?.n5?[indexPath.row].name ?? "",
             vocabCount: presenterLesson.lesson?.n5?[indexPath.row].app_vocab_count ?? 0,
             idLesson: presenterLesson.lesson?.n5?[indexPath.row].id ?? 0,
-            postionVocab: position ?? 1,
-            finish: presenterLesson.lesson?.n5?[indexPath.row].app_member_statistical?[0].lesson_finish ?? 0 )
+            postionVocab: position ?? 0,
+            finish: finish ?? 0 )
         
         vocabularyVC?.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vocabularyVC!, animated: true)
