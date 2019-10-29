@@ -94,7 +94,8 @@ extension LessonViewController: UICollectionViewDataSource, UICollectionViewDele
         if (kind == UICollectionView.elementKindSectionHeader) {
             
             let navigationCell = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: navCell, for: indexPath) as! NavCell
-            navigationCell.parseDataForNav(userName: name, userImageUrl: avatar)
+            navigationCell.parseDataForNav(userName: UserDefaults.standard.string(forKey: "name"),
+                                           userImageUrl: UserDefaults.standard.string(forKey: "avatar"))
             return navigationCell
         }
         fatalError()

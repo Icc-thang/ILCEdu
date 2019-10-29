@@ -44,7 +44,7 @@ class NavCell: UICollectionViewCell {
     }
     func parseDataForNav(userName:String?, userImageUrl:String?){
         userNameLabel.text = "こんにちは, \(userName ?? "")"
-        userImageView?.sd_setImage(with: URL(string:"\(userImageUrl ?? "https://i.imgur.com/wNZd7oZ.png")"))
+        userImageView?.sd_setImage(with: URL(string:"\(userImageUrl ?? "https://i.imgur.com/G0rDRbY.png")"))
         
     }
 }
