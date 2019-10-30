@@ -9,12 +9,8 @@
 import UIKit
 import FacebookLogin
 
-fileprivate let menuCell = "MenuCell"
 class MenuViewController: UITableViewController {
-    
-    fileprivate let image = [avatar, "ic_logout"]
-    fileprivate let menuTitle = ["個人ページ", "ログアウト"]
-    
+        
     let presenterMenu = PresenterMenu()
     
     override func viewWillAppear(_ animated: Bool) {
@@ -47,7 +43,7 @@ class MenuViewController: UITableViewController {
         let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 18))
         let label = UILabel(frame: CGRect(x: 20, y: 20, width: tableView.frame.size.width, height: 50))
         label.font = UIFont.boldSystemFont(ofSize: 25)
-        label.text = "MENU"
+        label.text = menu
         label.textColor = UIColor.black
         view.addSubview(label)
         
@@ -57,18 +53,18 @@ class MenuViewController: UITableViewController {
         return 70
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return menuTitle.count
+        return titleMenu.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0{
             let cell = tableView.dequeueReusableCell(withIdentifier: menuCell, for: indexPath) as! MenuCell
-            cell.setDataForMenu(menuSource: image[indexPath.row], title: menuTitle[indexPath.row])
+            cell.setDataForMenu(menuSource: imageMenu[indexPath.row], title: titleMenu[indexPath.row])
             return cell
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: menuCell, for: indexPath) as! MenuCell
-        cell.setDataForMenu(menuSource: image[indexPath.row]!, title: menuTitle[indexPath.row])
-        cell.setImageWithAccess(menuSource: image[indexPath.row]!, title: menuTitle[indexPath.row])
+        cell.setDataForMenu(menuSource: imageMenu[indexPath.row]!, title: titleMenu[indexPath.row])
+        cell.setImageWithAccess(menuSource: imageMenu[indexPath.row]!, title: titleMenu[indexPath.row])
         return cell
     }
     

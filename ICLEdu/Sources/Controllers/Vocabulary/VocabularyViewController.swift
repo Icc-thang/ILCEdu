@@ -9,8 +9,6 @@
 import UIKit
 import SDWebImage
 
-fileprivate let vocabularyCell = "VocabularyCell"
-fileprivate let cardCell = "CardCell"
 class VocabularyViewController: UIViewController{
     
     @IBOutlet weak var buttonNext: UIButton!

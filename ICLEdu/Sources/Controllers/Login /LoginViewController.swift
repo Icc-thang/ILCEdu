@@ -47,6 +47,7 @@ class LoginViewController: UIViewController {
                 let param = ["fields": "name, picture.type(large)"]
                 GraphRequest(graphPath: "me", parameters: param).start { (connection, result, error) in
                     if let result = result {
+                        self.showSpinner(onView: self.view)
                         let dict = JSON(result)
                         let name = dict["name"].stringValue
                         let avatar = dict["picture"]["data"]["url"].stringValue
@@ -69,12 +70,39 @@ extension LoginViewController: LoginDelegate {
         UserDefaults.standard.set(presenterLogin.loginModel?.id ?? 0, forKey: "idMember")
         if self.presenterLogin.loginModel?.access_token == "" {
             let registerVC = UIStoryboard(name: "RegisterController", bundle: nil).instantiateViewController(withIdentifier: "RegisterController") as! RegisterViewController
+            self.removeSpinner()
             self.navigationController?.pushViewController(registerVC, animated: true)
             
         }else{
             UserDefaults.standard.set(self.presenterLogin.loginModel?.access_token ?? "", forKey: "authorization")
             let tabbarVC = UIStoryboard(name: "TabbarController", bundle: nil).instantiateViewController(withIdentifier: "TabbarController") as! BubbleTabBarController
+            self.removeSpinner()
             self.navigationController?.pushViewController(tabbarVC, animated: true)
+        }
+    }
+}
+var vSpinner : UIView?
+ 
+extension UIViewController {
+    func showSpinner(onView : UIView) {
+        let spinnerView = UIView.init(frame: onView.bounds)
+        spinnerView.backgroundColor = UIColor.init(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.5)
+        let ai = UIActivityIndicatorView.init(style: .whiteLarge)
+        ai.startAnimating()
+        ai.center = spinnerView.center
+        
+        DispatchQueue.main.async {
+            spinnerView.addSubview(ai)
+            onView.addSubview(spinnerView)
+        }
+        
+        vSpinner = spinnerView
+    }
+    
+    func removeSpinner() {
+        DispatchQueue.main.async {
+            vSpinner?.removeFromSuperview()
+            vSpinner = nil
         }
     }
 }

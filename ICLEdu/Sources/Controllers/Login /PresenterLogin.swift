@@ -34,7 +34,12 @@ class PresenterLogin{
                     self.loginModel = Mapper<LoginFBModel>().map(JSONObject: json)
                     self.delegateLogin?.getDataLogin()
                     print("Log In:\(json)")
-            }) { (error) in print(error)
+            }) { (error) in
+                print(error)
+                
+                let alertError = UIAlertView(title: "Something wrong!", message: "Unable to connect to the server", delegate: self as? UIAlertViewDelegate, cancelButtonTitle: "Close")
+                alertError.show()
+
         }
     }
 }

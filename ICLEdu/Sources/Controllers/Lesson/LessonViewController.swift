@@ -12,10 +12,6 @@ import SDWebImage
 
 class LessonViewController: UIViewController {
     
-    fileprivate let navCell = "NavCell"
-    fileprivate let lesCell = "LessonCell"
-    fileprivate let vocabularyController = "VocabularyController"
-    
     @IBOutlet weak var lessonCollectionView: UICollectionView!
     
     fileprivate let refreshControl = UIRefreshControl()
@@ -70,7 +66,7 @@ class LessonViewController: UIViewController {
         //registerNavNib
         lessonCollectionView.register(UINib(nibName: navCell, bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: navCell)
         //registerLessonNib
-        lessonCollectionView.register(UINib(nibName: lesCell, bundle: nil), forCellWithReuseIdentifier: lesCell)
+        lessonCollectionView.register(UINib(nibName: lessonCell, bundle: nil), forCellWithReuseIdentifier: lessonCell)
     }
 }
 
@@ -94,7 +90,8 @@ extension LessonViewController: UICollectionViewDataSource, UICollectionViewDele
         if (kind == UICollectionView.elementKindSectionHeader) {
             
             let navigationCell = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: navCell, for: indexPath) as! NavCell
-            navigationCell.parseDataForNav(userName: UserDefaults.standard.string(forKey: "name"),
+            navigationCell.parseDataForNav(screenKey: tabLesson,
+                                           userName: UserDefaults.standard.string(forKey: "name"),
                                            userImageUrl: UserDefaults.standard.string(forKey: "avatar"))
             return navigationCell
         }
@@ -102,7 +99,7 @@ extension LessonViewController: UICollectionViewDataSource, UICollectionViewDele
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let lessonCell = collectionView.dequeueReusableCell(withReuseIdentifier: lesCell, for: indexPath) as! LessonCell
+        let lesCell = collectionView.dequeueReusableCell(withReuseIdentifier: lessonCell, for: indexPath) as! LessonCell
         
         var position:Int?
         var finish:Int?
@@ -114,7 +111,7 @@ extension LessonViewController: UICollectionViewDataSource, UICollectionViewDele
             position = presenterLesson.lesson?.n5?[indexPath.row].app_member_statistical?[0].lesson_vocab_position ?? 0
         }
         
-        lessonCell.parseDataLessonCell(
+        lesCell.parseDataLessonCell(
             imgURL: presenterLesson.lesson?.n5?[indexPath.row].image,
             name: presenterLesson.lesson?.n5?[indexPath.row].name,
             title: presenterLesson.lesson?.n5?[indexPath.row].title,
@@ -122,7 +119,7 @@ extension LessonViewController: UICollectionViewDataSource, UICollectionViewDele
             numberOfVocab: presenterLesson.lesson?.n5?[indexPath.row].app_vocab_count ?? 0,
             positionVocab: position)
         
-        return lessonCell
+        return lesCell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

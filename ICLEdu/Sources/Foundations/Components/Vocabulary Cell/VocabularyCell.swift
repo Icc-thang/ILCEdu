@@ -38,7 +38,7 @@ class VocabularyCell: UICollectionViewCell {
         cardCollection.delegate = self
         cardCollection.dataSource = self
         //register
-        cardCollection.register(UINib(nibName: "CardCell", bundle: nil), forCellWithReuseIdentifier: "CardCell")
+        cardCollection.register(UINib(nibName: cardCell, bundle: nil), forCellWithReuseIdentifier: cardCell)
     }
     
     override func prepareForReuse() {
@@ -92,9 +92,9 @@ extension VocabularyCell : UICollectionViewDelegate, UICollectionViewDataSource,
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cardCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCell", for: indexPath) as! CardCell
-        cardCell.setDataForCardCell(imageUrl: imageCardCell ?? "" , japanese: japaneseCardCell ?? "", kanji: kanjiVocab, example: exampleVocab)
-        return cardCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cardCell, for: indexPath) as! CardCell
+        cell.setDataForCardCell(imageUrl: imageCardCell ?? "" , japanese: japaneseCardCell ?? "", kanji: kanjiVocab, example: exampleVocab)
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

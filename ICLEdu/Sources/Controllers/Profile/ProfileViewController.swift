@@ -10,10 +10,6 @@ import UIKit
 
 class ProfileViewController: UITableViewController {
     
-    let profileCell = "ProfileCell"
-    let processCell = "ProcessCell"
-    let noteCell = "NoteCell"
-    
     let presenterProfile = PresenterProfile()
     override func viewDidLoad() {
         super.viewDidLoad()
