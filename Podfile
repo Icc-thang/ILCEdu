@@ -22,4 +22,5 @@ pod 'SwiftyJSON', '~> 4.0'
 pod 'PieCharts'
 pod 'SkeletonView'
 pod 'Moya/RxSwift', '~> 13.0'
+pod 'CircleProgressView', :git => 'https://github.com/CardinalNow/iOS-CircleProgressView.git'
 end

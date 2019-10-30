@@ -3,6 +3,7 @@ PODS:
   - AlamofireObjectMapper (5.2.1):
     - Alamofire (~> 4.7)
     - ObjectMapper (~> 3.4)
+  - CircleProgressView (1.2.0)
   - FacebookCore (0.9.0):
     - FBSDKCoreKit (~> 5.0)
   - FacebookLogin (0.9.0):
@@ -56,6 +57,7 @@ PODS:
 
 DEPENDENCIES:
   - AlamofireObjectMapper
+  - CircleProgressView (from `https://github.com/CardinalNow/iOS-CircleProgressView.git`)
   - FacebookCore
   - FacebookLogin
   - FacebookShare
@@ -87,9 +89,19 @@ SPEC REPOS:
     - SkeletonView
     - SwiftyJSON
 
+EXTERNAL SOURCES:
+  CircleProgressView:
+    :git: https://github.com/CardinalNow/iOS-CircleProgressView.git
+
+CHECKOUT OPTIONS:
+  CircleProgressView:
+    :commit: 29ee37232958f0dd7615486c4feed17b05cff34b
+    :git: https://github.com/CardinalNow/iOS-CircleProgressView.git
+
 SPEC CHECKSUMS:
   Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
   AlamofireObjectMapper: 1989f690e982b71921b9253f53a4f33a9bc00d88
+  CircleProgressView: 4ef8492b0d12e42948d9f2b78a1482d9464367d5
   FacebookCore: ba86524b66cfa86d0f8e65d08faa8504a9f732dd
   FacebookLogin: 6cee9fd6e1fe976fe8f7eec199e27b28b14f5d63
   FacebookShare: 85968ad1b1606c4944fb154924e425fd29184ea5
@@ -107,6 +119,6 @@ SPEC CHECKSUMS:
   SkeletonView: bb27c39857e5492136f02ee8a3aa78de55d12ecd
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: d58156e2d147a033cfd7e11eabf418ce29c2764b
+PODFILE CHECKSUM: 268e8a20038136352a0190edcd5e099f6686eb1e
 
 COCOAPODS: 1.8.1
