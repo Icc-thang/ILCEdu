@@ -41,7 +41,6 @@
 		881B459B234DDF4000BE321B /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881B4599234DDF4000BE321B /* NoteCell.swift */; };
 		881B459C234DDF4000BE321B /* NoteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 881B459A234DDF4000BE321B /* NoteCell.xib */; };
 		881B45A0234F06A800BE321B /* LoginFBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881B459F234F06A800BE321B /* LoginFBModel.swift */; };
-		881B45A5234F08CD00BE321B /* KeyCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881B45A4234F08CD00BE321B /* KeyCenter.swift */; };
 		881B45A7234F0A4400BE321B /* PresenterLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881B45A6234F0A4400BE321B /* PresenterLogin.swift */; };
 		881DBAB32358278700715AB9 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 881DBAB22358278700715AB9 /* MainStoryboard.storyboard */; };
 		881DBAB5235827A000715AB9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881DBAB4235827A000715AB9 /* ViewController.swift */; };
@@ -56,6 +55,9 @@
 		883ACFD2236185340025AC67 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883ACFD1236185340025AC67 /* ProfileViewController.swift */; };
 		883ACFD423618BB30025AC67 /* PresenterProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883ACFD323618BB30025AC67 /* PresenterProfile.swift */; };
 		883F019723563444007FAD5B /* ProfileController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 883F019623563444007FAD5B /* ProfileController.storyboard */; };
+		8888DD042369853300EFF1E7 /* PracticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8888DD032369853300EFF1E7 /* PracticeViewController.swift */; };
+		8888DD0623698C3500EFF1E7 /* PresenterPractice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8888DD0523698C3500EFF1E7 /* PresenterPractice.swift */; };
+		8888DD0923698E4E00EFF1E7 /* ShareReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8888DD0823698E4E00EFF1E7 /* ShareReference.swift */; };
 		88A9C08E2345DB77002A65F4 /* LoginController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88A9C08D2345DB77002A65F4 /* LoginController.storyboard */; };
 		88A9C0902345E6D3002A65F4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A9C08F2345E6D3002A65F4 /* LoginViewController.swift */; };
 		88C55FA12360B39800B30C66 /* PresenterMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C55FA02360B39800B30C66 /* PresenterMenu.swift */; };
@@ -134,7 +136,6 @@
 		881B4599234DDF4000BE321B /* NoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCell.swift; sourceTree = "<group>"; };
 		881B459A234DDF4000BE321B /* NoteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteCell.xib; sourceTree = "<group>"; };
 		881B459F234F06A800BE321B /* LoginFBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFBModel.swift; sourceTree = "<group>"; };
-		881B45A4234F08CD00BE321B /* KeyCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyCenter.swift; sourceTree = "<group>"; };
 		881B45A6234F0A4400BE321B /* PresenterLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterLogin.swift; sourceTree = "<group>"; };
 		881DBAB22358278700715AB9 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		881DBAB4235827A000715AB9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -149,6 +150,9 @@
 		883ACFD1236185340025AC67 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		883ACFD323618BB30025AC67 /* PresenterProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterProfile.swift; sourceTree = "<group>"; };
 		883F019623563444007FAD5B /* ProfileController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileController.storyboard; sourceTree = "<group>"; };
+		8888DD032369853300EFF1E7 /* PracticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeViewController.swift; sourceTree = "<group>"; };
+		8888DD0523698C3500EFF1E7 /* PresenterPractice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterPractice.swift; sourceTree = "<group>"; };
+		8888DD0823698E4E00EFF1E7 /* ShareReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareReference.swift; sourceTree = "<group>"; };
 		88A9C08D2345DB77002A65F4 /* LoginController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginController.storyboard; sourceTree = "<group>"; };
 		88A9C08F2345E6D3002A65F4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		88C55FA02360B39800B30C66 /* PresenterMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterMenu.swift; sourceTree = "<group>"; };
@@ -235,21 +239,13 @@
 		6C0DF44B23385E750056A094 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				6C0DF4622339B9EF0056A094 /* Nav Cell */,
 				883ACFCB236182600025AC67 /* ProfileCell */,
 				881DBAB82358D17100715AB9 /* Menu Cell */,
 				6CDEB915233B184B00420ABE /* Vocabulary Cell */,
 				6CDEB905233A0DD100420ABE /* Lesson Cell */,
 			);
 			path = Components;
-			sourceTree = "<group>";
-		};
-		6C0DF44E23385ED90056A094 /* LessonCell */ = {
-			isa = PBXGroup;
-			children = (
-				6C0DF44F23385F050056A094 /* LessonCell.swift */,
-				6C0DF45023385F050056A094 /* LessonCell.xib */,
-			);
-			path = LessonCell;
 			sourceTree = "<group>";
 		};
 		6C0DF4622339B9EF0056A094 /* Nav Cell */ = {
@@ -277,6 +273,7 @@
 			children = (
 				881DBABD2358D3C400715AB9 /* Menu */,
 				6C0DF4442334DAD30056A094 /* Profile */,
+				8888DD022369851100EFF1E7 /* Practice */,
 				6C0DF4392334D1800056A094 /* Vocabulary */,
 				6C0DF4422334DAA70056A094 /* Lesson */,
 				881A5885234CA1BC00CD23E0 /* Tabbar */,
@@ -290,7 +287,6 @@
 		6C43C8962334919D00230882 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				881B45A4234F08CD00BE321B /* KeyCenter.swift */,
 				880B122D2359AE6D006EB665 /* Vocabulary Model */,
 				88D92CBD2351AE0D000A299A /* Profile Model */,
 				88C71697235705E6008B9116 /* Lesson Model */,
@@ -311,6 +307,7 @@
 		6C43C898233491B100230882 /* Foundations */ = {
 			isa = PBXGroup;
 			children = (
+				8888DD0723698CFF00EFF1E7 /* Shared */,
 				6C43C89A2334920400230882 /* Extensions */,
 				6C0DF44B23385E750056A094 /* Components */,
 			);
@@ -393,8 +390,8 @@
 		6CDEB905233A0DD100420ABE /* Lesson Cell */ = {
 			isa = PBXGroup;
 			children = (
-				6C0DF4622339B9EF0056A094 /* Nav Cell */,
-				6C0DF44E23385ED90056A094 /* LessonCell */,
+				6C0DF44F23385F050056A094 /* LessonCell.swift */,
+				6C0DF45023385F050056A094 /* LessonCell.xib */,
 			);
 			path = "Lesson Cell";
 			sourceTree = "<group>";
@@ -514,6 +511,23 @@
 				883ACFCE236182F40025AC67 /* ProfileCell.xib */,
 			);
 			path = "Profile Cell";
+			sourceTree = "<group>";
+		};
+		8888DD022369851100EFF1E7 /* Practice */ = {
+			isa = PBXGroup;
+			children = (
+				8888DD032369853300EFF1E7 /* PracticeViewController.swift */,
+				8888DD0523698C3500EFF1E7 /* PresenterPractice.swift */,
+			);
+			path = Practice;
+			sourceTree = "<group>";
+		};
+		8888DD0723698CFF00EFF1E7 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				8888DD0823698E4E00EFF1E7 /* ShareReference.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 		88A9C08C2345DB5B002A65F4 /* Login  */ = {
@@ -743,13 +757,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8888DD042369853300EFF1E7 /* PracticeViewController.swift in Sources */,
 				881B4592234CCFAC00BE321B /* ProcessCell.swift in Sources */,
-				881B45A5234F08CD00BE321B /* KeyCenter.swift in Sources */,
 				881B459B234DDF4000BE321B /* NoteCell.swift in Sources */,
 				88FF67F3234731B300A353B2 /* ButtonExtension.swift in Sources */,
 				881B45A0234F06A800BE321B /* LoginFBModel.swift in Sources */,
 				883ACFD2236185340025AC67 /* ProfileViewController.swift in Sources */,
 				881DBAB72358408300715AB9 /* APIRequest.swift in Sources */,
+				8888DD0923698E4E00EFF1E7 /* ShareReference.swift in Sources */,
 				6C5952AF233350C000515B62 /* AppDelegate.swift in Sources */,
 				88D63991236058B20008C529 /* SwiftNotice.swift in Sources */,
 				6C0DF43D2334D9E40056A094 /* VocabularyViewController.swift in Sources */,
@@ -763,6 +778,7 @@
 				881A587D234CA06700CD23E0 /* BubbleTabBar.swift in Sources */,
 				881DBAB5235827A000715AB9 /* ViewController.swift in Sources */,
 				6C43C89323348F5800230882 /* CardView.swift in Sources */,
+				8888DD0623698C3500EFF1E7 /* PresenterPractice.swift in Sources */,
 				883ACFD423618BB30025AC67 /* PresenterProfile.swift in Sources */,
 				880B122F2359AE8D006EB665 /* VocabularyModel.swift in Sources */,
 				6C0DF4652339BAC90056A094 /* NavCell.swift in Sources */,
