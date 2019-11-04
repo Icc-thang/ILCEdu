@@ -74,7 +74,7 @@ class MenuViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
-            let profileVC = UIStoryboard(name: "ProfileController", bundle: nil).instantiateViewController(withIdentifier: "ProfileController") as! ProfileViewController
+            let profileVC = UIStoryboard(name: profileController, bundle: nil).instantiateViewController(withIdentifier: profileController) as! ProfileViewController
             profileVC.hidesBottomBarWhenPushed = true
             profileVC.getDataProfile(profileData: presenterMenu.profileModel)
             self.navigationController?.pushViewController(profileVC, animated: true)
@@ -85,7 +85,7 @@ class MenuViewController: UITableViewController {
             let loginManager = LoginManager()
             loginManager.logOut()
             
-            let rootVC = UIStoryboard(name: "LoginController", bundle: nil).instantiateViewController(withIdentifier: "LoginController") as! LoginViewController
+            let rootVC = UIStoryboard(name: loginController, bundle: nil).instantiateViewController(withIdentifier: loginController) as! LoginViewController
             let navVC = UINavigationController.init(rootViewController: rootVC)
             let share = UIApplication.shared.delegate as? AppDelegate
             share?.window?.rootViewController = navVC

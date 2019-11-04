@@ -12,6 +12,7 @@ import ObjectMapper
 
 protocol LoginDelegate:class {
     func getDataLogin()
+    func ifLoginError()
 }
 class PresenterLogin{
     weak var delegateLogin : LoginDelegate?
@@ -21,7 +22,6 @@ class PresenterLogin{
         self.delegateLogin = delegate
     }
     
-    let apiProvider = MoyaProvider<APIRequest>()
     
     var loginModel : LoginFBModel?
     
@@ -36,9 +36,7 @@ class PresenterLogin{
                     print("Log In:\(json)")
             }) { (error) in
                 print(error)
-                
-                let alertError = UIAlertView(title: "Something wrong!", message: "Unable to connect to the server", delegate: self as? UIAlertViewDelegate, cancelButtonTitle: "Close")
-                alertError.show()
+                self.delegateLogin?.ifLoginError()
 
         }
     }

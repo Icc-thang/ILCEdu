@@ -66,43 +66,38 @@ class LoginViewController: UIViewController {
     }
 }
 extension LoginViewController: LoginDelegate {
+    func ifLoginError() {
+        // create the alert
+        self.removeSpinner()
+        let alert = UIAlertController(title: "Something wrong!", message: "Unable to connect to the server", preferredStyle: UIAlertController.Style.alert)
+        // add an action (button)
+        alert.addAction(UIAlertAction(title: "Close", style: UIAlertAction.Style.cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Retry", style: UIAlertAction.Style.default, handler: { action in
+            
+            if AccessToken.current?.tokenString != nil{
+                self.showSpinner(onView: self.view)
+                self.presenterLogin.getDataForLogin(tokenFB: AccessToken.current?.tokenString ?? "")
+            }else {
+                print("Đăng nhập Facebook lỗi")
+            }
+        }))
+        
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     func getDataLogin() {
         UserDefaults.standard.set(presenterLogin.loginModel?.id ?? 0, forKey: "idMember")
         if self.presenterLogin.loginModel?.access_token == "" {
-            let registerVC = UIStoryboard(name: "RegisterController", bundle: nil).instantiateViewController(withIdentifier: "RegisterController") as! RegisterViewController
+            let registerVC = UIStoryboard(name: registerController, bundle: nil).instantiateViewController(withIdentifier: registerController) as! RegisterViewController
             self.removeSpinner()
             self.navigationController?.pushViewController(registerVC, animated: true)
             
         }else{
             UserDefaults.standard.set(self.presenterLogin.loginModel?.access_token ?? "", forKey: "authorization")
-            let tabbarVC = UIStoryboard(name: "TabbarController", bundle: nil).instantiateViewController(withIdentifier: "TabbarController") as! BubbleTabBarController
+            let tabbarVC = UIStoryboard(name: tabbarController, bundle: nil).instantiateViewController(withIdentifier: tabbarController) as! BubbleTabBarController
             self.removeSpinner()
             self.navigationController?.pushViewController(tabbarVC, animated: true)
-        }
-    }
-}
-var vSpinner : UIView?
- 
-extension UIViewController {
-    func showSpinner(onView : UIView) {
-        let spinnerView = UIView.init(frame: onView.bounds)
-        spinnerView.backgroundColor = UIColor.init(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.5)
-        let ai = UIActivityIndicatorView.init(style: .whiteLarge)
-        ai.startAnimating()
-        ai.center = spinnerView.center
-        
-        DispatchQueue.main.async {
-            spinnerView.addSubview(ai)
-            onView.addSubview(spinnerView)
-        }
-        
-        vSpinner = spinnerView
-    }
-    
-    func removeSpinner() {
-        DispatchQueue.main.async {
-            vSpinner?.removeFromSuperview()
-            vSpinner = nil
         }
     }
 }

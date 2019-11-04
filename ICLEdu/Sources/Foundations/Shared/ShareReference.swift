@@ -14,7 +14,7 @@ import SkeletonView
 let baseUrl:String = "https://townwork.vn/api/"
 
 // baseURL for image + audio
-let baseUrlMedia:String = "https://townwork.vn/"
+let baseUrlMedia = "https://townwork.vn/"
 
 let avatarBase = "https://i.imgur.com/G0rDRbY.png"
 
@@ -49,7 +49,6 @@ let cardCell = "CardCell"
 //Lesson Cell
 let lessonCell = "LessonCell"
 
-let vocabularyController = "VocabularyController"
 
 //Menu
 let menu = "MENU"
@@ -63,3 +62,9 @@ let titleMenu = [profile, logOut]
 let tabLesson = "語彙"
 let tabPractice = "練習"
 
+// storyBoard
+let loginController = "LoginController"
+let registerController = "RegisterController"
+let tabbarController = "TabbarController"
+let vocabularyController = "VocabularyController"
+let profileController = "ProfileController"

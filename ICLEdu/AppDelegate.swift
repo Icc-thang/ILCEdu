@@ -31,14 +31,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func checkLogin() {
         if UserDefaults.standard.string(forKey: "authorization") != "" || UserDefaults.standard.string(forKey: "authorization") != nil {
-            let rootVC = UIStoryboard(name: "TabbarController", bundle: nil).instantiateViewController(withIdentifier: "TabbarController") as! BubbleTabBarController
+            let rootVC = UIStoryboard(name: tabbarController, bundle: nil).instantiateViewController(withIdentifier: tabbarController) as! BubbleTabBarController
             let navVC = UINavigationController.init(rootViewController: rootVC)
             let share = UIApplication.shared.delegate as? AppDelegate
             share?.window?.rootViewController = navVC
             share?.window?.makeKeyAndVisible()
         }
         if UserDefaults.standard.string(forKey: "authorization") == nil{
-            let rootVC = UIStoryboard(name: "LoginController", bundle: nil).instantiateViewController(withIdentifier: "LoginController") as! LoginViewController
+            let rootVC = UIStoryboard(name: loginController, bundle: nil).instantiateViewController(withIdentifier: loginController) as! LoginViewController
             let navVC = UINavigationController.init(rootViewController: rootVC)
             let share = UIApplication.shared.delegate as? AppDelegate
             share?.window?.rootViewController = navVC
