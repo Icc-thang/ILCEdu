@@ -97,42 +97,19 @@ class RegisterViewController: UIViewController, UIActionSheetDelegate {
     @IBAction func saveProfile(_ sender: UIButton) {
 
         let emailString = emailTextField.text ?? ""
-        if isValidEmail(emailStr: emailString) == true {
-            print("Email đúng định dạng")
-        }else {
-            self.noticeTop("メールの形式が正しくありません。")
-        }
+//        if isValidEmail(emailStr: emailString) == true {
+//            print("Email đúng định dạng")
+//        }else {
+//            self.noticeTop("メールの形式が正しくありません。")
+//        }
         let nameString = fullNameTextField.text ?? ""
         let genderString = gender ?? ""
         let addressString = addressTextField.text ?? ""
         let dateString = dateOfBirthDay.text ?? ""
         let phoneString = phoneNumberTextField.text!.prefix(10)
         
-        if phoneString.count < 10 {
-            self.noticeTop("電話番号の形式が間違っています。")
-        }
-        if fullNameTextField.text == "" {
-            self.noticeTop("名前がありません。")
-        }
-        if  addressTextField.text == "" {
-            self.noticeTop("生年月日がありません。")
-        }
-        if dateOfBirthDay.text == "" {
-            self.noticeTop("生年月日がありません。")
-        }
-        if phoneNumberTextField.text == "" {
-            self.noticeTop("電話番号がありません。")
-        }
-        if emailTextField.text == "" {
-            self.noticeTop("メールがありません。")
-        }
-        
-        let slice = phoneString.prefix(2)
-        if slice == "09" || slice == "08" || slice == "07" || slice == "05" || slice == "03" {
-            print("ngon")
-        }else {
-            self.noticeTop("電話番号の形式が間違っています。")
-        }
+        let param = ["name":nameString, "gender":genderString,"email":emailString,"address":addressString,"birthday":dateString,"phone": String(phoneString)]
+        print(param)
         
         presenterRegister.getDataForRegister(
             nameString,
@@ -141,17 +118,44 @@ class RegisterViewController: UIViewController, UIActionSheetDelegate {
             addressString,
             dateString,
             String(phoneString))
-    }
-    
-     func isValidEmail(emailStr:String) -> Bool {
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+//        if phoneString.count < 10 {
+//            self.noticeTop("電話番号の形式が間違っています。")
+//        }
+//        if fullNameTextField.text == "" {
+//            self.noticeTop("名前がありません。")
+//        }
+//        if  addressTextField.text == "" {
+//            self.noticeTop("生年月日がありません。")
+//        }
+//        if dateOfBirthDay.text == "" {
+//            self.noticeTop("生年月日がありません。")
+//        }
+//        if phoneNumberTextField.text == "" {
+//            self.noticeTop("電話番号がありません。")
+//        }
+//        if emailTextField.text == "" {
+//            self.noticeTop("メールがありません。")
+//        }
+        
+//        let slice = phoneString.prefix(2)
+//        if slice == "09" || slice == "08" || slice == "07" || slice == "05" || slice == "03" {
+//            print("ngon")
+//        }else {
+//            self.noticeTop("電話番号の形式が間違っています。")
+//        }
+        
 
-        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        return emailPred.evaluate(with: emailStr)
     }
     
+//     func isValidEmail(emailStr:String) -> Bool {
+//        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+//
+//        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+//        return emailPred.evaluate(with: emailStr)
+//    }
+//
     @IBAction func phoneNumberChange(_ sender: UITextField) {
-        maxLength(textField: phoneNumberTextField, max: 10)
+//        maxLength(textField: phoneNumberTextField, max: 10)
     }
     
 }
@@ -169,14 +173,14 @@ extension RegisterViewController: DelegateRegister{
 }
 
 extension RegisterViewController: UITextFieldDelegate{
-    func maxLength(textField: UITextField, max: Int){
-        let length = textField.text?.count
-        let content = textField.text
-        if length! > max{
-            let index = content?.index(content!.startIndex, offsetBy: max)
-            textField.text = textField.text?.substring(to: index!)
-        }
-    }
+//    func maxLength(textField: UITextField, max: Int){
+//        let length = textField.text?.count
+//        let content = textField.text
+//        if length! > max{
+//            let index = content?.index(content!.startIndex, offsetBy: max)
+//            textField.text = textField.text?.substring(to: index!)
+//        }
+//    }
     // Start Editing The Text Field
     func textFieldDidBeginEditing(_ textField: UITextField) {
         moveTextField(textField, moveDistance: -150, up: true)

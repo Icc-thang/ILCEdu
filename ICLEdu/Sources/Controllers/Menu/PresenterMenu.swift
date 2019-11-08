@@ -10,29 +10,29 @@ import Foundation
 import Moya
 import ObjectMapper
 
-protocol DelegateMenu:class {
-    
-}
-
-class PresenterMenu {
-    weak var delegateMenu: DelegateMenu?
-    
-    convenience init(delegate: DelegateMenu){
-        self.init()
-        self.delegateMenu = delegate
-    }
-    
-    var profileModel : ProfileModel?
-    
-    func getDataForProfile(){
-        apiProvider.rx.request(.getProfile)
-            .filterSuccessfulStatusCodes()
-            .mapJSON()
-            .subscribe(onSuccess: { (json) in
-                print(json)
-                self.profileModel = Mapper<ProfileModel>().map(JSONObject: json)
-            }){ (error) in
-                print(error)
-        }
-    }
-}
+//protocol DelegateMenu:class {
+//
+//}
+//
+//class PresenterMenu {
+//    weak var delegateMenu: DelegateMenu?
+//
+//    convenience init(delegate: DelegateMenu){
+//        self.init()
+//        self.delegateMenu = delegate
+//    }
+//
+////    var profileModel : ProfileModel?
+////
+////    func getDataForProfile(){
+////        apiProvider.rx.request(.getProfile)
+////            .filterSuccessfulStatusCodes()
+////            .mapJSON()
+////            .subscribe(onSuccess: { (json) in
+////                print(json)
+////                self.profileModel = Mapper<ProfileModel>().map(JSONObject: json)
+////            }){ (error) in
+////                print(error)
+////        }
+////    }
+//}

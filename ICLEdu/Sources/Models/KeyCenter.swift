@@ -16,7 +16,7 @@ let baseUrl:String = "https://townwork.vn/api/"
 // baseURL for image + audio
 let baseUrlMedia:String = "https://townwork.vn/"
 
-let avatarBase = "https://i.imgur.com/wNZd7oZ.png"
+let avatarBase = "https://i.imgur.com/G0rDRbY.png"
 
 // avatar
 let avatar = UserDefaults.standard.string(forKey: "avatar")

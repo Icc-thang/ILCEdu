@@ -43,8 +43,7 @@ class LoginViewController: UIViewController {
         manager.logIn(permissions: [ .publicProfile], viewController: self) { (result) in
             switch result {
             case .success(_):
-                self.presenterLogin.getDataForLogin(tokenFB: AccessToken.current?.tokenString ?? "")
-                let param = ["fields": "name, picture.type(large)"]
+                let param = ["fields": "name, picture.type(large),email"]
                 GraphRequest(graphPath: "me", parameters: param).start { (connection, result, error) in
                     if let result = result {
                         let dict = JSON(result)
@@ -52,6 +51,7 @@ class LoginViewController: UIViewController {
                         let avatar = dict["picture"]["data"]["url"].stringValue
                         UserDefaults.standard.set(avatar, forKey: "avatar")
                         UserDefaults.standard.set(name, forKey: "name")
+                        self.presenterLogin.getDataForLogin(tokenFB: "\(dict)")
                     }
                 }
             case .cancelled:

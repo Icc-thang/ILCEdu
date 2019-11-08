@@ -15,7 +15,7 @@ class MenuViewController: UITableViewController {
     fileprivate let image = [avatar, "ic_logout"]
     fileprivate let menuTitle = ["個人ページ", "ログアウト"]
     
-    let presenterMenu = PresenterMenu()
+//    let presenterMenu = PresenterMenu()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -31,13 +31,13 @@ class MenuViewController: UITableViewController {
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        self.presenterMenu.getDataForProfile()
-    }
+//    override func viewDidAppear(_ animated: Bool) {
+//        self.presenterMenu.getDataForProfile()
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.presenterMenu.delegateMenu = self as? DelegateMenu
+//        self.presenterMenu.delegateMenu = self as? DelegateMenu
         
         let menuNib = UINib(nibName: menuCell, bundle: nil)
         tableView.register(menuNib, forCellReuseIdentifier: menuCell)
@@ -79,8 +79,9 @@ class MenuViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
             let profileVC = UIStoryboard(name: "ProfileController", bundle: nil).instantiateViewController(withIdentifier: "ProfileController") as! ProfileViewController
+            profileVC.presenterProfile = PresenterProfile()
             profileVC.hidesBottomBarWhenPushed = true
-            profileVC.getDataProfile(profileData: presenterMenu.profileModel)
+            
             self.navigationController?.pushViewController(profileVC, animated: true)
         }
         if indexPath.row == 1 {

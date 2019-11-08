@@ -105,12 +105,12 @@
 		6C0DF4642339BAC90056A094 /* NavCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavCell.xib; sourceTree = "<group>"; };
 		6C43C89023348F5800230882 /* ImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
 		6C43C89123348F5800230882 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
-		6C5952AB233350C000515B62 /* ICLEdu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ICLEdu.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C5952AB233350C000515B62 /* ILC Edu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ILC Edu.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C5952AE233350C000515B62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6C5952B5233350C100515B62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6C5952B8233350C100515B62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6C5952BA233350C100515B62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6C5952BF233350C100515B62 /* ICLEduTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ICLEduTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C5952BF233350C100515B62 /* ILCEduTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ILCEduTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C5952C3233350C100515B62 /* ICLEduTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICLEduTests.swift; sourceTree = "<group>"; };
 		6C5952C5233350C100515B62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6CB39CC3233BA9340098A363 /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
@@ -344,8 +344,8 @@
 		6C5952AC233350C000515B62 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6C5952AB233350C000515B62 /* ICLEdu.app */,
-				6C5952BF233350C100515B62 /* ICLEduTests.xctest */,
+				6C5952AB233350C000515B62 /* ILC Edu.app */,
+				6C5952BF233350C100515B62 /* ILCEduTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -545,9 +545,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6C5952AA233350C000515B62 /* ICLEdu */ = {
+		6C5952AA233350C000515B62 /* ILCEdu */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6C5952C8233350C100515B62 /* Build configuration list for PBXNativeTarget "ICLEdu" */;
+			buildConfigurationList = 6C5952C8233350C100515B62 /* Build configuration list for PBXNativeTarget "ILCEdu" */;
 			buildPhases = (
 				A744CFF9BCFDFEB185369A98 /* [CP] Check Pods Manifest.lock */,
 				6C5952A7233350C000515B62 /* Sources */,
@@ -561,14 +561,14 @@
 			);
 			dependencies = (
 			);
-			name = ICLEdu;
+			name = ILCEdu;
 			productName = ICLEdu;
-			productReference = 6C5952AB233350C000515B62 /* ICLEdu.app */;
+			productReference = 6C5952AB233350C000515B62 /* ILC Edu.app */;
 			productType = "com.apple.product-type.application";
 		};
-		6C5952BE233350C100515B62 /* ICLEduTests */ = {
+		6C5952BE233350C100515B62 /* ILCEduTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6C5952CB233350C100515B62 /* Build configuration list for PBXNativeTarget "ICLEduTests" */;
+			buildConfigurationList = 6C5952CB233350C100515B62 /* Build configuration list for PBXNativeTarget "ILCEduTests" */;
 			buildPhases = (
 				E66F8DF369C19778119B2644 /* [CP] Check Pods Manifest.lock */,
 				6C5952BB233350C100515B62 /* Sources */,
@@ -580,9 +580,9 @@
 			dependencies = (
 				6C5952C1233350C100515B62 /* PBXTargetDependency */,
 			);
-			name = ICLEduTests;
+			name = ILCEduTests;
 			productName = ICLEduTests;
-			productReference = 6C5952BF233350C100515B62 /* ICLEduTests.xctest */;
+			productReference = 6C5952BF233350C100515B62 /* ILCEduTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -604,7 +604,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 6C5952A6233350C000515B62 /* Build configuration list for PBXProject "ICLEdu" */;
+			buildConfigurationList = 6C5952A6233350C000515B62 /* Build configuration list for PBXProject "ILCEdu" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -617,8 +617,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6C5952AA233350C000515B62 /* ICLEdu */,
-				6C5952BE233350C100515B62 /* ICLEduTests */,
+				6C5952AA233350C000515B62 /* ILCEdu */,
+				6C5952BE233350C100515B62 /* ILCEduTests */,
 			);
 		};
 /* End PBXProject section */
@@ -797,7 +797,7 @@
 /* Begin PBXTargetDependency section */
 		6C5952C1233350C100515B62 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6C5952AA233350C000515B62 /* ICLEdu */;
+			target = 6C5952AA233350C000515B62 /* ILCEdu */;
 			targetProxy = 6C5952C0233350C100515B62 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -937,6 +937,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.2.1;
 				DEVELOPMENT_TEAM = X8ZJWJYFRT;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -948,9 +949,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.idghodings.ilceducation;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "ILC Edu";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -964,6 +965,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.2.1;
 				DEVELOPMENT_TEAM = X8ZJWJYFRT;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -975,9 +977,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.idghodings.ilceducation;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "ILC Edu";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1001,7 +1003,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ICLEdu.app/ICLEdu";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ILCEdu.app/ILCEdu";
 			};
 			name = Debug;
 		};
@@ -1022,14 +1024,14 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ICLEdu.app/ICLEdu";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ILCEdu.app/ILCEdu";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6C5952A6233350C000515B62 /* Build configuration list for PBXProject "ICLEdu" */ = {
+		6C5952A6233350C000515B62 /* Build configuration list for PBXProject "ILCEdu" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6C5952C6233350C100515B62 /* Debug */,
@@ -1038,7 +1040,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6C5952C8233350C100515B62 /* Build configuration list for PBXNativeTarget "ICLEdu" */ = {
+		6C5952C8233350C100515B62 /* Build configuration list for PBXNativeTarget "ILCEdu" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6C5952C9233350C100515B62 /* Debug */,
@@ -1047,7 +1049,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6C5952CB233350C100515B62 /* Build configuration list for PBXNativeTarget "ICLEduTests" */ = {
+		6C5952CB233350C100515B62 /* Build configuration list for PBXNativeTarget "ILCEduTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6C5952CC233350C100515B62 /* Debug */,

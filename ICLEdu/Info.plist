@@ -26,7 +26,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>FacebookAdvertiserIDCollectionEnabled</key>
 	<true/>
 	<key>FacebookAppID</key>
@@ -34,7 +34,7 @@
 	<key>FacebookAutoLogAppEventsEnabled</key>
 	<true/>
 	<key>FacebookDisplayName</key>
-	<string>ICLEdu</string>
+	<string>$(PRODUCT_NAME)</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>fbapi</string>
