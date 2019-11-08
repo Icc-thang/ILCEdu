@@ -91,7 +91,6 @@
 
 /* Begin PBXFileReference section */
 		3644135BF915446BC5851939 /* Pods_ILCEduTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ILCEduTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4D8032B96284BA667232B6C4 /* Pods-ICLEdu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ICLEdu.debug.xcconfig"; path = "Target Support Files/Pods-ICLEdu/Pods-ICLEdu.debug.xcconfig"; sourceTree = "<group>"; };
 		635FD502737D23CB19F3FAE6 /* Pods-ILCEduTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ILCEduTests.debug.xcconfig"; path = "Target Support Files/Pods-ILCEduTests/Pods-ILCEduTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6C0DF43A2334D1980056A094 /* VocabularyController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = VocabularyController.storyboard; sourceTree = "<group>"; };
 		6C0DF43C2334D9E40056A094 /* VocabularyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyViewController.swift; sourceTree = "<group>"; };
@@ -108,7 +107,6 @@
 		6CDEB903233A037700420ABE /* RegisterController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterController.storyboard; sourceTree = "<group>"; };
 		6CDEB913233A175500420ABE /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		7CC367318E16CD5A67279853 /* Pods_ILCEdu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ILCEdu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7E53901940DC13FDAADC0166 /* Pods-ICLEdu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ICLEdu.release.xcconfig"; path = "Target Support Files/Pods-ICLEdu/Pods-ICLEdu.release.xcconfig"; sourceTree = "<group>"; };
 		880B122E2359AE8D006EB665 /* VocabularyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyModel.swift; sourceTree = "<group>"; };
 		88105FFD2350430C004E56FC /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
 		881A587A234CA06600CD23E0 /* BubbleTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BubbleTabBar.swift; path = "Carthage/Checkouts/bubble-icon-tabbar/BubbleTabBar/Classes/BubbleTabBar.swift"; sourceTree = SOURCE_ROOT; };
@@ -180,8 +178,6 @@
 		0EC7E5F56C251CC6EDB72525 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4D8032B96284BA667232B6C4 /* Pods-ICLEdu.debug.xcconfig */,
-				7E53901940DC13FDAADC0166 /* Pods-ICLEdu.release.xcconfig */,
 				E1CF261748E5649D617DD3BF /* Pods-ILCEdu.debug.xcconfig */,
 				A352888519955E5D207724D6 /* Pods-ILCEdu.release.xcconfig */,
 				635FD502737D23CB19F3FAE6 /* Pods-ILCEduTests.debug.xcconfig */,
