@@ -14,11 +14,10 @@ class ProfileViewController: UITableViewController {
     let processCell = "ProcessCell"
     let noteCell = "NoteCell"
     
-    let presenterProfile = PresenterProfile()
+    var presenterProfile : PresenterProfile?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.presenterProfile.delegateProfile = self as? DelegateProfile
         
         
         tableView.register(UINib(nibName: profileCell, bundle: nil), forCellReuseIdentifier: profileCell)
@@ -26,9 +25,9 @@ class ProfileViewController: UITableViewController {
         //        tableView.register(UINib(nibName: noteCell, bundle: nil), forCellReuseIdentifier: noteCell)
     }
     
-    func getDataProfile(profileData: ProfileModel?) {
-        presenterProfile.getProfileModel(profileModel : profileData)
-    }
+//    func getDataProfile(profileData: ProfileModel?) {
+//        presenterProfile.getProfileModel(profileModel : profileData)
+//    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
@@ -37,11 +36,11 @@ class ProfileViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //        if indexPath.row == 0{
         let cell = tableView.dequeueReusableCell(withIdentifier: profileCell) as! ProfileCell
-        cell.setDataProfile(name: presenterProfile.profileModel?.name,
-                            address: presenterProfile.profileModel?.address,
-                            gender: presenterProfile.profileModel?.gender,
-                            dateOfBirth: presenterProfile.profileModel?.birthday,
-                            phone: presenterProfile.profileModel?.phone)
+        cell.setDataProfile(name: presenterProfile?.profileModel?.name,
+                            address: presenterProfile?.profileModel?.address,
+                            gender: presenterProfile?.profileModel?.gender,
+                            dateOfBirth: presenterProfile?.profileModel?.birthday,
+                            phone: presenterProfile?.profileModel?.phone)
         cell.isUserInteractionEnabled = false
         return cell
         //        }
