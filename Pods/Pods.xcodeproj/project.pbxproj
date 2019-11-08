@@ -957,11 +957,12 @@
 			remoteInfo = Alamofire;
 		};
 		1578C5BDC212B3C52DD2E7D2E10568FD /* PBXContainerItemProxy */ = {
+
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 47D2E85A78C25869BB13521D8561A638;
-			remoteInfo = libwebp;
+			remoteGlobalIDString = 4949F2E81928B23F0DBD7CBD4C7FAD08;
+			remoteInfo = CircleProgressView;
 		};
 		1732D261D4D7CCABA8E46C919A47403B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -991,12 +992,14 @@
 			remoteGlobalIDString = 28907903AF6DD0AD321D92CD660E7E23;
 			remoteInfo = FBSDKCoreKit;
 		};
+
 		2D58506A57B630648EE5826BAC9EFB57 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 8CEEFD1CB630CA790F0396E2E24A4C8C;
 			remoteInfo = SkeletonView;
+
 		};
 		3656BF4118B2148D376119387B0E7CF8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -1012,6 +1015,7 @@
 			remoteGlobalIDString = 162E649F50FEC62B61BDD87D1BD422B4;
 			remoteInfo = ObjectMapper;
 		};
+
 		4205D999BE73E66041D185EE4F8558FE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
@@ -1020,13 +1024,16 @@
 			remoteInfo = RxSwift;
 		};
 		43761C8078AD20B1EA5B655F81536138 /* PBXContainerItemProxy */ = {
+
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 4949F2E81928B23F0DBD7CBD4C7FAD08;
 			remoteInfo = CircleProgressView;
 		};
+
 		45FFD5B5ECED7B18744735186FAF9052 /* PBXContainerItemProxy */ = {
+
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -1047,6 +1054,7 @@
 			remoteGlobalIDString = 28907903AF6DD0AD321D92CD660E7E23;
 			remoteInfo = FBSDKCoreKit;
 		};
+
 		662FCD110824A664B1CFC9F4D475E4BD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
@@ -1067,14 +1075,16 @@
 			proxyType = 1;
 			remoteGlobalIDString = 063386C78BA04CFC605AF41C9F9AAE03;
 			remoteInfo = FacebookLogin;
+
 		};
-		87B71C25A7C962AB6FDC7A07C204B0F2 /* PBXContainerItemProxy */ = {
+		7BF66BFBA8366E572903066A4AF1D2CE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 290D7B2F80A1721A35508C1739C47F56;
-			remoteInfo = FacebookCore;
+			remoteGlobalIDString = 10C5885FCB0908EF785774EE52473DAB;
+			remoteInfo = FBSDKLoginKit;
 		};
+
 		9CFE4AB1FBAE64CC375913D2D78D8D54 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
@@ -1095,6 +1105,7 @@
 			proxyType = 1;
 			remoteGlobalIDString = C2ECF3E3D5A2C9D2ED49172DB168006F;
 			remoteInfo = "Pods-ILCEdu";
+
 		};
 		C014797835830711980D09F162AD7150 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -1110,6 +1121,7 @@
 			remoteGlobalIDString = 28907903AF6DD0AD321D92CD660E7E23;
 			remoteInfo = FBSDKCoreKit;
 		};
+
 		C750512C6507B46831134057A15A66E6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
@@ -1118,18 +1130,21 @@
 			remoteInfo = PieCharts;
 		};
 		D3D019FEF9D280199CB69B3AFFB25E09 /* PBXContainerItemProxy */ = {
+
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = CA09A2FD7A98221701B5DA2209B6EC97;
-			remoteInfo = FacebookShare;
+			remoteGlobalIDString = 3847153A6E5EEFB86565BA840768F429;
+			remoteInfo = SDWebImage;
 		};
+
 		D9693D571BCFE11B97AFD87718EFC02D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = E163AC315AD24CFBD60C178D602BFC83;
 			remoteInfo = Result;
+
 		};
 		DF1CFC8886F71EAA70F152AB930C0AFA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -1145,12 +1160,14 @@
 			remoteGlobalIDString = 47D2E85A78C25869BB13521D8561A638;
 			remoteInfo = libwebp;
 		};
+
 		E7AC4D8598D47EF2532AFEB10D037747 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 56F4191D8CB8B4E6B4E5E4FA1A9F0F46;
 			remoteInfo = FBSDKShareKit;
+
 		};
 		F3353A698FBA9B2ECD0B8C3BE03A706D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -1166,13 +1183,14 @@
 			remoteGlobalIDString = 17F9141D333DA1A7BE5937F227221070;
 			remoteInfo = Moya;
 		};
-		F9BE30A673A8C8DE58C039CE4AF60E2C /* PBXContainerItemProxy */ = {
+		F4E8FFC75667679B8257A7CB8B228F35 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = E163AC315AD24CFBD60C178D602BFC83;
-			remoteInfo = Result;
+			remoteGlobalIDString = 8CEEFD1CB630CA790F0396E2E24A4C8C;
+			remoteInfo = SkeletonView;
 		};
+
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -2197,9 +2215,18 @@
 		FF27CD706CF334BA2B556CD4B357505D /* FacebookShare.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FacebookShare.xcconfig; sourceTree = "<group>"; };
 		FF4621D3FB690F6089A925F452C4140C /* UIView+IBInspectable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+IBInspectable.swift"; path = "Sources/Extensions/UIView+IBInspectable.swift"; sourceTree = "<group>"; };
 		FF60BEB43D4222AF0D10BB3FD6BC858C /* FBSDKShareMessengerURLActionButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKShareMessengerURLActionButton.h; path = FBSDKShareKit/FBSDKShareKit/FBSDKShareMessengerURLActionButton.h; sourceTree = "<group>"; };
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		01B01A5D1D2D28D00F23C8AE1BE994AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0D056D3085297CD8D0040E7A0201531 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		090C1D63463ACF622287EFF9D5C9392D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -2299,19 +2326,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AB533FA6985A920EFC83C26481CD6E6A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4762756F64C661592645D32D87ECA8C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AD9C5A8DAF4334B670E91B2EC08DBE2C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				464450D037D17ED5EE2322E180A6A9F5 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BE02C8DC39F5FCDDC9387CA7E4BB4B21 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				56F2F61122C57ACA466D46B969DB5416 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2379,6 +2406,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+
 		050FA8B863E7F0F47EFFD44930C35333 /* FacebookCore */ = {
 			isa = PBXGroup;
 			children = (
@@ -2535,11 +2563,13 @@
 				EAB3826509A220AE5A15BC93FAC76D5E /* SDWebImage-Info.plist */,
 				56E7DD3690F5A76181E6249FD2382404 /* SDWebImage-prefix.pch */,
 				B97683FE8FDA001DC3736E1873E10769 /* SDWebImage-umbrella.h */,
+
 			);
 			name = "Support Files";
-			path = "../Target Support Files/SDWebImage";
+			path = "../Target Support Files/SwiftyJSON";
 			sourceTree = "<group>";
 		};
+
 		1AC92A100214B403DE7C701EB3B120F7 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -2657,11 +2687,13 @@
 				43CE6A19CC18BF55FEA4F197CBDDE5D3 /* SwiftyJSON-Info.plist */,
 				64C2DD21AD18AB4668A8E35C1E4747C2 /* SwiftyJSON-prefix.pch */,
 				2FF1CA3053C0087D43CF08957CCC027F /* SwiftyJSON-umbrella.h */,
+
 			);
 			name = "Support Files";
 			path = "../Target Support Files/SwiftyJSON";
 			sourceTree = "<group>";
 		};
+
 		49DF85581EE58B4819150E9A083F3446 /* SkeletonView */ = {
 			isa = PBXGroup;
 			children = (
@@ -2708,6 +2740,7 @@
 			);
 			name = SkeletonView;
 			path = SkeletonView;
+
 			sourceTree = "<group>";
 		};
 		4C996CCED171D54271F8805C9E9002CE /* Basics */ = {
@@ -2730,6 +2763,7 @@
 			name = Basics;
 			sourceTree = "<group>";
 		};
+
 		55C5AEAE640D64F11E5AA214C1B14DBF /* RxSwift */ = {
 			isa = PBXGroup;
 			children = (
@@ -2766,11 +2800,13 @@
 				B6A945F8C675185C0727175C6E0687B7 /* SkeletonView-Info.plist */,
 				26DC4445F960D304FAB8FC563C71143D /* SkeletonView-prefix.pch */,
 				8FFFD0EC5C3EDC52FC40247E2AA85413 /* SkeletonView-umbrella.h */,
+
 			);
 			name = "Support Files";
 			path = "../Target Support Files/SkeletonView";
 			sourceTree = "<group>";
 		};
+
 		5FE574A2D497AC85B51423D15CDFA774 /* Pods-ILCEduTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -2796,6 +2832,7 @@
 			);
 			name = Moya;
 			path = Moya;
+
 			sourceTree = "<group>";
 		};
 		67DE7134CC811332A724EAC1CB78781F /* Support Files */ = {
@@ -2812,6 +2849,7 @@
 			path = "../Target Support Files/Result";
 			sourceTree = "<group>";
 		};
+
 		69846103995DEF7E88CB8EC251E612A3 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -2821,6 +2859,7 @@
 				A9BBAD08BE3C38B0DCD7D34759B467D6 /* UIKit.framework */,
 			);
 			name = iOS;
+
 			sourceTree = "<group>";
 		};
 		6A66AF2D772A7C8B2C8C36ADBF638821 /* FBSDKShareKit */ = {
@@ -2833,6 +2872,7 @@
 			path = FBSDKShareKit;
 			sourceTree = "<group>";
 		};
+
 		70926A0118009F3BF8C484420582692B /* Core */ = {
 			isa = PBXGroup;
 			children = (
@@ -3156,167 +3196,8 @@
 			);
 			name = PieCharts;
 			path = PieCharts;
-			sourceTree = "<group>";
-		};
-		7F68C657EC74D159FCAC6A11498FB0D8 /* RxSwift */ = {
-			isa = PBXGroup;
-			children = (
-				A8E1E7F1831376AD71710B23C6EB5DA0 /* AddRef.swift */,
-				4BBB2236C0E56D6CE363379F85E7ADF9 /* Amb.swift */,
-				7B14690376DEE823377948667FBA1D4D /* AnonymousDisposable.swift */,
-				A907843EEF1F8C7963891F6B71A66050 /* AnonymousObserver.swift */,
-				633D2E6C9C1013DEB545722BA456AA95 /* AnyObserver.swift */,
-				B108F98CCD3C3EC8DB65FF3A63A62F04 /* AsMaybe.swift */,
-				2DA9D0F788B4E538685C09954F64C08F /* AsSingle.swift */,
-				7958A5C61CB1E709634C7CC929213BC8 /* AsyncLock.swift */,
-				E3BC98A15F360428FAF6090AA7A04887 /* AsyncSubject.swift */,
-				C4EA932D07FD092D29060C2329233B80 /* AtomicInt.swift */,
-				B89911A0AC34BAD58FB8F55C0ADA700A /* Bag.swift */,
-				A2B1B15EF4A00C7AE11444C289037D7E /* Bag+Rx.swift */,
-				7F3BF67140F4D2D86B03B1CA76CF371E /* BehaviorSubject.swift */,
-				69C54ACD11A5C7DBF2C9FD64AA550ED0 /* BinaryDisposable.swift */,
-				5D5310F5DC96589F18969315906D02D4 /* BooleanDisposable.swift */,
-				37FF6C37ABEEAF39D233CA8995E0380A /* Buffer.swift */,
-				3AE6A6496ECB7F31AF0951D3DCB5E642 /* Cancelable.swift */,
-				E4EF6C11B000568E59B3F8129E499D46 /* Catch.swift */,
-				767B480B6F44DE677E4825A4860DC920 /* CombineLatest.swift */,
-				C05ED251C9F9A2C57FED32035480AD22 /* CombineLatest+arity.swift */,
-				0CDD399F4FF20D4709B4AD9FB105507A /* CombineLatest+Collection.swift */,
-				48C6AA7B3D8D7EC98FE319632F48EC7F /* Completable.swift */,
-				62D0A6FBAA3DD0A5964EC297071C4C62 /* Completable+AndThen.swift */,
-				EE8FBD58104EF3B259275F4820986E77 /* CompositeDisposable.swift */,
-				484B8A09C6D02359130119FE75483786 /* Concat.swift */,
-				4D356440ACFEAD72E5B70555573A6B86 /* ConcurrentDispatchQueueScheduler.swift */,
-				27BE5B47EAE87573E8D1009AF6F35BA1 /* ConcurrentMainScheduler.swift */,
-				C8E0A9B7816196A0D1E5DDBBBBD69EAD /* ConnectableObservableType.swift */,
-				3B7275536BDE14A3298BFE6383323CA4 /* Create.swift */,
-				9DBD44C85D3B3DF933DFC2A13538DEF8 /* CurrentThreadScheduler.swift */,
-				485BD8FB78199D4C0A99C7FE44ABBEA5 /* Debounce.swift */,
-				E44ED10287A04258F3CBC6C73FECF1D7 /* Debug.swift */,
-				37863C2CB93A6E2C8EE4C1D296599F65 /* DefaultIfEmpty.swift */,
-				3D1F00ADB39A35DC8B7E6F8704CB643D /* Deferred.swift */,
-				8F52621D3BB87B06AC2FC11E931599F6 /* Delay.swift */,
-				D727A7ADFEA4920F996633E12AB3D49A /* DelaySubscription.swift */,
-				9FFA5FDDAAB82B8AEA9B3D59F22BBC57 /* Dematerialize.swift */,
-				24B097D73B50D69CEA3D3BFD087E7897 /* Deprecated.swift */,
-				DB506E770D7F92E3DEE7185100AF4F8B /* DeprecationWarner.swift */,
-				464AE40BC57CD3428CC3E3ADF0536758 /* DispatchQueue+Extensions.swift */,
-				CC18A8401227818122D4BE299BD86E5A /* DispatchQueueConfiguration.swift */,
-				8148F463554C308D99AB2904E3503343 /* Disposable.swift */,
-				41B97FE0D9E8A062CCE94F691894D9ED /* Disposables.swift */,
-				F7BD06A4A1DB6B39360B5C13BAC00FD1 /* DisposeBag.swift */,
-				E6E34A74D75390CFC8B02F30367804B9 /* DisposeBase.swift */,
-				92FF87CEC123BF5E1CFC35DD3232C66B /* DistinctUntilChanged.swift */,
-				62E73B2886CE30235AC91AD945876794 /* Do.swift */,
-				42E0FEE883C8A1F6908F818B985F2273 /* ElementAt.swift */,
-				64365C4B7BFE1931E755BCF3435707A3 /* Empty.swift */,
-				4FD633F849B63CCA188725B30909F32F /* Enumerated.swift */,
-				11B3877614F3EC2B5BF4A41862345073 /* Error.swift */,
-				F1DAA20206F0533ABB183E5D036225FB /* Errors.swift */,
-				BC482DC92434F1E3876EAEABF8989A54 /* Event.swift */,
-				1DBF64C4EC2CE17D757FC306C74CCDDF /* Filter.swift */,
-				A1CD25AC43B121532A510C231587CFEC /* First.swift */,
-				B103EA4A2F4D3A0010F27EC0E53B5C97 /* Generate.swift */,
-				1098F80F261F592047D446EAFE2B7B1F /* GroupBy.swift */,
-				CAC4003D486FA620A9A8F4BBCA681E0F /* GroupedObservable.swift */,
-				3D9B4608CC81A5144F9F224A56DCC103 /* HistoricalScheduler.swift */,
-				17D5D1C261179BA1B30E8E71BED11948 /* HistoricalSchedulerTimeConverter.swift */,
-				9E3CD9EC5E428D13739261BCBAAF7B6A /* ImmediateSchedulerType.swift */,
-				A21EEF09AF59FE5FA7D3E486128B8A98 /* InfiniteSequence.swift */,
-				2F7731DF84DB483F451BB4CC2F05C367 /* InvocableScheduledItem.swift */,
-				52855F7EDF8210DA10D743688BDD3234 /* InvocableType.swift */,
-				9543092FED1B49E96444250D60AC2CFF /* Just.swift */,
-				8BDCADD24FD0D071B24330CEACCA56A7 /* Lock.swift */,
-				F4801B41BF7EDA9BF20AC42934A841DF /* LockOwnerType.swift */,
-				F10DC8DCFA8121F4CF1F397A4701CE7D /* MainScheduler.swift */,
-				3828D5B73FC3AF72AF4F074FFB547E70 /* Map.swift */,
-				68D0FD506AF33137A498364120362F0B /* Materialize.swift */,
-				9066345DD64FF34562DE76D3A64A6243 /* Maybe.swift */,
-				60334876828EA1BEC128EABC710986FA /* Merge.swift */,
-				AEBBBAF2666A187BFED81CF000FD917C /* Multicast.swift */,
-				E294287571DB77E687ACB9BF22CCE677 /* Never.swift */,
-				106E3B8B613F616FF9C0CDDEF9A2F83B /* NopDisposable.swift */,
-				5A8DBD8141271632F947D4197F0C6F53 /* Observable.swift */,
-				DD0F3CC945AD4C392BAFE1FCE5A444F9 /* ObservableConvertibleType.swift */,
-				7329E319DE57F4DB62494DBBD4BF3ED8 /* ObservableType.swift */,
-				EC6889CDA4E8471827A045E095DE05E0 /* ObservableType+Extensions.swift */,
-				D33A332E80566D8CFB8D53D8059195C0 /* ObservableType+PrimitiveSequence.swift */,
-				1E32F67A7408142DA738A6898DE61E73 /* ObserveOn.swift */,
-				F2654E1CD6172F9651E97B66FA6F614A /* ObserverBase.swift */,
-				CB9675138BA3A9713E0F3009E05A7133 /* ObserverType.swift */,
-				233431B69846A37B7BA3D3666149B3D9 /* OperationQueueScheduler.swift */,
-				D4729581070CCA3623D3BB670F59E8C3 /* Optional.swift */,
-				5C551B76726D4D01DC9474F50EC0F4F5 /* Platform.Darwin.swift */,
-				B2B95E06753A712FD29986576026F300 /* Platform.Linux.swift */,
-				B3F7B177DC90158822CBDC35611808C1 /* PrimitiveSequence.swift */,
-				73806CB29F8BEF487B0DC1198D811690 /* PrimitiveSequence+Zip+arity.swift */,
-				3E0AA4022A90EF4C69195070430EFFB7 /* PriorityQueue.swift */,
-				1BAD53E6578744D0258CC67DC599C84D /* Producer.swift */,
-				C27924127ACF9EDB7D8FC2AE7B5CA027 /* PublishSubject.swift */,
-				8DE4926FA975AE5A48312F583127D5CC /* Queue.swift */,
-				6A6692C0598DC2BCA9CBF05A8D9C69C8 /* Range.swift */,
-				652D83B633B10341557A2EB671D226D1 /* Reactive.swift */,
-				688704A0F86E98D105F64E5262A96A3D /* RecursiveLock.swift */,
-				07D836C82127700317CA6AE05EBE8A07 /* RecursiveScheduler.swift */,
-				65F9A2EABDEB79654556A640A946656F /* Reduce.swift */,
-				AAC9BAE03460E306F53D5F2167F52CC2 /* RefCountDisposable.swift */,
-				AE253F25DA4C20CD1EB3458C5C920E94 /* Repeat.swift */,
-				7C404C4C32605E021C566A8A0F74F310 /* ReplaySubject.swift */,
-				47F51533ACB13951DD90FA0D1CD6673C /* RetryWhen.swift */,
-				94F33BFE58A946DF5B1D245CDD752E7A /* Rx.swift */,
-				F6D97F074CA6842B102509F105FF56E9 /* RxMutableBox.swift */,
-				013AD2D3D953C48F8DCA1A0E992711DC /* Sample.swift */,
-				632EC1C0FCE3725BFCB274CF7F39A0DA /* Scan.swift */,
-				F8C9ED162538BBE231F4063FF9B6FD9F /* ScheduledDisposable.swift */,
-				2703816D1071E98826FED79EA9D88496 /* ScheduledItem.swift */,
-				66A632C9380FBE6417E1AA683F202319 /* ScheduledItemType.swift */,
-				1545765096E5C42FD6E4EDB10E35B60D /* SchedulerServices+Emulation.swift */,
-				5B26F6105C3BC0C43604CB309781EC3D /* SchedulerType.swift */,
-				54CBBC906212792D55DF64A76E1E7A97 /* Sequence.swift */,
-				D429D2E176AC4269A7BCC00E9EE9557F /* SerialDispatchQueueScheduler.swift */,
-				9EBF868864288B21625C75ED7DFCA521 /* SerialDisposable.swift */,
-				55C3F5B5681C7237B1DF90DBD3A466A8 /* ShareReplayScope.swift */,
-				8E6E452DAD9B018630AD5D9FE14DAC84 /* Single.swift */,
-				76ED53E6E2031EA2715887C4B2116708 /* SingleAssignmentDisposable.swift */,
-				6F9B54F8AE7D09842A32EDB4C50EE612 /* SingleAsync.swift */,
-				43D1E2E605E1DABFDA351C11BE349A66 /* Sink.swift */,
-				0C4B3D5707C2A0FD3F48A8A70199CDA1 /* Skip.swift */,
-				07D4591750C258DE9E368275CE043947 /* SkipUntil.swift */,
-				12D17511F87B966DED912C56928B0D85 /* SkipWhile.swift */,
-				8D4FBB445DF99ECC99CA9152EB91D6AB /* StartWith.swift */,
-				643E4FA5CC58EF21ED2ECDE9D266E912 /* String+Rx.swift */,
-				BBC5F0227C13DFF233D194F7963D22A1 /* SubjectType.swift */,
-				4D145A00A82A2857E5132D034B533B48 /* SubscribeOn.swift */,
-				CC4B4DB831D02FF5D32BA2A56BAF8259 /* SubscriptionDisposable.swift */,
-				44B8CAD0D1C231F7445A62CE82450E5B /* SwiftSupport.swift */,
-				28345605DF96D0F0CE51E17F275DA750 /* Switch.swift */,
-				34BBED6048A15FAB41504DAB287BFCE4 /* SwitchIfEmpty.swift */,
-				0736D857F639719F79A2E2E1B4A844DD /* SynchronizedDisposeType.swift */,
-				9909D162BB5549B7442F223997939C59 /* SynchronizedOnType.swift */,
-				DE36E74825E394A4539DA75CC9F2DFDB /* SynchronizedUnsubscribeType.swift */,
-				E18C418A05F38EE5F5A54330EF498481 /* TailRecursiveSink.swift */,
-				B6892610DCDAAE6ECE4AF661A6512BA5 /* Take.swift */,
-				8E11FCCDD1C43DCD4CBF8D8EE798B492 /* TakeLast.swift */,
-				B1328EE6B3E96239B05F9F400D908C90 /* TakeUntil.swift */,
-				8A8E7B4E4D241BE96FF1689EAE556F06 /* TakeWhile.swift */,
-				BF28E7CF253936778B84EFED2545ABB5 /* Throttle.swift */,
-				7530946BC60F5D41CBC82114565345F8 /* Timeout.swift */,
-				7C5C0F7EB11FAD525CD8C127A46AC65D /* Timer.swift */,
-				1E70F0A4335622D9B4FCF6EDD8F8F500 /* ToArray.swift */,
-				0C5B5230686AF4898E1D09F802DA4C08 /* Using.swift */,
-				70A19B4C23C4F69E5E0B19DACA7360BB /* VirtualTimeConverterType.swift */,
-				79BB892E4E702281EAC60D92DA32BAB8 /* VirtualTimeScheduler.swift */,
-				6B2698B69F88D08A23B965DD81C120D0 /* Window.swift */,
-				5B158260670A6C8066B952EEF23B8ED4 /* WithLatestFrom.swift */,
-				54FA5FA507E2D2D83064388B4C7326EE /* Zip.swift */,
-				B084AC381F82737868030903E799322D /* Zip+arity.swift */,
-				0A510F368997F99C78509249A0F4E0C2 /* Zip+Collection.swift */,
-				80086595ADB8DE3DEE8E2F92DBC5DB6F /* Support Files */,
-			);
-			name = RxSwift;
-			path = RxSwift;
-			sourceTree = "<group>";
-		};
+
+
 		80086595ADB8DE3DEE8E2F92DBC5DB6F /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -3326,11 +3207,13 @@
 				30440C864A625E3007E9847655D5C22D /* RxSwift-Info.plist */,
 				05F58D72ADDF7D8726B0177DBC21C75E /* RxSwift-prefix.pch */,
 				448EEE1A48F1BDAE55273C1B7B9976D2 /* RxSwift-umbrella.h */,
+
 			);
 			name = "Support Files";
 			path = "../Target Support Files/RxSwift";
 			sourceTree = "<group>";
 		};
+
 		8189C2F0B7D03AFA38D6E6067581A84E /* Alamofire */ = {
 			isa = PBXGroup;
 			children = (
@@ -3559,11 +3442,13 @@
 			);
 			name = FacebookLogin;
 			path = FacebookLogin;
+
 			sourceTree = "<group>";
 		};
 		AB721C446C7262AE0CCAD30C9BBA9973 /* ObjectMapper */ = {
 			isa = PBXGroup;
 			children = (
+
 				10496B3FABAC2F4A040030B08CB1F106 /* CodableTransform.swift */,
 				D7AA78E8C8CC289BE65132232079E8D0 /* CustomDateFormatTransform.swift */,
 				1A49DD3EC3EB4F6AAA8B9F28483C1A5F /* DataTransform.swift */,
@@ -3589,11 +3474,13 @@
 				3CDAAFE0C8580FC327C4B4858414962D /* TransformType.swift */,
 				3849E5746E77846600F13C6F7593FCED /* URLTransform.swift */,
 				DA16E9015ECAF2496070C2003C65900A /* Support Files */,
+
 			);
 			name = ObjectMapper;
 			path = ObjectMapper;
 			sourceTree = "<group>";
 		};
+
 		B8AD6646FF1FB794AEFDDB9107DD766D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -3882,12 +3769,14 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/FBSDKLoginKit";
+
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
 		15A421E0FD913D494C3922195C2791D1 /* Headers */ = {
+
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -4000,6 +3889,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+
 		7512C35B1ED0B0BF07AEADFC35138752 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -4070,6 +3960,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+
 		CBC2825B535AA21122BDF5EC1A0550D7 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -4529,6 +4420,7 @@
 			productReference = 44BDE666786E299753905F12877D4067 /* LinearProgressView.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+
 		56F4191D8CB8B4E6B4E5E4FA1A9F0F46 /* FBSDKShareKit */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C0CF58A7F07F3FF3A6645059FAFDEC7B /* Build configuration list for PBXNativeTarget "FBSDKShareKit" */;
@@ -4732,7 +4624,9 @@
 				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+
 			productRefGroup = A9062308B4475B9040740CEE62282F8E /* Products */;
+
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -4810,7 +4704,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+
 		9234D931DD8C30A844A2361ABE959CB8 /* Resources */ = {
+
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -4839,6 +4735,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A49F5943BB44D421A56C94AEEEB592AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A59539DBB41D1FEBD50276CBC3F0F628 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -4846,14 +4749,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A5A12C7B1DF9A5D39D370385CD5BAF59 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
+
 		A8B38D1433683F2D53DA874E8AF45CD0 /* Resources */ = {
+
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -5200,6 +5098,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+
 		7D760D1C7A139E97BD8C20668CA9BCA4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -5301,6 +5200,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+
 		865B39F882D59259F9342FEB5F941039 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -5314,6 +5214,7 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		A6048004CB5DD3606FD74F00B365F9A6 /* Sources */ = {
+
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -5664,17 +5565,25 @@
 			target = 28907903AF6DD0AD321D92CD660E7E23 /* FBSDKCoreKit */;
 			targetProxy = 291A5FCDD02A72528FBD8F84C7818B30 /* PBXContainerItemProxy */;
 		};
+		057E5C30D8EDF4290A46D55D5CA191B2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SkeletonView;
+			target = 8CEEFD1CB630CA790F0396E2E24A4C8C /* SkeletonView */;
+			targetProxy = F4E8FFC75667679B8257A7CB8B228F35 /* PBXContainerItemProxy */;
+		};
 		0948562AED281D995F08ABAB87C913E2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = FBSDKCoreKit;
 			target = 28907903AF6DD0AD321D92CD660E7E23 /* FBSDKCoreKit */;
 			targetProxy = 6183A5683D25DD0951062C310D8B411E /* PBXContainerItemProxy */;
 		};
+
 		0A767051B38FE8E3177C3DBFFD03E1A8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SwiftyJSON;
 			target = D118A6A04828FD3CDA8640CD2B6796D2 /* SwiftyJSON */;
 			targetProxy = 69374EB5F99CE6386DAD0AE2DCE732F2 /* PBXContainerItemProxy */;
+
 		};
 		1E68C62EA6A6972696ED996E50EEFAFB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -5700,6 +5609,7 @@
 			target = 56F4191D8CB8B4E6B4E5E4FA1A9F0F46 /* FBSDKShareKit */;
 			targetProxy = F3353A698FBA9B2ECD0B8C3BE03A706D /* PBXContainerItemProxy */;
 		};
+
 		2EC04772233977E408343D56EB3AE57E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SkeletonView;
@@ -5712,13 +5622,16 @@
 			target = 54AB102BD56121F4FB8F9FF3053F8767 /* LinearProgressView */;
 			targetProxy = 27F55303324E9EBF55E1D7D39D7C946F /* PBXContainerItemProxy */;
 		};
+
 		39CD27440CA8B40FAEF42269175DFF20 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Result;
 			target = E163AC315AD24CFBD60C178D602BFC83 /* Result */;
 			targetProxy = F9BE30A673A8C8DE58C039CE4AF60E2C /* PBXContainerItemProxy */;
 		};
+
 		3B05449EADB077FE6D5D7962F105A49B /* PBXTargetDependency */ = {
+ 
 			isa = PBXTargetDependency;
 			name = FBSDKCoreKit;
 			target = 28907903AF6DD0AD321D92CD660E7E23 /* FBSDKCoreKit */;
@@ -5736,6 +5649,7 @@
 			target = 290D7B2F80A1721A35508C1739C47F56 /* FacebookCore */;
 			targetProxy = 45FFD5B5ECED7B18744735186FAF9052 /* PBXContainerItemProxy */;
 		};
+
 		61DC82E4A0DC977C9B117329669C611B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = FacebookShare;
@@ -5777,6 +5691,7 @@
 			name = SDWebImage;
 			target = 3847153A6E5EEFB86565BA840768F429 /* SDWebImage */;
 			targetProxy = 3656BF4118B2148D376119387B0E7CF8 /* PBXContainerItemProxy */;
+
 		};
 		A8468949CBB2AF61B769169D938CC127 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -5784,12 +5699,19 @@
 			target = 47D2E85A78C25869BB13521D8561A638 /* libwebp */;
 			targetProxy = E6D0EC51D5645138EDE6C5E2E4D05CAA /* PBXContainerItemProxy */;
 		};
+		A857A8B946869805E5F9FD7DAF8A5C7E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = libwebp;
+			target = 47D2E85A78C25869BB13521D8561A638 /* libwebp */;
+			targetProxy = 0EDA64C3C5430281592B414D78E6575A /* PBXContainerItemProxy */;
+		};
 		B487AF2A3F94EBDEE1B3562EBEA568F5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = FacebookCore;
 			target = 290D7B2F80A1721A35508C1739C47F56 /* FacebookCore */;
 			targetProxy = 87B71C25A7C962AB6FDC7A07C204B0F2 /* PBXContainerItemProxy */;
 		};
+
 		B9C54FD3C05E277038FECDAE47396D52 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = PieCharts;
@@ -5808,12 +5730,14 @@
 			target = 47D2E85A78C25869BB13521D8561A638 /* libwebp */;
 			targetProxy = 1578C5BDC212B3C52DD2E7D2E10568FD /* PBXContainerItemProxy */;
 		};
+
 		D8138C02699CD17F9BDB9437E23ED5AB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = FBSDKLoginKit;
 			target = 10C5885FCB0908EF785774EE52473DAB /* FBSDKLoginKit */;
 			targetProxy = 5035120357305D9A44278E338490D8D7 /* PBXContainerItemProxy */;
 		};
+
 		DBD7FB51C3D9FA36D7EF468AD5A7D478 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = FBSDKLoginKit;
@@ -5825,6 +5749,7 @@
 			name = Moya;
 			target = 17F9141D333DA1A7BE5937F227221070 /* Moya */;
 			targetProxy = F57DB45B36E09C324C538B4AB4391523 /* PBXContainerItemProxy */;
+
 		};
 		E76107A9790584203E672A5896E4B0B9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -5832,11 +5757,13 @@
 			target = 4949F2E81928B23F0DBD7CBD4C7FAD08 /* CircleProgressView */;
 			targetProxy = 43761C8078AD20B1EA5B655F81536138 /* PBXContainerItemProxy */;
 		};
+
 		EA43A9C43A76A64AC3152D23FCDA8FF9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = FacebookLogin;
 			target = 063386C78BA04CFC605AF41C9F9AAE03 /* FacebookLogin */;
 			targetProxy = 7AE3FCBCD2FBC67DF62D65D65D32770D /* PBXContainerItemProxy */;
+
 		};
 		FCAF6321E4FDC57C5CBB9BE63C14B8FF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -5855,7 +5782,9 @@
 /* Begin XCBuildConfiguration section */
 		0BE8C1F8AF623488AA04D932312903DD /* Debug */ = {
 			isa = XCBuildConfiguration;
+
 			baseConfigurationReference = 83F141AAE173B574A6806964E897E739 /* Result.xcconfig */;
+
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -5890,7 +5819,9 @@
 		};
 		1190D33CFB7BDEE31C65CC7ECDE0FA45 /* Release */ = {
 			isa = XCBuildConfiguration;
+
 			baseConfigurationReference = 0266EA1A33073172AEDE5A44475CFAFF /* SDWebImage.xcconfig */;
+
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -5926,7 +5857,9 @@
 		};
 		124AA77418747D85F8FD22FAB4837A9B /* Debug */ = {
 			isa = XCBuildConfiguration;
+
 			baseConfigurationReference = DB5321EFA8D3527381C129239D33202B /* SkeletonView.xcconfig */;
+
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -5961,7 +5894,9 @@
 		};
 		13049AA41BBA470FCF6FD2872090678C /* Debug */ = {
 			isa = XCBuildConfiguration;
+
 			baseConfigurationReference = DA5A41F86B14ECB00AE37A2747BB970B /* ObjectMapper.xcconfig */;
+
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -6060,7 +5995,9 @@
 		};
 		20C5415A82A1963D12467DB17D2699B8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+
 			baseConfigurationReference = C85CB9B3DABF4A047D3DCCC8E72ED99E /* Pods-ILCEdu.debug.xcconfig */;
+
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -6096,6 +6033,7 @@
 			};
 			name = Debug;
 		};
+
 		22CB495827DF57CB867348728B8B8C38 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E2A887055C05415DA8569AEECA0B6252 /* Moya.xcconfig */;
@@ -6135,6 +6073,7 @@
 		3D93CA1C6C56EDF6AF2002F43AE03241 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BD53896C2A94F9E1D98AFB91366B73D6 /* LinearProgressView.xcconfig */;
+
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -6169,7 +6108,9 @@
 		};
 		3E650FE05857F4FB665A7F9FEF085CD1 /* Release */ = {
 			isa = XCBuildConfiguration;
+
 			baseConfigurationReference = EAD0E2CD8B186F848A818A10867F0136 /* FacebookLogin.xcconfig */;
+
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -6203,7 +6144,9 @@
 			};
 			name = Release;
 		};
+
 		5A3EA3D38F64E3D071EEFA03DDA6CB0F /* Release */ = {
+
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 74B1001179C30DC3F30BD659D247360E /* FBSDKLoginKit.xcconfig */;
 			buildSettings = {
@@ -6241,7 +6184,9 @@
 		};
 		608A894D0C1BA4EDFF220D1E0187CFAA /* Release */ = {
 			isa = XCBuildConfiguration;
+
 			baseConfigurationReference = 7A20D2F839EAF9B06F03F2482B9B7290 /* PieCharts.xcconfig */;
+
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -6277,7 +6222,9 @@
 		};
 		60DF385FE35E022030C4099A5650C89E /* Debug */ = {
 			isa = XCBuildConfiguration;
+
 			baseConfigurationReference = E2A887055C05415DA8569AEECA0B6252 /* Moya.xcconfig */;
+
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -6312,7 +6259,9 @@
 		};
 		691759E12C0C0C295D4A3037C9EB0246 /* Release */ = {
 			isa = XCBuildConfiguration;
+
 			baseConfigurationReference = D8EA41672025C16439550177CC9E1670 /* libwebp.xcconfig */;
+
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -6348,7 +6297,9 @@
 		};
 		6E2226BAF771B9AEEA8FE646C18E7879 /* Release */ = {
 			isa = XCBuildConfiguration;
+
 			baseConfigurationReference = CD84ED55CD9036BD0F1181AB8B6147E8 /* SwiftyJSON.xcconfig */;
+
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -6384,7 +6335,9 @@
 		};
 		709436A5131820E44A1196F57BC8461B /* Release */ = {
 			isa = XCBuildConfiguration;
+
 			baseConfigurationReference = FF27CD706CF334BA2B556CD4B357505D /* FacebookShare.xcconfig */;
+
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -6420,7 +6373,9 @@
 		};
 		75BBB760DFD877E344322B54D29DFE64 /* Debug */ = {
 			isa = XCBuildConfiguration;
+
 			baseConfigurationReference = 6551E96F0153C415382584E3A3AE450B /* Alamofire.xcconfig */;
+
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -6455,7 +6410,9 @@
 		};
 		7898A8ABED15AFCB831E5E7C06AD8833 /* Release */ = {
 			isa = XCBuildConfiguration;
+
 			baseConfigurationReference = 68D8A4A25F55A261AD0827C3937F62A5 /* FBSDKCoreKit.xcconfig */;
+
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -6491,7 +6448,9 @@
 		};
 		7B989D3600863C56E3E6C2E5FE98DF94 /* Release */ = {
 			isa = XCBuildConfiguration;
+
 			baseConfigurationReference = DD21AE30D50DA568CDE80741E528387F /* FBSDKShareKit.xcconfig */;
+
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -6527,7 +6486,9 @@
 		};
 		841C7A083CE473473BC414E9FEEF2780 /* Release */ = {
 			isa = XCBuildConfiguration;
+
 			baseConfigurationReference = AA5B18D1049D75596DC5BCC69EDFB59F /* CircleProgressView.xcconfig */;
+
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -6563,7 +6524,9 @@
 		};
 		8EA65D6954F09800C3E114DAACFEEC7F /* Debug */ = {
 			isa = XCBuildConfiguration;
+
 			baseConfigurationReference = 68D8A4A25F55A261AD0827C3937F62A5 /* FBSDKCoreKit.xcconfig */;
+
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -6598,7 +6561,9 @@
 		};
 		8F23562730D364A34F7B1830A47AC2E6 /* Release */ = {
 			isa = XCBuildConfiguration;
+
 			baseConfigurationReference = B00E0DA48EDF66873018C1568E6C99C5 /* Pods-ILCEdu.release.xcconfig */;
+
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -6635,9 +6600,11 @@
 			};
 			name = Release;
 		};
+
 		9296011FF200C52455134A13ED99E094 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 17DD302F7D9423E81EE02683047853AE /* Pods-ILCEduTests.debug.xcconfig */;
+      
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -6675,7 +6642,9 @@
 		};
 		93E393FB093F5E9B6C3B2448E939C4A6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+
 			baseConfigurationReference = 7A20D2F839EAF9B06F03F2482B9B7290 /* PieCharts.xcconfig */;
+
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -6710,7 +6679,9 @@
 		};
 		97422B9C69FEFF649D7D3C875B3B47C8 /* Release */ = {
 			isa = XCBuildConfiguration;
+
 			baseConfigurationReference = 19CDE73AA7EC5A3E5F6CCC576AF03E22 /* Pods-ILCEduTests.release.xcconfig */;
+
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -6749,7 +6720,9 @@
 		};
 		9AF13D9ED5108631B68FECCAB95B21BD /* Release */ = {
 			isa = XCBuildConfiguration;
+
 			baseConfigurationReference = BD53896C2A94F9E1D98AFB91366B73D6 /* LinearProgressView.xcconfig */;
+
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -6785,7 +6758,9 @@
 		};
 		9EB549EF91833974C68673D43F20D4C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+
 			baseConfigurationReference = EAD0E2CD8B186F848A818A10867F0136 /* FacebookLogin.xcconfig */;
+
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -6820,7 +6795,9 @@
 		};
 		A504CA400E77A695924D5EA352602F84 /* Debug */ = {
 			isa = XCBuildConfiguration;
+
 			baseConfigurationReference = DB10018AE6A97056DBB47111DDDE8385 /* FacebookCore.xcconfig */;
+
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -6855,7 +6832,9 @@
 		};
 		A9696872BB4E38A707CC739EDE55552C /* Release */ = {
 			isa = XCBuildConfiguration;
+
 			baseConfigurationReference = BAE1088C14CA7149158C7EEDC77277CC /* RxSwift.xcconfig */;
+
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -6927,7 +6906,9 @@
 		};
 		AD75E0A8E147E6533FCF40D05C47D0A2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+
 			baseConfigurationReference = 0266EA1A33073172AEDE5A44475CFAFF /* SDWebImage.xcconfig */;
+
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -7022,7 +7003,9 @@
 		};
 		B71DB581EBE515D2DB990015C65B5C7E /* Release */ = {
 			isa = XCBuildConfiguration;
+
 			baseConfigurationReference = 83F141AAE173B574A6806964E897E739 /* Result.xcconfig */;
+
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -7058,7 +7041,9 @@
 		};
 		B8F5585F1C9A19D6741F707CDC5A8F6F /* Release */ = {
 			isa = XCBuildConfiguration;
+
 			baseConfigurationReference = DB5321EFA8D3527381C129239D33202B /* SkeletonView.xcconfig */;
+
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -7092,9 +7077,50 @@
 			};
 			name = Release;
 		};
+		BC8FBC313C1EA43354ABF0FF6576989D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 234D91CBD76AC8443F37BCEE81B2641A /* Pods-ICLEdu.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-ICLEdu/Pods-ICLEdu-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ICLEdu/Pods-ICLEdu.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		CE1CFD83BBB73BA67981064298B67BAE /* Debug */ = {
 			isa = XCBuildConfiguration;
+
 			baseConfigurationReference = DD21AE30D50DA568CDE80741E528387F /* FBSDKShareKit.xcconfig */;
+
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -7162,9 +7188,46 @@
 			};
 			name = Debug;
 		};
+		CF0E040F1A4FBBEE22D368EC0E2F5F8D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC6CA3303CCE4C96BF9D89E752E6802B /* CircleProgressView.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/CircleProgressView/CircleProgressView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CircleProgressView/CircleProgressView-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/CircleProgressView/CircleProgressView.modulemap";
+				PRODUCT_MODULE_NAME = CircleProgressView;
+				PRODUCT_NAME = CircleProgressView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		D2B9762EF9874C813682C4D11776B50C /* Debug */ = {
 			isa = XCBuildConfiguration;
+
 			baseConfigurationReference = 74B1001179C30DC3F30BD659D247360E /* FBSDKLoginKit.xcconfig */;
+
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -7199,7 +7262,9 @@
 		};
 		DEA59BBE8C9AE376101F919E5AE10831 /* Debug */ = {
 			isa = XCBuildConfiguration;
+
 			baseConfigurationReference = BAE1088C14CA7149158C7EEDC77277CC /* RxSwift.xcconfig */;
+
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -7234,7 +7299,9 @@
 		};
 		E81C30CD63389F82C0B47B27758AE6A3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+
 			baseConfigurationReference = FF27CD706CF334BA2B556CD4B357505D /* FacebookShare.xcconfig */;
+
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -7269,7 +7336,9 @@
 		};
 		E8F35927ECB754A46E0AC8C2BACAF32D /* Debug */ = {
 			isa = XCBuildConfiguration;
+
 			baseConfigurationReference = CD84ED55CD9036BD0F1181AB8B6147E8 /* SwiftyJSON.xcconfig */;
+
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -7304,7 +7373,9 @@
 		};
 		EF22ECA4EC1F51E0EB991C9024200F28 /* Debug */ = {
 			isa = XCBuildConfiguration;
+
 			baseConfigurationReference = D8EA41672025C16439550177CC9E1670 /* libwebp.xcconfig */;
+
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -7339,7 +7410,9 @@
 		};
 		F94FD07C591B17B7E61A1528AB9BCB3B /* Release */ = {
 			isa = XCBuildConfiguration;
+
 			baseConfigurationReference = 6551E96F0153C415382584E3A3AE450B /* Alamofire.xcconfig */;
+
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -7375,7 +7448,9 @@
 		};
 		FA0B5D6DF359BB7F53D828ACC8C46DDD /* Release */ = {
 			isa = XCBuildConfiguration;
+
 			baseConfigurationReference = DB10018AE6A97056DBB47111DDDE8385 /* FacebookCore.xcconfig */;
+
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -7439,6 +7514,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+
 		435F577E4A4CEDC53CC2F09B23544227 /* Build configuration list for PBXNativeTarget "FBSDKCoreKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -7516,6 +7592,15 @@
 			buildConfigurations = (
 				CE1CFD83BBB73BA67981064298B67BAE /* Debug */,
 				7B989D3600863C56E3E6C2E5FE98DF94 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DAF81F86B78581C0C268AEDBB1FC12A0 /* Build configuration list for PBXNativeTarget "Pods-ICLEdu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C30A204E9C2CBC3727F00E7EA8B9047 /* Debug */,
+				BC8FBC313C1EA43354ABF0FF6576989D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
