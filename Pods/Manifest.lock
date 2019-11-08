@@ -53,7 +53,6 @@ PODS:
   - SwiftyJSON (4.3.0)
 
 DEPENDENCIES:
-
   - CircleProgressView (from `https://github.com/CardinalNow/iOS-CircleProgressView.git`)
   - FacebookCore
   - FacebookLogin
@@ -114,7 +113,6 @@ SPEC CHECKSUMS:
   SDWebImage: c10d14a8883ebd89664f02a422006f66a85c0c5d
   SkeletonView: bb27c39857e5492136f02ee8a3aa78de55d12ecd
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
-
 
 PODFILE CHECKSUM: d07df533e19c5c0817c1eab8b40c29a2a61aa880
 

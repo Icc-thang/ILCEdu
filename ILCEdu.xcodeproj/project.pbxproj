@@ -56,13 +56,13 @@
 		88B8F8F4237560A70084D3E8 /* VocabularyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88B8F8F2237560A60084D3E8 /* VocabularyCell.xib */; };
 		88B8F8F7237560B00084D3E8 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B8F8F5237560AF0084D3E8 /* CardCell.swift */; };
 		88B8F8F8237560B00084D3E8 /* CardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88B8F8F6237560B00084D3E8 /* CardCell.xib */; };
+		88B8F8F923756E0E0084D3E8 /* Pods_ILCEdu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CC367318E16CD5A67279853 /* Pods_ILCEdu.framework */; };
 		88C55FA12360B39800B30C66 /* PresenterMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C55FA02360B39800B30C66 /* PresenterMenu.swift */; };
 		88C71699235705FC008B9116 /* LessonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C71698235705FC008B9116 /* LessonModel.swift */; };
 		88C7169E235707F6008B9116 /* PresenterLesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C7169D235707F6008B9116 /* PresenterLesson.swift */; };
 		88D63991236058B20008C529 /* SwiftNotice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D63990236058B10008C529 /* SwiftNotice.swift */; };
 		88D92CC22351B1CC000A299A /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D92CC12351B1CC000A299A /* ProfileModel.swift */; };
 		88DCB72D2344517D004DF4C2 /* PresenterRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DCB72C2344517D004DF4C2 /* PresenterRegister.swift */; };
-		CD0505265EA1DD082C4B17E3 /* Pods_ILCEdu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CC367318E16CD5A67279853 /* Pods_ILCEdu.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,8 +161,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88B8F8F923756E0E0084D3E8 /* Pods_ILCEdu.framework in Frameworks */,
 				881A5881234CA09100CD23E0 /* BubbleTabBar.framework in Frameworks */,
-				CD0505265EA1DD082C4B17E3 /* Pods_ILCEdu.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
