@@ -72,16 +72,6 @@ extension LoginViewController: LoginDelegate {
         let alert = UIAlertController(title: "Something wrong!", message: "Unable to connect to the server", preferredStyle: UIAlertController.Style.alert)
         // add an action (button)
         alert.addAction(UIAlertAction(title: "Close", style: UIAlertAction.Style.cancel, handler: nil))
-        alert.addAction(UIAlertAction(title: "Retry", style: UIAlertAction.Style.default, handler: { action in
-            
-            if AccessToken.current?.tokenString != nil{
-                self.showSpinner(onView: self.view)
-                self.presenterLogin.getDataForLogin(tokenFB: AccessToken.current?.tokenString ?? "")
-            }else {
-                print("Đăng nhập Facebook lỗi")
-            }
-        }))
-        
         // show the alert
         self.present(alert, animated: true, completion: nil)
     }
