@@ -57,7 +57,6 @@
 		88B8F8F7237560B00084D3E8 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B8F8F5237560AF0084D3E8 /* CardCell.swift */; };
 		88B8F8F8237560B00084D3E8 /* CardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88B8F8F6237560B00084D3E8 /* CardCell.xib */; };
 		88B8F8F923756E0E0084D3E8 /* Pods_ILCEdu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CC367318E16CD5A67279853 /* Pods_ILCEdu.framework */; };
-		88C55FA12360B39800B30C66 /* PresenterMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C55FA02360B39800B30C66 /* PresenterMenu.swift */; };
 		88C71699235705FC008B9116 /* LessonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C71698235705FC008B9116 /* LessonModel.swift */; };
 		88C7169E235707F6008B9116 /* PresenterLesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C7169D235707F6008B9116 /* PresenterLesson.swift */; };
 		88D63991236058B20008C529 /* SwiftNotice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D63990236058B10008C529 /* SwiftNotice.swift */; };
@@ -143,7 +142,6 @@
 		88B8F8F2237560A60084D3E8 /* VocabularyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VocabularyCell.xib; sourceTree = "<group>"; };
 		88B8F8F5237560AF0084D3E8 /* CardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 		88B8F8F6237560B00084D3E8 /* CardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardCell.xib; sourceTree = "<group>"; };
-		88C55FA02360B39800B30C66 /* PresenterMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterMenu.swift; sourceTree = "<group>"; };
 		88C71698235705FC008B9116 /* LessonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonModel.swift; sourceTree = "<group>"; };
 		88C7169D235707F6008B9116 /* PresenterLesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterLesson.swift; sourceTree = "<group>"; };
 		88D63990236058B10008C529 /* SwiftNotice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftNotice.swift; sourceTree = "<group>"; };
@@ -228,11 +226,11 @@
 		6C0DF44B23385E750056A094 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				88B8F8D823755FF60084D3E8 /* Nav Cell */,
-				88B8F8D323755F780084D3E8 /* Vocabulary Cell */,
-				88B8F8D223755F700084D3E8 /* Profile Cell */,
 				88B8F8D123755F6A0084D3E8 /* Menu Cell */,
+				88B8F8D223755F700084D3E8 /* Profile Cell */,
+				88B8F8D323755F780084D3E8 /* Vocabulary Cell */,
 				88B8F8D023755F5D0084D3E8 /* Lesson Cell */,
+				88B8F8D823755FF60084D3E8 /* Nav Cell */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -401,7 +399,6 @@
 			isa = PBXGroup;
 			children = (
 				881DBABE2358D3D400715AB9 /* MenuViewController.swift */,
-				88C55FA02360B39800B30C66 /* PresenterMenu.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -747,7 +744,6 @@
 				881DBABF2358D3D500715AB9 /* MenuViewController.swift in Sources */,
 				6C0DF4482334DAFF0056A094 /* LessonViewController.swift in Sources */,
 				88B8F8EC237560860084D3E8 /* ProcessCell.swift in Sources */,
-				88C55FA12360B39800B30C66 /* PresenterMenu.swift in Sources */,
 				88105FFE2350430C004E56FC /* RegisterModel.swift in Sources */,
 				88B8F8F0237560950084D3E8 /* ProfileCell.swift in Sources */,
 				88C71699235705FC008B9116 /* LessonModel.swift in Sources */,

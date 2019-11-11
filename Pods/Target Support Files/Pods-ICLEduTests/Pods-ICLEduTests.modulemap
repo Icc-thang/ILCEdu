@@ -1,6 +1,0 @@
-framework module Pods_ICLEduTests {
-  umbrella header "Pods-ICLEduTests-umbrella.h"
-
-  export *
-  module * { export * }
-}
