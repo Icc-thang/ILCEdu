@@ -79,15 +79,10 @@ extension LoginViewController: LoginDelegate {
     
     func getDataLogin() {
         UserDefaults.standard.set(presenterLogin.loginModel?.id ?? 0, forKey: "idMember")
-        if self.presenterLogin.loginModel?.access_token == "" {
-            self.removeSpinner()
-            let registerVC = UIStoryboard(name: registerController, bundle: nil).instantiateViewController(withIdentifier: registerController) as! RegisterViewController
-            self.navigationController?.pushViewController(registerVC, animated: true)
-            
-        }else{
-            self.removeSpinner()
-        UserDefaults.standard.set(self.presenterLogin.loginModel?.access_token ?? "", forKey: "authorization")
+        if self.presenterLogin.loginModel?.access_token != "" || self.presenterLogin.loginModel?.access_token != nil {
+            UserDefaults.standard.set(self.presenterLogin.loginModel?.access_token ?? "", forKey: "authorization")
             let tabbarVC = UIStoryboard(name: tabbarController, bundle: nil).instantiateViewController(withIdentifier: tabbarController) as! BubbleTabBarController
+            self.removeSpinner()
             self.navigationController?.pushViewController(tabbarVC, animated: true)
         }
     }
