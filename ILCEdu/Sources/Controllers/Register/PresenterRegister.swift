@@ -29,7 +29,7 @@ class PresenterRegister {
         apiProvider.rx.request(.register(member_name, member_email, member_gender, member_address, member_birthday, member_phone))
             .filterSuccessfulStatusCodes()
             .mapJSON()
-            .subscribe(onSuccess: { json in
+            .subscribe(onSuccess: { json in  print(json)
                 self.registerModel = Mapper<RegisterModel>().map(JSONObject: json)
                 self.delegateRegister?.getDataRegister()
             }) { (err) in

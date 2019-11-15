@@ -31,7 +31,7 @@ class PresenterLesson {
             .do(onError: { error in
                 print(error)
             })
-            .subscribe(onSuccess: { json in
+            .subscribe(onSuccess: { json in print(json)
                 self.lesson = Mapper<Lesson>().map(JSONObject: json)
                 self.delegateLesson?.getDataLesson()
             }) { (error) in

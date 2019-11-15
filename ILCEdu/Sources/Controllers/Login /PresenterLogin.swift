@@ -13,7 +13,7 @@ import ObjectMapper
 protocol LoginDelegate:class {
     func getDataLogin()
     func ifLoginError()
-
+    
 }
 class PresenterLogin{
     weak var delegateLogin : LoginDelegate?
@@ -26,14 +26,15 @@ class PresenterLogin{
     var loginModel : LoginFBModel?
     
     func getDataForLogin(tokenFB : String?){
-        apiProvider.rx.request(.loginFB(tokenFB ?? ""))
+        apiProvider.rx
+            .request(.loginFB(tokenFB ?? ""))
             .filterSuccessfulStatusCodes()
+            .filterSuccessfulStatusAndRedirectCodes()
             .mapJSON()
             .subscribe(
-                onSuccess: { json in
+                onSuccess: { json in print(json)
                     self.loginModel = Mapper<LoginFBModel>().map(JSONObject: json)
                     self.delegateLogin?.getDataLogin()
-                    print("Log In:\(json)")
             }) { (error) in print(error)
                 self.delegateLogin?.ifLoginError()
         }

@@ -12,46 +12,23 @@ import FacebookLogin
 
 class MenuViewController: UITableViewController {
     
-//    let presenterMenu = PresenterMenu()
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        // Hide the Navigation Bar
-        self.navigationController?.setNavigationBarHidden(true, animated: animated)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        // Show the Navigation Bar
-        self.navigationController?.setNavigationBarHidden(false, animated: animated)
-    }
-    
-//    override func viewDidAppear(_ animated: Bool) {
-//        self.presenterMenu.getDataForProfile()
-//    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.presenterMenu.delegateMenu = self as? DelegateMenu
+        navigationSetup()
+        registerMenuCell()
         
-        let menuNib = UINib(nibName: menuCell, bundle: nil)
-        tableView.register(menuNib, forCellReuseIdentifier: menuCell)
     }
     
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 18))
-        let label = UILabel(frame: CGRect(x: 20, y: 20, width: tableView.frame.size.width, height: 50))
-        label.font = UIFont.boldSystemFont(ofSize: 25)
-        label.text = menu
-        label.textColor = UIColor.black
-        view.addSubview(label)
-        
-        return view
+    func navigationSetup(){
+        let view = NaviView()
+        view.setNavigationView(classLabel: tabMenu,
+                               userAvatar: UserDefaults.standard.string(forKey: "avatar") ?? avatarBase)
+        navigationItem.titleView = view
+        navigationController?.navigationBar.isTranslucent = false
     }
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 70
+    
+    func registerMenuCell(){
+        tableView.register(UINib(nibName: menuCell, bundle: nil), forCellReuseIdentifier: menuCell)
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return titleMenu.count
@@ -77,7 +54,7 @@ class MenuViewController: UITableViewController {
         if indexPath.row == 0 {
             let profileVC = UIStoryboard(name: profileController, bundle: nil).instantiateViewController(withIdentifier: profileController) as! ProfileViewController
             profileVC.hidesBottomBarWhenPushed = true
-
+            
             self.navigationController?.pushViewController(profileVC, animated: true)
         }
         if indexPath.row == 1 {

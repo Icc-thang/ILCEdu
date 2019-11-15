@@ -52,7 +52,7 @@ class PresenterVocabulary{
         apiProvider.rx.request(.getVocab(idLesson ?? 0))
             .filterSuccessfulStatusCodes()
             .mapJSON()
-            .subscribe(onSuccess: { json in
+            .subscribe(onSuccess: { json in  print(json)
                 self.vocabList = Mapper<VocabularyModel>().mapArray(JSONObject: json)
                 self.delegateVocabulary?.getListVocab()
             }){ (error) in
@@ -63,7 +63,7 @@ class PresenterVocabulary{
     func postPosionVocab(vocab_position:Int?){
         apiProvider.rx.request(.lesson_vocab_position(idLesson ?? 0, vocab_position ?? 0))
             .filterSuccessfulStatusCodes()
-            .subscribe(onSuccess: { json in
+            .subscribe(onSuccess: { json in  print(json)
                 print("Đẩy từ vựng vị trí \(vocab_position ?? 0) ở bài \(self.idLesson ?? 0) hoàn tất")
             }){ (error) in
                 print(error)
