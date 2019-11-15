@@ -17,6 +17,7 @@ extension UIColor{
     static let colorGray = UIColor().colorFromHex("8B8B8B")
     static let colorRed = UIColor().colorFromHex("D72031")
     static let colorBlue = UIColor().colorFromHex("4169E1")
+    static let colorYellow = UIColor().colorFromHex("FFFC5D")
     
     func colorFromHex(_ hex: String) -> UIColor {
         var hexString = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
