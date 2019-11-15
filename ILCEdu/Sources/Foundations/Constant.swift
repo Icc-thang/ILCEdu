@@ -7,8 +7,10 @@
 //
 
 import Foundation
+import UIKit
 import Moya
 import SkeletonView
+import SDWebImage
 
 // baseURLAPI
 let baseUrl:String = "https://townwork.vn/api/"
@@ -31,9 +33,6 @@ let apiProvider = MoyaProvider<APIRequest>()
 let gradient = SkeletonGradient(baseColor: UIColor.colorGreen)
 let animation = SkeletonAnimationBuilder().makeSlidingAnimation(withDirection: .leftRight)
 
-//Nav Cell
-let navCell = "NavCell"
-
 //Profile Cell
 let profileCell = "ProfileCell"
 let processCell = "ProcessCell"
@@ -48,6 +47,10 @@ let cardCell = "CardCell"
 
 //Lesson Cell
 let lesCell = "LessonCell"
+
+//practice Cell
+let practiceCell = "PracticeCell"
+let sectionCell = "SectionCell"
 
 //Controller
 let loginController = "LoginController"
@@ -68,4 +71,4 @@ let titleMenu = [profile, logOut]
 //tab
 let tabLesson = "語彙"
 let tabPractice = "練習"
-
+let tabMenu = "メニュー"

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PracticeCell" id="gTV-IL-0wX" customClass="PracticeCell" customModule="ILC_Edu" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="350" height="241"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="350" height="241"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="BvX-9U-3gi" customClass="CircleProgressView" customModule="CircleProgressView">
+                        <rect key="frame" x="77" y="8" width="196" height="196"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dzA-rT-sJZ" customClass="CircleProgressView" customModule="CircleProgressView">
+                                <rect key="frame" x="149.5" y="149.5" width="46.5" height="46.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="26c-Tf-xAr">
+                                        <rect key="frame" x="8" y="8" width="30.5" height="30.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30.5" id="k7p-KY-zhb"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="dzA-rT-sJZ" secondAttribute="height" multiplier="1:1" id="ahm-6K-XM1"/>
+                                    <constraint firstItem="26c-Tf-xAr" firstAttribute="leading" secondItem="dzA-rT-sJZ" secondAttribute="leading" constant="8" id="j4a-t6-7x1"/>
+                                    <constraint firstAttribute="trailing" secondItem="26c-Tf-xAr" secondAttribute="trailing" constant="8" id="kLB-uv-lCD"/>
+                                    <constraint firstAttribute="bottom" secondItem="26c-Tf-xAr" secondAttribute="bottom" constant="8" id="kaB-Sd-aMy"/>
+                                    <constraint firstItem="26c-Tf-xAr" firstAttribute="top" secondItem="dzA-rT-sJZ" secondAttribute="top" constant="8" id="vwG-TG-h7n"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="centerFillColor">
+                                        <color key="value" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="progress">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="trackFillColor">
+                                        <color key="value" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="trackBackgroundColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="trackWidth">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="dzA-rT-sJZ" secondAttribute="bottom" id="NwK-k5-rSe"/>
+                            <constraint firstAttribute="width" secondItem="BvX-9U-3gi" secondAttribute="height" id="TFS-wX-uTW"/>
+                            <constraint firstAttribute="trailing" secondItem="dzA-rT-sJZ" secondAttribute="trailing" id="X8e-Rp-C1b"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="progress">
+                                <real key="value" value="0.69999999999999996"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="trackWidth">
+                                <real key="value" value="7"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="image" keyPath="centerImage" value="practice_img"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="trackBorderWidth">
+                                <real key="value" value="3"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="refreshRate">
+                                <real key="value" value="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="trackBackgroundColor">
+                                <color key="value" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="trackFillColor">
+                                <color key="value" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="centerFillColor">
+                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="roundedCap" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7UR-Ee-GDn">
+                        <rect key="frame" x="141.5" y="212" width="67" height="21"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N5: Bài 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MVo-M7-Rxp">
+                                <rect key="frame" x="0.0" y="0.0" width="67" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="MVo-M7-Rxp" secondAttribute="bottom" id="ANE-qB-SMn"/>
+                            <constraint firstAttribute="trailing" secondItem="MVo-M7-Rxp" secondAttribute="trailing" id="LCq-MV-WoG"/>
+                            <constraint firstItem="MVo-M7-Rxp" firstAttribute="top" secondItem="7UR-Ee-GDn" secondAttribute="top" id="a0d-mD-jwa"/>
+                            <constraint firstItem="MVo-M7-Rxp" firstAttribute="leading" secondItem="7UR-Ee-GDn" secondAttribute="leading" id="jkC-KH-adc"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="BvX-9U-3gi" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="3OV-m9-suA"/>
+                <constraint firstItem="BvX-9U-3gi" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="C0F-fV-970"/>
+                <constraint firstAttribute="bottom" secondItem="7UR-Ee-GDn" secondAttribute="bottom" constant="8" id="bp5-2g-n0J"/>
+                <constraint firstItem="7UR-Ee-GDn" firstAttribute="centerX" secondItem="BvX-9U-3gi" secondAttribute="centerX" id="r72-aa-1If"/>
+                <constraint firstItem="7UR-Ee-GDn" firstAttribute="top" secondItem="BvX-9U-3gi" secondAttribute="bottom" constant="8" id="uuH-0n-P2w"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="350" height="240"/>
+            <connections>
+                <outlet property="practiceLevel" destination="BvX-9U-3gi" id="rkc-VA-Fax"/>
+                <outlet property="practiceLevelPercent" destination="dzA-rT-sJZ" id="Tym-71-08Y"/>
+                <outlet property="practicePercent" destination="26c-Tf-xAr" id="sba-gN-1yp"/>
+            </connections>
+            <point key="canvasLocation" x="355.07246376811599" y="191.18303571428569"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="practice_img" width="100" height="100"/>
+    </resources>
+</document>
