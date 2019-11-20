@@ -11,7 +11,7 @@ import UIKit
 class PracticeViewController: UIViewController {
     
     @IBOutlet weak var practiceCollectionView: UICollectionView!
-     var sectionTitle = ["N5","N4"]
+    var sectionTitle = ["N5","N4"]
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationSetup()
@@ -34,23 +34,23 @@ class PracticeViewController: UIViewController {
 }
 
 extension PracticeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
-   
-        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-            return CGSize(width: collectionView.frame.size.width, height: 30)
-        }
     
-        func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-            switch kind {
-            case UICollectionView.elementKindSectionHeader:
-                let cell = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: sectionCell, for: indexPath) as! SectionCell
-                cell.sectionTitle.text = sectionTitle[indexPath.section]
-                return cell
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: collectionView.frame.size.width, height: 30)
+    }
     
-            default:
-                assert(false, "Unexpected element kind")
-            }
-            fatalError()
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        switch kind {
+        case UICollectionView.elementKindSectionHeader:
+            let cell = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: sectionCell, for: indexPath) as! SectionCell
+            cell.sectionTitle.text = sectionTitle[indexPath.section]
+            return cell
+            
+        default:
+            assert(false, "Unexpected element kind")
         }
+        fatalError()
+    }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return sectionTitle.count
@@ -67,16 +67,21 @@ extension PracticeViewController: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
-        if indexPath.item % 3 == 0 {
+        if indexPath.row % 3 == 0 {
             let cellWidth = (collectionView.frame.width - (flowLayout.sectionInset.left + flowLayout.sectionInset.right))
-            return CGSize(width: cellWidth, height: 150)
+            return CGSize(width: cellWidth , height: cellWidth / 2)
         } else {
-            let cellWidth = (collectionView.frame.width - (flowLayout.sectionInset.left + flowLayout.sectionInset.right) - flowLayout.minimumInteritemSpacing) / 2
-            return CGSize(width: cellWidth, height: 150)
+            let cellWidth = (collectionView.frame.width / 2 ) - (flowLayout.sectionInset.left + flowLayout.sectionInset.right)
+            return CGSize(width: cellWidth , height: cellWidth)
         }
     }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.item)
+        if indexPath.section == 0 {
+            print("section \(indexPath.section) : item \(indexPath.item)")
+        }else if indexPath.section == 1 {
+            print("section \(indexPath.section) : item \(indexPath.item)")
+        }
     }
 }
 
