@@ -20,39 +20,30 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="73"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ye3-7D-BsQ">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="73"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ijX-7O-sk1">
-                            <rect key="frame" x="0.0" y="0.0" width="4.666666666666667" height="73"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HQf-Z2-3Xl" customClass="CircleAvatar" customModule="ILC_Edu" customModuleProvider="target">
-                            <rect key="frame" x="335" y="16.666666666666671" width="40" height="40"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="40" id="UhU-Fx-Gbn"/>
-                                <constraint firstAttribute="width" secondItem="HQf-Z2-3Xl" secondAttribute="height" multiplier="1:1" id="o4p-bB-YuB"/>
-                            </constraints>
-                        </imageView>
-                    </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HQf-Z2-3Xl" customClass="CircleAvatar" customModule="ILC_Edu" customModuleProvider="target">
+                    <rect key="frame" x="326" y="16" width="41" height="41"/>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="ijX-7O-sk1" secondAttribute="bottom" id="H7G-Kc-upP"/>
-                        <constraint firstItem="ijX-7O-sk1" firstAttribute="leading" secondItem="Ye3-7D-BsQ" secondAttribute="leading" id="Mzq-3B-rh3"/>
-                        <constraint firstItem="ijX-7O-sk1" firstAttribute="top" secondItem="Ye3-7D-BsQ" secondAttribute="top" id="XBo-pI-O55"/>
-                        <constraint firstAttribute="trailing" secondItem="HQf-Z2-3Xl" secondAttribute="trailing" id="arP-P2-3Qy"/>
-                        <constraint firstItem="HQf-Z2-3Xl" firstAttribute="centerY" secondItem="ijX-7O-sk1" secondAttribute="centerY" id="z0M-1r-BTd"/>
+                        <constraint firstAttribute="width" secondItem="HQf-Z2-3Xl" secondAttribute="height" multiplier="1:1" id="5eY-Tu-iGh"/>
+                        <constraint firstAttribute="width" constant="41" id="HVz-OS-ve6"/>
                     </constraints>
-                </view>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ijX-7O-sk1">
+                    <rect key="frame" x="8" y="24" width="311" height="25.333333333333329"/>
+                    <constraints>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="5gA-0U-Ok9"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="Ye3-7D-BsQ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="N8Q-U3-dWt"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Ye3-7D-BsQ" secondAttribute="bottom" id="he6-uh-wCN"/>
-                <constraint firstItem="Ye3-7D-BsQ" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="mOk-SU-Fds"/>
-                <constraint firstItem="Ye3-7D-BsQ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ouK-Wf-XsL"/>
+                <constraint firstItem="ijX-7O-sk1" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Z5U-fr-jjB"/>
+                <constraint firstItem="HQf-Z2-3Xl" firstAttribute="leading" secondItem="ijX-7O-sk1" secondAttribute="trailing" constant="7" id="jeK-Wx-kNR"/>
+                <constraint firstItem="HQf-Z2-3Xl" firstAttribute="centerY" secondItem="ijX-7O-sk1" secondAttribute="centerY" id="ln9-UO-Tfg"/>
+                <constraint firstItem="ijX-7O-sk1" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="nLr-Lp-CZx"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="HQf-Z2-3Xl" secondAttribute="trailing" constant="8" id="qJ6-92-U3E"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
