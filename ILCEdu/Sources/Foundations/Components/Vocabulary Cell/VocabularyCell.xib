@@ -77,7 +77,6 @@
                                 <rect key="frame" x="16" y="16" width="390" height="390"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="390" id="DAR-a3-5hb"/>
                                     <constraint firstAttribute="width" secondItem="kbx-uC-ha3" secondAttribute="height" multiplier="1:1" id="Uy7-C6-Nxp"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="3qq-Xc-SbQ">
@@ -99,7 +98,6 @@
                             <constraint firstAttribute="bottom" secondItem="IBy-d9-cSm" secondAttribute="bottom" constant="8" id="YCm-gt-Pxa"/>
                             <constraint firstItem="XC2-uI-ik6" firstAttribute="leading" secondItem="vjr-C6-vyn" secondAttribute="leading" constant="16" id="a51-qh-tyf"/>
                             <constraint firstItem="kbx-uC-ha3" firstAttribute="leading" secondItem="vjr-C6-vyn" secondAttribute="leading" constant="16" id="pKW-os-bGn"/>
-                            <constraint firstItem="kbx-uC-ha3" firstAttribute="centerX" secondItem="vjr-C6-vyn" secondAttribute="centerX" id="rx0-tr-Exk"/>
                             <constraint firstItem="IBy-d9-cSm" firstAttribute="top" secondItem="XC2-uI-ik6" secondAttribute="bottom" constant="8" id="y0p-Ip-IcB"/>
                         </constraints>
                     </view>
