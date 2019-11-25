@@ -27,24 +27,24 @@ class LessonCell: UICollectionViewCell {
         super.awakeFromNib()
         backgroundSetup()
         progressSetup()
-        loadingData()
+//        loadingData()
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        lessonImageView.showAnimatedGradientSkeleton(usingGradient: gradient, animation: animation, transition: .crossDissolve(0.25))
-        Timer.scheduledTimer(timeInterval: 1.3, target: self, selector: #selector(removeLoader), userInfo: nil, repeats: false)
+//        lessonImageView.showAnimatedGradientSkeleton(usingGradient: gradient, animation: animation, transition: .crossDissolve(0.25))
+//        Timer.scheduledTimer(timeInterval: 1.3, target: self, selector: #selector(removeLoader), userInfo: nil, repeats: false)
     }
     
-    func loadingData(){
-        lessonImageView.showAnimatedGradientSkeleton(usingGradient: gradient, animation: animation)
-        Timer.scheduledTimer(timeInterval: 1.3, target: self, selector: #selector(removeLoader), userInfo: nil, repeats: false)
-    }
+//    func loadingData(){
+//        lessonImageView.showAnimatedGradientSkeleton(usingGradient: gradient, animation: animation)
+//        Timer.scheduledTimer(timeInterval: 1.3, target: self, selector: #selector(removeLoader), userInfo: nil, repeats: false)
+//    }
     
-    @objc func removeLoader()
-    {
-        lessonImageView.hideSkeleton(transition: .crossDissolve(0.25))
-    }
+//    @objc func removeLoader()
+//    {
+//        lessonImageView.hideSkeleton(transition: .crossDissolve(0.25))
+//    }
     func backgroundSetup(){
         bgView.layer.cornerRadius = 20.0
         bgView.layer.shadowColor = UIColor.gray.cgColor
