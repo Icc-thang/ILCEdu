@@ -27,48 +27,6 @@
             </objects>
             <point key="canvasLocation" x="-1006" y="-1145"/>
         </scene>
-        <!--Lesson View Controller-->
-        <scene sceneID="bR4-jJ-sYV">
-            <objects>
-                <viewController storyboardIdentifier="LessonController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BKQ-An-6Ti" customClass="LessonViewController" customModule="ILC_Edu" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="QrS-P7-wJE">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KKN-PL-aQW">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="P54-la-kA9">
-                                    <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
-                                <connections>
-                                    <outlet property="dataSource" destination="BKQ-An-6Ti" id="w3j-PO-WtN"/>
-                                    <outlet property="delegate" destination="BKQ-An-6Ti" id="bHR-uY-X31"/>
-                                </connections>
-                            </collectionView>
-                        </subviews>
-                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="KKN-PL-aQW" firstAttribute="top" secondItem="5Eq-q6-P8x" secondAttribute="top" id="5X7-5F-QEz"/>
-                            <constraint firstItem="KKN-PL-aQW" firstAttribute="leading" secondItem="5Eq-q6-P8x" secondAttribute="leading" id="ipJ-zv-g4I"/>
-                            <constraint firstItem="5Eq-q6-P8x" firstAttribute="trailing" secondItem="KKN-PL-aQW" secondAttribute="trailing" id="tso-GK-aKv"/>
-                            <constraint firstItem="5Eq-q6-P8x" firstAttribute="bottom" secondItem="KKN-PL-aQW" secondAttribute="bottom" id="ykX-1p-JLO"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="5Eq-q6-P8x"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="QPL-Rh-sFP"/>
-                    <connections>
-                        <outlet property="lessonCollectionView" destination="KKN-PL-aQW" id="MEi-ZR-nBW"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4jA-Iq-8SN" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="920" y="-1658"/>
-        </scene>
         <!--Practice View Controller-->
         <scene sceneID="ngI-J3-JDP">
             <objects>
@@ -152,12 +110,34 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BKQ-An-6Ti" kind="relationship" relationship="rootViewController" id="p45-AK-EYb"/>
+                        <segue destination="Bpl-DT-J8I" kind="relationship" relationship="rootViewController" id="amf-AC-HdV"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hqu-b9-g02" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="10" y="-1658"/>
+        </scene>
+        <!--Lesson View Controller-->
+        <scene sceneID="prp-eF-cZ3">
+            <objects>
+                <collectionViewController storyboardIdentifier="LessonViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Bpl-DT-J8I" customClass="LessonViewController" customModule="ILC_Edu" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="GWR-S5-v5l">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="NED-8V-N9q">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells/>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="n3f-QA-Xej"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eDx-BK-W4v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="919" y="-1658"/>
         </scene>
         <!--メニュー-->
         <scene sceneID="Y8s-mV-7UE">
