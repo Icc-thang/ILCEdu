@@ -11,6 +11,7 @@ import UIKit
 import Moya
 import SkeletonView
 import SDWebImage
+import RxSwift
 
 // baseURLAPI
 let baseUrl:String = "https://townwork.vn/api/"
@@ -29,6 +30,9 @@ let name = UserDefaults.standard.string(forKey: "name")
 //api provider
 let apiProvider = MoyaProvider<APIRequest>()
 
+//DisposeBag
+let disposeBag = DisposeBag()
+
 //place holder
 let gradient = SkeletonGradient(baseColor: UIColor.colorGreen)
 let animation = SkeletonAnimationBuilder().makeSlidingAnimation(withDirection: .leftRight)
@@ -42,8 +46,10 @@ let noteCell = "NoteCell"
 let menuCell = "MenuCell"
 
 //VocabularyCell
-let vocabularyCell = "VocabularyCell"
-let cardCell = "CardCell"
+let vocabCell = "VocabCell"
+let meaningVocabCell = "MeaningVocabCell"
+let imageVocabCell = "ImageVocabCell"
+let buttonVocabCell = "ButtonVocabCell"
 
 //Lesson Cell
 let lesCell = "LessonCell"
@@ -56,9 +62,30 @@ let sectionCell = "SectionCell"
 let loginController = "LoginController"
 let registerController = "RegisterController"
 let tabbarController = "TabbarController"
-let vocabularyController = "VocabularyController"
+let vocabController = "VocabController"
 let profileController = "ProfileController"
+let questionController = "QuestionController"
 
+//QuestionCell
+let questionCell = "QuestionCell"
+
+//TextQuestionCell
+let textQuestionCell = "TextQuestionCell"
+
+//AudioQuestionCell
+let audioQuestionCell = "AudioQuestionCell"
+
+//ImageQuestionCell
+let imageQuestionCell = "ImageQuestionCell"
+
+//SuggestCell
+let suggestCell = "SuggestCell"
+
+//AnswerCell
+let answerCell = "AnswerCell"
+
+//NextCell
+let nextCell = "NextCell"
 
 //Menu
 let menu = "MENU"
