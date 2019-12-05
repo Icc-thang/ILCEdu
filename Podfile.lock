@@ -1,6 +1,7 @@
 PODS:
-  - Alamofire (4.9.0)
+  - Alamofire (4.9.1)
   - CircleProgressView (1.2.0)
+  - Differentiator (3.1.0)
   - FacebookCore (0.9.0):
     - FBSDKCoreKit (~> 5.0)
   - FacebookLogin (0.9.0):
@@ -44,6 +45,12 @@ PODS:
   - ObjectMapper (3.5.1)
   - PieCharts (0.0.7)
   - Result (4.1.0)
+  - RxCocoa (4.5.0):
+    - RxSwift (>= 4.4.2, ~> 4.4)
+  - RxDataSources (3.1.0):
+    - Differentiator (~> 3.0)
+    - RxCocoa (~> 4.0)
+    - RxSwift (~> 4.0)
   - RxSwift (4.5.0)
   - SDWebImage/Core (4.4.7)
   - SDWebImage/WebP (4.4.7):
@@ -61,6 +68,9 @@ DEPENDENCIES:
   - Moya/RxSwift (~> 13.0)
   - ObjectMapper
   - PieCharts
+  - RxCocoa (~> 4.0)
+  - RxDataSources
+  - RxSwift (~> 4.0)
   - SDWebImage/WebP
   - SkeletonView
   - SwiftyJSON (~> 4.0)
@@ -68,6 +78,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - Differentiator
     - FacebookCore
     - FacebookLogin
     - FacebookShare
@@ -80,6 +91,8 @@ SPEC REPOS:
     - ObjectMapper
     - PieCharts
     - Result
+    - RxCocoa
+    - RxDataSources
     - RxSwift
     - SDWebImage
     - SkeletonView
@@ -95,8 +108,9 @@ CHECKOUT OPTIONS:
     :git: https://github.com/CardinalNow/iOS-CircleProgressView.git
 
 SPEC CHECKSUMS:
-  Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   CircleProgressView: 4ef8492b0d12e42948d9f2b78a1482d9464367d5
+  Differentiator: be49ca3408f0ecfc761e4c7763d20c62be01b9ad
   FacebookCore: ba86524b66cfa86d0f8e65d08faa8504a9f732dd
   FacebookLogin: 6cee9fd6e1fe976fe8f7eec199e27b28b14f5d63
   FacebookShare: 85968ad1b1606c4944fb154924e425fd29184ea5
@@ -109,11 +123,13 @@ SPEC CHECKSUMS:
   ObjectMapper: 70187b8941977c62ccfb423caf6b50be405cabf0
   PieCharts: 30e50dfa7dc19e5b84e9878d32089673ef5d0453
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
+  RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
+  RxDataSources: a843bad90c29817f5923ec8163f4af2de084ceb3
   RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
   SDWebImage: c10d14a8883ebd89664f02a422006f66a85c0c5d
   SkeletonView: bb27c39857e5492136f02ee8a3aa78de55d12ecd
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: d07df533e19c5c0817c1eab8b40c29a2a61aa880
+PODFILE CHECKSUM: b8e73d0cdf3f40ed6a9109bdb6646de153ff0cb0
 
 COCOAPODS: 1.8.4
