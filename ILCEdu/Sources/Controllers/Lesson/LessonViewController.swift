@@ -8,125 +8,83 @@
 
 import UIKit
 import SDWebImage
+import RxSwift
+import RxCocoa
 
-
-class LessonViewController: UIViewController {
+class LessonViewController: UICollectionViewController{
     
-    @IBOutlet weak var lessonCollectionView: UICollectionView!
-    
-    fileprivate let refreshControl = UIRefreshControl()
-    
-    fileprivate var number: Int = 0
-    
-    fileprivate let presenterLesson = PresenterLesson()
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        presenterLesson.getDataForLesson()
-    }
+    private let vm = LessonViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenterLesson.delegateLesson = self
+        self.collectionView.delegate = nil
+        self.collectionView.dataSource = nil
+        self.collectionView.rx.setDelegate(self).disposed(by: disposeBag)
+        print("Bearer \(UserDefaults.standard.string(forKey: "authorization")!)")
         navigationSetup()
-        collectionViewSetUp()
-        pullToRefreshData()
- 
+        bindUI()
+        bindViewModel()
     }
     
-    func navigationSetup(){
+    private func bindUI(){
+        collectionView.register(UINib(nibName: lesCell, bundle: nil), forCellWithReuseIdentifier: lesCell)
+        
+        let flowLayout = UICollectionViewFlowLayout()
+        let size = (collectionView.frame.size.width - CGFloat(16))
+        flowLayout.itemSize = CGSize(width: size, height: size)
+        collectionView.setCollectionViewLayout(flowLayout, animated: true)
+    }
+    
+    private func bindViewModel(){
+        
+        vm.dataN5
+            .asObservable()
+            .bind(to: self.collectionView.rx.items(cellIdentifier: lesCell,cellType: LessonCell.self)){ (index,model,cell) in
+                print(model)
+                var position:Int?
+                var finish:Int?
+                if model.app_member_statistical?.isEmpty == true{
+                    finish = 0
+                    position = 0
+                }else{
+                    finish = model.app_member_statistical?[0].lesson_finish ?? 0
+                    position = model.app_member_statistical?[0].lesson_vocab_position ?? 0
+                }
+                cell.parseDataLessonCell(imgURL: model.image,name: model.name, title: model.title,
+                                         totalPercent: self.vm.percentLesson(lesson_finish: finish, numberOfVocab: model.app_vocab_count ?? 0, positionVocab: position))
+        }.disposed(by: disposeBag)
+        
+        self.collectionView.rx
+            .modelSelected(N5.self)
+            .subscribe(onNext: { (model) in
+                let vocabularyVC = UIStoryboard.init(name: vocabController, bundle: nil)
+                    .instantiateViewController(withIdentifier: vocabController) as? VocabViewController
+                var position:Int?
+                var finish:Int?
+                if model.app_member_statistical?.isEmpty == true{
+                    finish = 0
+                    position = 0
+                }else{
+                    finish = model.app_member_statistical?[0].lesson_finish ?? 0
+                    position = model.app_member_statistical?[0].lesson_vocab_position ?? 0
+                }
+                vocabularyVC?.lessonVC = self
+                vocabularyVC?.initData(lessonID: model.id ?? 0, percent: self.vm.percentLesson(lesson_finish: finish, numberOfVocab: model.app_vocab_count ?? 0, positionVocab: position), lessonName: model.name ?? "", position: position ?? 0, vocabCount: model.app_vocab_count ?? 0)
+                
+                vocabularyVC?.hidesBottomBarWhenPushed = true
+                self.navigationController?.pushViewController(vocabularyVC!, animated: true)
+            }).disposed(by: disposeBag)
+    }
+    
+    func setPosition(_ id:Int, _ positionVocab: Int){
+        vm.refreshData(id, positionVocab)
+    }
+    
+    private func navigationSetup(){
         let view = NaviView()
         view.setNavigationView(classLabel: tabLesson,
                                userAvatar: UserDefaults.standard.string(forKey: "avatar") ?? avatarBase)
         navigationItem.titleView = view
         navigationController?.navigationBar.isTranslucent = false
-    }
-    
-    func pullToRefreshData(){
-        // Add Refresh Control to CollectionView
-        if #available(iOS 10.0, *) {
-            self.lessonCollectionView.refreshControl = refreshControl
-        } else {
-            self.lessonCollectionView.addSubview(refreshControl)
-        }
-        self.refreshControl.addTarget(self, action: #selector(updateData), for: .valueChanged)
-        self.refreshControl.tintColor = UIColor.lightGray
-    }
-    
-    @objc private func updateData() {
-        self.number += 1
-        self.presenterLesson.getDataForLesson()
-        self.refreshControl.endRefreshing()
-    }
-    
-    func collectionViewSetUp(){
-        //registerLessonNib
-        lessonCollectionView.register(UINib(nibName: lesCell, bundle: nil), forCellWithReuseIdentifier: lesCell)
-    }
-}
-
-extension LessonViewController: DelegateLesson {
-    func getDataLesson() {
-        lessonCollectionView.reloadData()
-    }
-}
-
-extension LessonViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return presenterLesson.lesson?.n5?.count ?? 0
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let lessonCell = collectionView.dequeueReusableCell(withReuseIdentifier: lesCell, for: indexPath) as! LessonCell
-        
-        var position:Int?
-        var finish:Int?
-        if presenterLesson.lesson?.n5?[indexPath.row].app_member_statistical?.isEmpty == true{
-            finish = 0
-            position = 0
-        }else{
-            finish = presenterLesson.lesson?.n5?[indexPath.row].app_member_statistical?[0].lesson_finish ?? 0
-            position = presenterLesson.lesson?.n5?[indexPath.row].app_member_statistical?[0].lesson_vocab_position ?? 0
-        }
-        
-        lessonCell.parseDataLessonCell(
-            imgURL: presenterLesson.lesson?.n5?[indexPath.row].image,
-            name: presenterLesson.lesson?.n5?[indexPath.row].name,
-            title: presenterLesson.lesson?.n5?[indexPath.row].title,
-            lesson_finish: finish,
-            numberOfVocab: presenterLesson.lesson?.n5?[indexPath.row].app_vocab_count ?? 0,
-            positionVocab: position)
-        
-        return lessonCell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = (collectionView.frame.size.width - 16)
-        return CGSize.init(width: width , height: 370)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vocabularyVC = UIStoryboard.init(name: vocabularyController, bundle: nil).instantiateViewController(withIdentifier: vocabularyController) as? VocabularyViewController
-        
-        var position:Int?
-        var finish:Int?
-        if presenterLesson.lesson?.n5?[indexPath.row].app_member_statistical?.isEmpty == true{
-            finish = 0
-            position = 0
-        }else{
-            finish = presenterLesson.lesson?.n5?[indexPath.row].app_member_statistical?[0].lesson_finish ?? 0
-            position = presenterLesson.lesson?.n5?[indexPath.row].app_member_statistical?[0].lesson_vocab_position ?? 0
-        }
-        
-        vocabularyVC?.getKeyFromLesson(
-            nameLesson: presenterLesson.lesson?.n5?[indexPath.row].name ?? "",
-            vocabCount: presenterLesson.lesson?.n5?[indexPath.row].app_vocab_count ?? 0,
-            idLesson: presenterLesson.lesson?.n5?[indexPath.row].id ?? 0,
-            postionVocab: position ?? 0,
-            finish: finish ?? 0 )
-        
-        vocabularyVC?.hidesBottomBarWhenPushed = true
-        self.navigationController?.pushViewController(vocabularyVC!, animated: true)
     }
 }
