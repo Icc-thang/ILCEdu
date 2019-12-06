@@ -41,7 +41,7 @@ class VocabViewController: UIViewController {
         super.viewDidLoad()
         vocabCollectionView.delegate = nil
         vocabCollectionView.dataSource = nil
-        vocabCollectionView.rx.setDelegate(self).disposed(by: disposeBag)
+        self.vocabCollectionView.rx.setDelegate(self).disposed(by: disposeBag)
         bindUI()
         bindViewModel()
     }
@@ -68,29 +68,16 @@ class VocabViewController: UIViewController {
         flowLayout.minimumLineSpacing = 0
         vocabCollectionView.showsHorizontalScrollIndicator = false
         vocabCollectionView.setCollectionViewLayout(flowLayout, animated: true)
-        vocabCollectionView.layoutIfNeeded()
         
         //
         progressSetup()
-        //        let nextIndex = vm.position! - 1
-        //        print(nextIndex)
-        //        if nextIndex < vm.position! {
-        //            vocabCollectionView.scrollToItem(at: IndexPath(item: 1, section: 0), at: .centeredHorizontally, animated: false)
-        //        }
-        
+        self.automaticallyAdjustsScrollViewInsets = false
     }
     
     func bindViewModel(){
         vm.vocabData.asObservable()
             .bind(to: vocabCollectionView.rx.items(cellIdentifier: vocabCell, cellType: VocabCell.self)){ (index, model, cell) in
-                print(model)
                 cell.setModel(model)
-//                cell.setDataForVocabCell(imageUrl: model.vocab_image ?? "",
-//                                         japanese: model.vocab_jp ?? "",
-//                                         kanji: model.vocab_kanji ?? "",
-//                                         example: model.vocab_example ?? "",
-//                                         mean: model.vocab_vi ?? "",
-//                                         linkAudio: model.vocab_audio ?? "")
         }.disposed(by: disposeBag)
     }
     
@@ -110,7 +97,7 @@ class VocabViewController: UIViewController {
 
 extension VocabViewController : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: UIScreen.main.bounds.size.width,
-                      height: collectionView.bounds.height)
+        let height = collectionView.frame.size.height
+        return CGSize(width: screenWidth, height: height)
     }
 }

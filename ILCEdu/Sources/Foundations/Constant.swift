@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 import Moya
-import SkeletonView
 import SDWebImage
 import RxSwift
 
@@ -32,10 +31,6 @@ let apiProvider = MoyaProvider<APIRequest>()
 
 //DisposeBag
 let disposeBag = DisposeBag()
-
-//place holder
-let gradient = SkeletonGradient(baseColor: UIColor.colorGreen)
-let animation = SkeletonAnimationBuilder().makeSlidingAnimation(withDirection: .leftRight)
 
 //Profile Cell
 let profileCell = "ProfileCell"
@@ -99,3 +94,5 @@ let titleMenu = [profile, logOut]
 let tabLesson = "語彙"
 let tabPractice = "練習"
 let tabMenu = "メニュー"
+
+let screenWidth = UIScreen.main.bounds.size.width

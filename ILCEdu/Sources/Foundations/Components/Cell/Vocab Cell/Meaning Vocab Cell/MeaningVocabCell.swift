@@ -9,13 +9,15 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import AVFoundation
 
 class MeaningVocabCell: UITableViewCell {
     
     @IBOutlet weak var meaningLabel: UILabel!
     @IBOutlet weak var meaningButton: UIButton!
     var isOpen:Bool = false
-
+    private var player : AVPlayer?
+    @IBOutlet weak var listenButton: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         meaningButton.rx.tap.bind{ _ in
@@ -27,8 +29,21 @@ class MeaningVocabCell: UITableViewCell {
                 self.isOpen = false
             }
         }
+        listenButton.rx.tap.bind { _ in
+            do {
+                try AVAudioSession.sharedInstance().setCategory(.playback)
+            } catch(let error) {
+                print(error.localizedDescription)
+            }
+            self.player!.seek(to: CMTime.zero)
+            self.player!.play()
+        }
     }
-    
+    func playerInit(_ linkAudio:String) {
+        let url = URL(string: baseUrlMedia + (linkAudio))
+        let playerItem:AVPlayerItem = AVPlayerItem(url: url!)
+        player = AVPlayer(playerItem: playerItem)
+    }
     override func prepareForReuse() {
         super.prepareForReuse()
         self.isOpen = false

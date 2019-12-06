@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mM8-dm-biy">
-                        <rect key="frame" x="86" y="18" width="226" height="24"/>
+                        <rect key="frame" x="86" y="18" width="156" height="24"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -31,18 +31,28 @@
                         </constraints>
                         <state key="normal" image="ic_translate"/>
                     </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kXJ-8F-PEA">
+                        <rect key="frame" x="250" y="-1" width="62" height="62"/>
+                        <state key="normal" image="ic_listen"/>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Xgk-4J-n0S" firstAttribute="centerY" secondItem="mM8-dm-biy" secondAttribute="centerY" id="688-jC-Yur"/>
+                    <constraint firstItem="kXJ-8F-PEA" firstAttribute="width" secondItem="Xgk-4J-n0S" secondAttribute="width" id="EHc-n0-eDX"/>
+                    <constraint firstItem="kXJ-8F-PEA" firstAttribute="centerY" secondItem="Xgk-4J-n0S" secondAttribute="centerY" id="KXI-Tv-i76"/>
+                    <constraint firstItem="kXJ-8F-PEA" firstAttribute="width" secondItem="kXJ-8F-PEA" secondAttribute="height" multiplier="1:1" id="MnN-kB-aFF"/>
+                    <constraint firstItem="kXJ-8F-PEA" firstAttribute="leading" secondItem="mM8-dm-biy" secondAttribute="trailing" constant="8" id="NfJ-9V-Kh8"/>
+                    <constraint firstItem="kXJ-8F-PEA" firstAttribute="height" secondItem="Xgk-4J-n0S" secondAttribute="height" id="TpV-mW-wKQ"/>
                     <constraint firstItem="Xgk-4J-n0S" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Tq8-bg-AoA"/>
                     <constraint firstItem="mM8-dm-biy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="18" id="aNb-8Z-OJY"/>
+                    <constraint firstAttribute="trailing" secondItem="kXJ-8F-PEA" secondAttribute="trailing" constant="8" id="baH-RI-QLA"/>
                     <constraint firstItem="mM8-dm-biy" firstAttribute="leading" secondItem="Xgk-4J-n0S" secondAttribute="trailing" constant="8" id="cda-Zl-K6K"/>
                     <constraint firstAttribute="bottom" secondItem="mM8-dm-biy" secondAttribute="bottom" constant="18" id="jdj-Va-Zmf"/>
-                    <constraint firstAttribute="trailing" secondItem="mM8-dm-biy" secondAttribute="trailing" constant="8" id="sae-2Q-r7l"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="listenButton" destination="kXJ-8F-PEA" id="Duv-BU-dVJ"/>
                 <outlet property="meaningButton" destination="Xgk-4J-n0S" id="57J-yN-1Ta"/>
                 <outlet property="meaningLabel" destination="mM8-dm-biy" id="Dh6-ML-Y9u"/>
             </connections>
@@ -50,6 +60,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="ic_listen" width="169" height="169"/>
         <image name="ic_translate" width="169" height="169"/>
     </resources>
 </document>

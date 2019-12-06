@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -28,46 +27,26 @@
             <point key="canvasLocation" x="-1006" y="-1145"/>
         </scene>
         <!--Practice View Controller-->
-        <scene sceneID="ngI-J3-JDP">
+        <scene sceneID="cjL-d1-wLP">
             <objects>
-                <viewController storyboardIdentifier="PracticeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iXG-zj-w0s" customClass="PracticeViewController" customModule="ILC_Edu" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ogM-Vd-MGn">
+                <collectionViewController storyboardIdentifier="ACollectionViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DmJ-Dw-VeT" customClass="PracticeViewController" customModule="ILC_Edu" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="6Hv-hW-3oj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="RMb-e8-BN5">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Bae-Ed-5zN">
-                                    <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
-                                <connections>
-                                    <outlet property="dataSource" destination="iXG-zj-w0s" id="S8t-Po-ARW"/>
-                                    <outlet property="delegate" destination="iXG-zj-w0s" id="54h-RN-9Ib"/>
-                                </connections>
-                            </collectionView>
-                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="4wD-L3-8Zc" firstAttribute="bottom" secondItem="RMb-e8-BN5" secondAttribute="bottom" id="9qp-N4-dVY"/>
-                            <constraint firstItem="RMb-e8-BN5" firstAttribute="leading" secondItem="4wD-L3-8Zc" secondAttribute="leading" id="HHK-DZ-RiH"/>
-                            <constraint firstItem="4wD-L3-8Zc" firstAttribute="trailing" secondItem="RMb-e8-BN5" secondAttribute="trailing" id="OBY-wy-djj"/>
-                            <constraint firstItem="RMb-e8-BN5" firstAttribute="top" secondItem="4wD-L3-8Zc" secondAttribute="top" id="VRW-0g-clF"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="4wD-L3-8Zc"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="cB2-7j-8BW"/>
-                    <connections>
-                        <outlet property="practiceCollectionView" destination="RMb-e8-BN5" id="Ho5-gY-uYb"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SAM-Ld-x1S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="EdK-JK-BEy">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells/>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="y5O-J6-X4B"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ztl-J3-wkI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="918.84057971014499" y="-979.01785714285711"/>
+            <point key="canvasLocation" x="919" y="-979"/>
         </scene>
         <!--Menu-->
         <scene sceneID="DZ4-Yv-pgo">
@@ -170,7 +149,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="iXG-zj-w0s" kind="relationship" relationship="rootViewController" id="HaG-JM-nH9"/>
+                        <segue destination="DmJ-Dw-VeT" kind="relationship" relationship="rootViewController" id="OFn-Ij-UMl"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2gG-AV-jzO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
